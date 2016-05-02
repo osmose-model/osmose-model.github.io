@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head><title>FB-Osmose Bridge</title>
+<link rel="stylesheet" href="screen.css" type="text/css">
+</head>
+<body>
+	<div class="pheader">Step 1: Getting parameter estimates for your OSMOSE model</div>
+	<div id="container">
+		<p class="justify13">You are about to query parameter estimates for your OSMOSE model.</p>
+
+		<p class="justify13">To get started, please select an ecosystem or a combination of a country and FAO area.</p>
+		
+		<form action="step2.html" method="post" id="step1Form">
+			<div class="padTop10">
+				<div class="w200 floatLeft">
+					 <b><i>Ecosystem</i></b> 
+				</div>
+				<select name="ecosystem" id="ecosystem">
+					<option></option>
+					<option value="Amazon">Amazon (River (basin))</option>
+					<option value="Baikal">Baikal (Lake)</option>
+					<option value="Taal">Taal (Lake)</option>
+				</select>
+			</div>
+			<hr>
+			<div class="padTop10">
+				<div class="w200 floatLeft">
+					 <b><i>Country</i></b> 
+				</div>
+				<select name="country" id="country">
+					<option></option>
+					<option value="">Afghanistan</option>
+					<option value="">Albania</option>
+					<option value="">Philippines</option>
+				</select>
+			</div>
+			<div class="padTop10">
+				<div class="w200 floatLeft">
+					 <b><i>Sub-country</i></b> 
+				</div>
+				<select name="subcountry" id="subcountry">
+					<option></option>
+				</select>
+			</div>
+			<div class="padTop10">
+				<div class="w200 floatLeft">
+					 <b><i>FAO Area</i></b> 
+				</div>
+				<select name="faoarea" id="faoarea">
+					<option></option>
+				</select>
+			</div>
+		</form>
+		<div class="padTop10">
+			<input type="button" name="submit" value="Proceed" onClick="parent.location='step2.html'"/>
+			
+			<input type="button" name="start" value="Exit" onClick="parent.location='step1.html'"></input>
+		</div>
+	</div>
+</body>
+</html>

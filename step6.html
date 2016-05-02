@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>FB-Osmose Bridge</title>
+<link rel="stylesheet" href="screen.css" type="text/css">
+<script src='/libs/jquery/jquery.js'></script>
+</head>
+<body>
+	<div class="pheader">Step 6: Indicate the time step of your OSMOSE model</div>
+	<div id="container">
+		<p class="justify13">Please indicate the number of time steps per year in your OSMOSE model:</p>
+		
+		<form action="" method="post" id="step6Form" name="step6Form">
+			<div class="padTop10 padBottom10">
+				<input type="text" name="steps"> e.g., 12 if your OSMOSE model has monthly time step
+			</div>
+			
+			<div class="padTop10">
+				<input type="button" name="back" value="Back" onClick="history.go(-1)"/>
+				
+				<input type="submit" name="submit" value="Generate Configuration files"/>
+				
+				<input type="button" name="exit" value="Exit" onClick="parent.location='step1.html'"/>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

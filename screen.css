@@ -1,0 +1,90 @@
+body {
+    font: 11px normal Arial,Verdana,Sans-serif;
+    text-align: left;
+}
+
+.pheader {
+    background-color: #FFF;
+    margin: 0 auto;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 1.65em;
+    font-weight: normal;
+    min-width: 758px;
+    width: 80%;
+    overflow: auto;
+    color: #333399;
+}
+
+#container {
+    width: 768px;
+    margin: 0 auto;
+}
+
+.justify13 {
+    text-align: justify;
+    font-size: 13px;
+}
+
+.padTop10 {
+    padding-top: 10px;
+}
+
+.padBottom10 {
+    padding-bottom: 10px;
+}
+
+.padTop20 {
+    padding-top: 20px;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+.w200 {
+    width: 200px;
+}
+
+form {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+table{
+	border: 1px;
+}
+
+.label {
+    font: bold 12px Arial, Verdana, Sans-serif;
+}
+
+.imgSize25 {
+	width: 25px;
+}
+
+.collapse {
+	border-collapse: collapse;
+}
+
+th {
+	padding: 5px;
+	text-align: center;
+}
+
+td {
+	padding: 5px;
+}
+
+.width20 {
+	width: 20%;
+}
+
+.centerContents{
+	margin: auto;
+}
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head><title>FB-Osmose Bridge</title>
+<link rel="stylesheet" href="screen.css" type="text/css">
+<script src='/libs/jquery/jquery.js'></script>
+</head>
+<body>
+	<div class="pheader">Step 4: Order Focal functional groups</div>
+	<div id="container">
+		<p class="justify13">Please order focal functional groups</p>
+		
+		<form action="step5.html" method="post" id="step4Form" name="step4Form">
+			<div class="padTop10">
+				<table class="padTop10 collapse" width="100%" border="1"> 
+				<th></th>
+				<th>Focal Functional Group</th>
+				<th>Species</th>
+				<tr>
+					<td class="centerContents"><select name="mackerel">
+					  <option value="1">1</option>
+					  <option value="2">2</option>
+					  <option value="3">3</option>
+					  <option value="4">4</option>
+					</select></td>
+					<td>King Mackerel</td>
+					<td><i>Scomberomorus cavalla</i></td>
+				</tr>
+				<tr>
+					<td class="centerContents"><select name="amberjacks">
+					  <option value="1">1</option>
+					  <option value="2" selected>2</option>
+					  <option value="3">3</option>
+					  <option value="4">4</option>
+					</select></td>
+					<td>Amberjacks</td>
+					<td><i>Seriola dumerili</i><br/><i>Seriola zonata</i></td>
+				</tr>
+				<tr>
+					<td class="centerContents"><select name="crabs">
+					  <option value="1">1</option>
+					  <option value="2">2</option>
+					  <option value="3" selected>3</option>
+					  <option value="4">4</option>
+					</select></td>
+					<td>Large Crabs</td>
+					<td><i>Callinectes sapidus</i><br/><i>Menippe mercenaria</i></td>
+				</tr>
+				</table>
+			</div>
+			
+			<div class="padTop10">
+				<input type="button" name="back" value="Back" onClick="history.go(-1)"/>
+				
+				<input type="submit" name="submit" value="Proceed"/>
+				
+				<input type="button" name="exit" value="Exit" onClick="parent.location='step1.html'"/>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
