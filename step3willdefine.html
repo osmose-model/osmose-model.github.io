@@ -2,74 +2,76 @@
 <html>
 <head><title>FB-Osmose Bridge</title>
 <link rel="stylesheet" href="screen.css" type="text/css">
+<script src="funcWizard.js"></script>
 </head>
 <body>
-	<div class="pheader">Step 3: Reorganize functional groups</div>
+	<div class="pheader">Step 3: Define functional groups</div>
 	<div id="container">
 		
-		<p class="justify13 padTop10"> Please: <b>(1)</b> define focal functional groups for your OSMOSE model and upto two reference species for each focal functional group (Latin species names)</p>
+		<p class="justify13 padTop10"> Please:</p>
 		
-		<p class="justify13"><b>(2)</b> define background functional groups for your OSMOSE model and upto four reference species for each background functional group (Latin species names and/or Latin genus names and/or family names and/or order names).</p>
+		<p class="justify13 padTop10"><b>(1)</b> Define focal functional groups for your OSMOSE model and up to two reference species for each focal functional group (Latin species names). Suggestions will be provided to you as you start typing something in the "Reference species" columns.</p>
+		
+		<p class="justify13"><b>(2)</b> Define background functional groups for your OSMOSE model and up to four reference species for each background functional group (Latin species names and/or Latin genus names and/or family names and/or order names). Suggestions will be provided to you as you start typing something in the "Reference species" columns.</p>
 		
 		<p class="justify13 padTop10">*Focal functional groups are groups of species/species which are explicitly considered in OSMOSE (i.e., their whole life cycle is modeled), while background functional groups are groups of species/species which are implicitly considered in OSMOSE (fields of biomass for these groups are used to force the OSMOSE model).</p>
 
-		<p class="justify13 padTop10">*Caution: The name of the functional groups should not include spaces nor underscores. For example, "CoastalOmnivores" is a valid functional group name, but not "Coastal omnivores" nor "Coastal_omnivores".</p>
+		<p class="justify13 padTop10">*Caution: The name of the functional groups should not include spaces nor underscores. For example, "SmallPelagics" is a valid functional group name, but not "Small pelagics" nor "Small_pelagics".</p>
 		
-		<p class="justify13 padTop10 padBottom10">*When you are ready, press Proceed to go to the next step.</p>
+		<p class="justify13 padTop10 padBottom10">When you are ready, press Proceed to go to the next step.</p>
 		
 		<form action="step4.html" method="get" id="step3willdefineForm" name="step3willdefineForm">
 		
 		<table class="padTop10 collapse" border="1"> 
 			<th>Functional Group</th>
-			<th>Focal Functional Group</th>
-			<th>Background Functional Group</th>
-			<th>Reference Species1</th>
-			<th>Reference Species2</th>
-			<th>Reference Species3</th>
-			<th>Reference Species4</th>
+			<th class="width10">Focal Functional Group</th>
+			<th class="width10">Background Functional Group</th>
+			<th class="width15">Reference Species 1</th>
+			<th class="width15">Reference Species 2</th>
+			<th class="width15">Reference Species 3</th>
+			<th class="width15">Reference Species 4</th>
 			<tr>
-				<td>King Mackerel</td>
-				<td><input type="radio" name="sample3" value="fgroup" checked></input></td>
-				<td><input type="radio" name="sample3" value="bgroup"></input></td>
-				<td><i>Scomberomorus cavalla</i></td>
-				<td></td>
+				<td>Amberjacks<div class="floatRight"><img class="imgSize25" src="edit.png"></div></td>
+				<td><div class="center"><input type="radio" name="sample1" value="fgroup" checked></input></div></td>
+				<td><div class="center"><input type="radio" name="sample1" value="bgroup"></input></div></td>
+				<td><i>Seriola dumerili</i><div class="floatRight"><img class="imgSize25" src="edit.png"></div></td>
+				<td><i>Seriola zonata</i><div class="floatRight"><img class="imgSize25" src="edit.png"></div></td>
 				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td>Amberjacks</td>
-				<td><input type="radio" name="sample1" value="fgroup" checked></input></td>
-				<td><input type="radio" name="sample1" value="bgroup"></input></td>
-				<td><i>Seriola dumerili</i></td>
-				<td><i>Seriola zonata</i></td>
-				<td><i>Seriola fasciata</i></td>
+				<td>SmallPelagics<div class="floatRight"><img class="imgSize25" src="edit.png"></div></td>
+				<td><div class="center"><input type="radio" name="sample3" value="fgroup" checked></input></div></td>
+				<td><div class="center"><input type="radio" name="sample3" value="bgroup"></input></div></td>
+				<td><i>Sardinella aurita</i><div class="floatRight"><img class="imgSize25" src="edit.png"></div></td>
+				<td><i>Harengula jaguana</i><div class="floatRight"><img class="imgSize25" src="edit.png"></div></td>
+				<td></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td>Microzoplankton</td>
-				<td><input type="radio" name="sample2" value="fgroup"></input></td>
-				<td><input type="radio" name="sample2" value="bgroup" checked></input></td>
-				<td><i>Oncaea</i></td>
-				<td><i>Oithona</i></td>
-				<td><i>Paracalanidae</i></td>
+				<td>Microzoplankton<div class="floatRight"><img class="imgSize25" src="edit.png"></td>
+				<td><div class="center"><input type="radio" name="sample2" value="fgroup"></input></div></td>
+				<td><div class="center"><input type="radio" name="sample2" value="bgroup" checked></input></div></td>
+				<td><i>Oncaea</i><div class="floatRight"><img class="imgSize25" src="edit.png"></td>
+				<td><i>Oithona</i><div class="floatRight"><img class="imgSize25" src="edit.png"></td>
+				<td><i>Paracalanidae</i><div class="floatRight"><img class="imgSize25" src="edit.png"></td>
 				<td></td>
 			</tr>
 		</table>
 		
-			<div class="padTop10"> 
-				<div class="floatRight">
-				<img class="imgSize25" src="minus.png">
-				<img class="imgSize25" src="add.png">
-				</div>
+		<div class="padTop10"> 
+			<div class="floatleft">
+			<img class="imgSize25" src="add.png">
 			</div>
+		</div>
 
-			<div class="padTop10">
-				<input type="button" name="back" value="Back" onClick="history.go(-1)"/>
-				
-				<input type="submit" name="submit" value="Proceed"/>
-				
-				<input type="button" name="exit" value="Exit" onClick="parent.location='step1.html'"/>
-			</div>
+		<div class="padTop10">
+			<input type="button" name="back" value="Back" onClick="history.go(-1)"/>
+			
+			<input type="submit" name="submit" value="Proceed"/>
+			
+			<input type="button" name="exit" value="Exit" onClick="parent.location='step1.html'"/>
+		</div>
 		</form>
 	</div>
 </body>

@@ -11,13 +11,13 @@ body {
     font-size: 1.65em;
     font-weight: normal;
     min-width: 758px;
-    width: 80%;
+    width: 90%;
     overflow: auto;
     color: #333399;
 }
 
 #container {
-    width: 768px;
+    width: 800px;
     margin: 0 auto;
 }
 
@@ -92,8 +92,16 @@ td {
 	width: 10%;
 }
 
+.width15 {
+	width: 15%;
+}
+
 .width80 {
 	width: 80%;
+}
+
+.width5 {
+	width: 5%;
 }
 
 .center {
@@ -107,4 +115,9 @@ td {
 
 .top{
 	vertical-align: top;
+}
+
+.backgroundLightSteelBlue{
+	background-color: LightSteelBlue;
+
 }
