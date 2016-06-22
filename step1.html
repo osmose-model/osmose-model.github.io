@@ -36,6 +36,9 @@ $.ajax({
 	url: "https://fishbase.ropensci.org/countref?limit=500&fields=C_Code,Note",
 	success: function (result) {
 		
+		//get unique
+		//var eName = _.keys(_.countBy(result.data, function(data) {return data.C_Code+'|'+data.Note; }));
+		
 		var byCountry = result.data.slice(0);
 		byCountry.sort(function(a,b){
 			var x = a.Note.toLowerCase();

@@ -71,13 +71,7 @@ function save(){
 
 	var json;
 	var cat;
-	var order;
-	
-	var savectr = 1;
-	var fgroup = 0;
-	var bgroup = 0;
-	
-	
+
 	for(var i=0; i<grp.length; i++){
 		if(grp[i].checked == true){
 			
@@ -87,29 +81,18 @@ function save(){
 			var grpchoice = $("input[name=sample"+groupNum+"]:checked").val();
 			
 			if(grpchoice == "fgroup"){
-				cat = "Focal";
-				order = ++fgroup;
+				cat = "Focal Functional Group";
 			}else{
-				cat = "Background";
-				order = ++bgroup;
+				cat = "Background Functional Group";
 			}
 			
 			var checkedSpecies = $('input[name='+groupNum+'species]:checked').map(function(){
 				return this.value;
 			}).get().join(',');
 			
-			json = '{"Functional_Group":"'+ $(grp[i]).val() +'","Category":"'+cat+'","Species":"' + checkedSpecies + '","Order":"'+order+'"}';
+			json = '{"Functional Group": "'+ $(grp[i]).val() +'", "Category": "'+cat+'", "Species": "' + checkedSpecies + '" }';
 			
-			sessionStorage.setItem('group'+savectr, json);
-			savectr++;
 		}
 	}
 	return true;
-}
-
-function Group(name, cat, species){
-	this.Name = name;
-	this.Category = cat;
-	this.Species = species;
-
 }
