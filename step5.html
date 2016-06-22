@@ -2,6 +2,51 @@
 <html>
 <head><title>FB-Osmose Bridge</title>
 <link rel="stylesheet" href="screen.css" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var grpctr = 1;
+	var data = [];
+	var sessionName;
+	var html;
+	
+	for(var a=1; a<sessionStorage.length+1; a++){
+		sessionName = 'group'+a;
+
+		data.push(JSON.parse(sessionStorage.getItem(sessionName)));
+	}
+	
+	var filter = $.grep(data, function (el){
+		return el.Category === "Background";
+	});
+	
+	$.each(filter, function(index, element){
+		html += '<tr>';
+		html += '<td class="centerContents"><select name="'+element.Functional_Group+'">';
+		
+		for(var b=1; b<=filter.length; b++){
+			if(element.Order == b){
+				html += '<option value="'+b+'" selected>'+b+'</option>';
+			}else{
+				html += '<option value="'+b+'">'+b+'</option>';
+			}
+		}
+		
+		html += '</select></td>' +
+			'<td>'+element.Functional_Group+'</td>';
+			
+		var sp = element.Species.split(",");
+		
+		html += '<td>';
+		for(var c=0; c<sp.length; c++){
+			html += '<i>'+sp[c]+'</i><br/>';
+		}
+		html += '</td></tr>';
+	});
+	
+	$('#btable tr:last').after(html);
+});
+</script>
 </head>
 <body>
 	<div class="pheader">Step 5: Order Background functional groups</div>
@@ -10,11 +55,11 @@
 		
 		<form action="step6.html" method="get" id="step5Form" name="step5Form">
 			<div class="padTop10">
-				<table class="padTop10 collapse" width="100%" border="1"> 
+				<table class="padTop10 collapse" width="100%" border="1" id="btable"> 
 				<th></th>
 				<th>Background Functional Group</th>
 				<th>Species</th>
-				<tr>
+				<!--<tr>
 					<td class="centerContents"><select name="pplankton">
 					  <option value="1">1</option>
 					  <option value="2">2</option>
@@ -43,7 +88,7 @@
 					</select></td>
 					<td>Echinoderms ...</td>
 					<td><i>Murex</i><br/><i>Anthenoides</i></td>
-				</tr>
+				</tr>-->
 				</table>
 			</div>
 			
