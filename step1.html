@@ -58,68 +58,6 @@ $.ajax({
 	}
 });
 
-function listSubCountry(){
-	var c_code = document.getElementById("country").value;
-
-	$('#subcountry').empty();
-	$('#subcountry').append($('<option>', {
-		text: "Select",
-		value: ""
-	}));
-	
-	$('#faoarea').empty();
-	$('#faoarea').append($('<option>', {
-		text: "Select",
-		value: ""
-	}));
-	
-	if(c_code!= ""){
-		$.ajax({
-		type: 'GET',
-		url: "subcountry.json",
-		async:false,
-		success: function (result) {
-			
-			var filter = $.grep(result, function(element,index){
-				return element.C_Code == c_code;
-			});
-			
-			$.each(filter, function(index, element){
-				$('#subcountry').append($('<option>', {
-					text: element.CountrySub,
-					value: element.CSub_Code
-				}));
-			});
-		},
-		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			alert(textStatus);
-		}
-		});
-		
-		$.ajax({
-		type: 'GET',
-		url: "faoarea.json",
-		async:false,
-		success: function (result) {
-
-			var filter = $.grep(result, function(element,index){
-				return element.C_Code == c_code;
-			});
-			
-			$.each(filter, function(index, element){
-				$('#faoarea').append($('<option>', {
-					text: element.FAO,
-					value: element.AreaCode
-				}));
-			});
-		},
-		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			alert(textStatus);
-		}
-		});
-	}
-}
-
 function validateform(){
 	if(document.step1Form.choose.value == "eco"){
 		if(document.step1Form.ecosystem.value == ""){
@@ -135,10 +73,12 @@ function validateform(){
 			document.step1Form.country.focus();
 			return false;
 		}
-		if(document.step1Form.subcountry.value == ""){
-			alert("Please select a subcountry!");
-			document.step1Form.subcountry.focus();
-			return false;
+		if(document.step1Form.country.value == "840"){
+			if(document.step1Form.subcountry.value == ""){
+				alert("Please select a subcountry!");
+				document.step1Form.subcountry.focus();
+				return false;
+			}
 		}
 		if(document.step1Form.faoarea.value == ""){
 			alert("Please select a faoarea!");
