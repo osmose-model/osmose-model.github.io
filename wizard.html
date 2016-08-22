@@ -178,17 +178,54 @@ $(document).ready(function(){
 		
 		<p class="justify13 padTop10"> Please feel free to: </p>
 		
-		<p class="justify13"><b>(1)</b> Indicate whether each functional group is a focal functional group or a background functional group, using dedicated radio buttons. Focal functional groups are groups of species/species which are explicitly considered in OSMOSE (i.e., their whole life cycle is modeled), while background functional groups are groups of species/species which are implicitly considered in OSMOSE (fields of biomass for these groups are used to force the OSMOSE model). By default, FishBase/SeaLifeBase defined all functional groups as focal functional groups.</p>
+		<p class="justify13"><b>(1)</b> Indicate whether each functional group is a focal functional group or a background functional group, using dedicated radio buttons. <img onClick="msgpop(1)" id="info1" class="imgSize25" src="info.png"></p>
+		<div class="messagepop pop" id="message1">
+			<p>Focal functional groups are groups of species/species which are explicitly considered in OSMOSE (i.e., their whole life cycle is modeled), while background functional groups are groups of species/species which are implicitly considered in OSMOSE (fields of biomass for these groups are used to force the OSMOSE model). </p>
+			<p>By default, FishBase/SeaLifeBase defined all functional groups as focal functional groups.</p>
+			<input type="button" class="close" onClick="deselect(1)" name="okbutton" value="OK"></input>
+		</div>
 		
-		<p class="justify13"><b>(2)</b> Remove species from some functional groups. To remove a species from a given functional group, deselect it from the column "Species" using the dedicated radio button.</p>
+		<p class="justify13"><b>(2)</b> Remove species from some functional groups.
+		<img onClick="msgpop(2)" id="info2" class="imgSize25" src="info.png"></p>
+		<div class="messagepop pop" id="message2">
+			<p>To remove a species from a given functional group, deselect it from the column "Species" using the dedicated radio button.</p>
+			<p>To remove all the species belonging to the same order from a given functional group, deselect the order from the column "Order" using the dedicated radio button; this action will deselect all the species belonging to the order from the column "Species" of the functional group.</p>
+			<input type="button" class="close" onClick="deselect(2)" name="okbutton" value="OK"></input>
+		</div>
 		
-		<p class="justify13"><b>(3)</b> Redistribute species between functional groups. To redistribute a given species between two functional groups: (i) deselect this species from the column "Species" of its original functional group using the dedicated radio button; and (ii) in the column "Species" of the functional group in which you wish to reallocate the species, press the Edit button (<img class="imgSize25" src="edit.png">) and type the name of the species (Latin name, vernacular name, family name or order name); suggestions will be provided to you as you start typing something.</p>
+		<p class="justify13"><b>(3)</b> Redistribute species between functional groups. <img onClick="msgpop(3)" id="info3" class="imgSize25" src="info.png"></p>
+		<div class="messagepop pop" id="message3">
+			<p>To redistribute a given species between two functional groups: </p>
+			<p>(i) Deselect a species from the column "Species" of its original functional group using the dedicated radio button.</p> 
+			<p>(ii) Then: In the column "Species" of the functional group in which you wish to reallocate the species, press the Edit button (<img class="imgSize25" src="edit.png">) and type the name of the species (Latin name); suggestions will be provided to you as you start typing something.</p>
+			<p>OR</p>
+			<p>(i) Deselect a given order from the column "Order" of its original functional group using the dedicated radio button; this action will deselect all the species belonging to the order from the column "Species" of the original functional group.</p>
+			<p>(ii) Then: In the column "Order" of the functional group in which you wish to reallocate the species, press the Edit button (<img class="imgSize25" src="edit.png">) and type the name of the order; suggestions will be provided to you as you start typing something. Once the order name is entered, the species belonging to that order will automatically appear in the "Species" column of the new functional group.</p>
+			<input type="button" class="close" onClick="deselect(3)" name="okbutton" value="OK"></input>
+		</div>
 		
-		<p class="justify13"><b>(4)</b> Remove functional groups from the table. To do so, use the radio buttons of the "Select/deselect" column.</p>
+		<p class="justify13"><b>(4)</b> Remove functional groups from the table. <img onClick="msgpop(4)" id="info4" class="imgSize25" src="info.png"></p>
+		<div class="messagepop pop" id="message4">
+			<p>To remove functional groups from the table, use the radio buttons of the "Select/deselect" column.</p>
+			<input type="button" class="close" onClick="deselect(4)" name="okbutton" value="OK"></input>
+		</div>
 		
-		<p class="justify13"><b>(5)</b> Create functional groups. To create a new functional group, press the Plus button at the bottom of the table (<img class="imgSize25" src="add.png">). Then: (i) enter the name of the new functional group; (ii) indicate whether the new functional group is a focal functional group or a background functional group, using dedicated radio buttons; (iii) and, in the column "Species", type the name of the different species making up the new functional group (Latin names, vernacular names, family names and/or order names); suggestions will be provided to you as you start typing something.</p>
+		<p class="justify13"><b>(5)</b> Create functional groups. <img onClick="msgpop(5)" id="info5" class="imgSize25" src="info.png"></p>
+		<div class="messagepop pop" id="message5">
+			<p>To create a new functional group, press the Plus button at the bottom of the table (<img class="imgSize25" src="add.png">).</p>
+			<p>Then:</p> 
+			<p>(i) Enter the name of the new functional group.</p>
+			<p>(ii) Indicate whether the new functional group is a focal functional group or a background functional group, using dedicated radio buttons;</p> <p>(iii) In the column "Species", type the name of the different species making up the new functional group (Latin names); suggestions will be provided to you as you start typing something.</p>
+			<p>OR</p>
+			<p>(iii) In the column "Order", type the name of the different orders making up the new functional group; suggestions will be provided to you as you start typing something. Once an order name is entered, the species belonging to that order will automatically appear in the "Species" column of the new functional group.</p>
+			<input type="button" class="close" onClick="deselect(5)" name="okbutton" value="OK"></input>
+		</div>
 		
-		<p class="justify13"><b>(6)</b> Rename functional groups. To rename a functional group, press the Edit button (<img class="imgSize25" src="edit.png">) at the right of the functional group name. </p>
+		<p class="justify13"><b>(6)</b> Rename functional groups. <img onClick="msgpop(6)" id="info6" class="imgSize25" src="info.png"></p>
+		<div class="messagepop pop" id="message6">
+			<p>To rename a functional group, press the Edit button (<img class="imgSize25" src="edit.png">) at the right of the functional group name. </p>
+			<input type="button" class="close" onClick="deselect(6)" name="okbutton" value="OK"></input>
+		</div>
 		
 		<p class="justify13 padTop10">*Caution: The name of the functional groups should not include spaces nor underscores. For example, "SmallPelagics" is a valid functional group name, but not "Small pelagics" nor "Small_pelagics".</p>
 

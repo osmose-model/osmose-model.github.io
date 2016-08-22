@@ -271,6 +271,54 @@ function findFamOrOrder(ctr, gen, sp, a){
 
 }
 
+function deselect(ctr) {
+  $('#message'+ctr).slideFadeToggle(function() {
+	var msgicon = $('#info'+ctr);
+    msgicon.removeClass('selected');
+  });    
+}
+
+function closeSelected(){
+	$('.selected').each(function(index){
+		var ctrpopup = $(this).attr('id').slice(-1);
+		
+		deselect(ctrpopup);
+	});
+}
+
+function msgpop(ctr){
+	
+	var msgicon = $('#info'+ctr);
+	var msg = $('#message'+ctr);
+	
+	if(msgicon.hasClass('selected')){
+		deselect(ctr);
+	}else{
+		closeSelected();
+		msgicon.addClass('selected');
+		msg.slideFadeToggle();
+	}
+	return false;
+}
+
+$.fn.slideFadeToggle = function(easing, callback) {
+  return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
+};
+/*
+$(document).mouseup(function (e)
+{
+	if($('.selected')[0]){
+		var ctrpopup = $('.selected').attr('id').slice(-1);
+		var container = $('#message'+ctrpopup);
+		
+		if (!container.is(e.target) // if the target of the click isn't the container...
+			&& container.has(e.target).length === 0) // ... nor a descendant of the container
+		{
+			closeSelected();
+		}
+	}
+});
+*/
 function changeFname(fname){
 	$('input[name=new]').remove();
 	$('input[name=OKbtn]').remove();

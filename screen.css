@@ -147,3 +147,25 @@ td {
 #steps li {font-size:24px; float:left; padding:10px; color:#b0b1b3;}
 #steps li span {font-size:11px; display:block;}
 #steps li.current { color:#000;}
+
+img.selected{
+	color:white;
+	z-index:100;
+}
+
+.messagepop {
+  background-color:#FFFFFF;
+  border:1px solid #999999;
+  cursor:default;
+  display:none;
+  margin-top: 5px;
+  position:absolute;
+  text-align:left;
+  width:394px;
+  z-index:50;
+  padding: 10px 10px 10px;
+}
+
+.messagepop p, {
+  margin: 5px 0;
+}
