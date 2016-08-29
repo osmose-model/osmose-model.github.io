@@ -44,6 +44,7 @@
             $("#" + stepName + "Prev").bind("click", function(e) {
                 $("#" + stepName).hide();
 				if(i == 3) $("#step" + (i - 1 - 1)).show();
+				else if(i == 4) $("#step" + (i - 1 - 1)).show();
                 else $("#step" + (i - 1)).show();
                 $(submmitButtonName).hide();
             });

@@ -187,8 +187,6 @@ function changeNext(current, targetNext){
 	$("#" + stepName + "Next").bind("click", function(e) {
 		$("#" + stepName).hide();
 		$("#step" + targetNext).show();
-		if (targetNext + 1 == count)
-			$(submmitButtonName).show();
 	});
 }
 
@@ -200,7 +198,6 @@ function changePrev(current, targetPrev){
 	$("#" + stepName + "Prev").bind("click", function(e) {
 		$("#" + stepName).hide();
 		$("#step" + targetPrev).show();
-		$(submmitButtonName).hide();
 	});
 }
 
