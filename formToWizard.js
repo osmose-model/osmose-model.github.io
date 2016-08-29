@@ -22,25 +22,14 @@
             var name = $(this).find("legend").html();
             /*$("#steps").append("<li id='stepDesc" + i + "'>Step " + (i + 1) + "<span>" //+ name 
 			+ "</span></li>");*/
-
+		
             if (i == 0) {
 				createNextButton(i);
-				selectStep(i);
             }
             else if (i == count - 1) {
                 $("#step" + i).hide();
                 createPrevButton(i);
             }
-			else if(i == 2){
-				$("#step" + i).hide();
-                createPrevButton(i);
-                createNextButton(i+1);
-			}
-			else if(i == 3){
-				$("#step" + i).hide();
-                createPrevButton(i-1);
-                createNextButton(i);
-			}
             else {
                 $("#step" + i).hide();
                 createPrevButton(i);
@@ -54,9 +43,9 @@
 
             $("#" + stepName + "Prev").bind("click", function(e) {
                 $("#" + stepName).hide();
-                $("#step" + (i - 1)).show();
+				if(i == 3) $("#step" + (i - 1 - 1)).show();
+                else $("#step" + (i - 1)).show();
                 $(submmitButtonName).hide();
-                selectStep(i - 1);
             });
         }
 
@@ -69,22 +58,12 @@
 				
 				if(valid){
 					$("#" + stepName).hide();
-					$("#step" + (i + 1)).show();
+					if(i == 2) $("#step" + (i + 1 + 1)).show();
+					else $("#step" + (i + 1)).show();
 					if (i + 2 == count)
 						$(submmitButtonName).show();
-					selectStep(i + 1);
 				}
             });
         }
-
-        function selectStep(i) {
-            $("#steps li").removeClass("current");
-            $("#stepDesc" + i).addClass("current");
-        }
-		
-		function createExitButton(){
-			
-		}
-
     }
 })(jQuery); 

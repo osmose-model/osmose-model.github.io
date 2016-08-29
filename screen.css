@@ -88,6 +88,10 @@ table{
 	width: 25px;
 }
 
+.imgSize50 {
+	width: 50px;
+}
+
 .collapse {
 	border-collapse: collapse;
 }
@@ -140,13 +144,29 @@ td {
 
 .backgroundLightSteelBlue{
 	background-color: LightSteelBlue;
-
 }
 
-#steps { list-style:none; width:100%; overflow:hidden; margin:0px; padding:0px;}
-#steps li {font-size:24px; float:left; padding:10px; color:#b0b1b3;}
-#steps li span {font-size:11px; display:block;}
-#steps li.current { color:#000;}
+#steps { 
+	list-style:none; 
+	width:100%; 
+	overflow:hidden; 
+	margin:0px; 
+	padding:0px;
+}
+
+.prev, .next { 
+	background-color:#b0232a; 
+	padding:5px 10px; 
+	color:#fff; 
+	text-decoration:none;
+	margin: 5px;
+	float:left;
+}
+
+.prev:hover, .next:hover { 
+	background-color:#000; 
+	text-decoration:none;
+}
 
 img.selected{
 	color:white;
@@ -168,4 +188,18 @@ img.selected{
 
 .messagepop p, {
   margin: 5px 0;
+}
+
+.autooverflow{
+	overflow: auto;
+}
+
+.vbottom{
+	left: 0;
+    bottom: 15px;
+    position: absolute;
+}
+
+.relativeposition{
+	position: relative;
 }

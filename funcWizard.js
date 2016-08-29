@@ -146,49 +146,6 @@ function changeEcoOrCountry(){
 
 }
 
-
-/*function save(){
-	var groupctr = 1;
-	var grp = document.getElementsByName("selectedgroup");
-
-	var json;
-	var cat;
-	var order;
-	
-	var savectr = 1;
-	var fgroup = 0;
-	var bgroup = 0;
-	
-	
-	for(var i=0; i<grp.length; i++){
-		if(grp[i].checked == true){
-			
-			var grpctr = $(grp[i]).attr('id');
-			var groupNum = grpctr.slice(-1);
-			
-			var grpchoice = $("input[name=sample"+groupNum+"]:checked").val();
-			
-			if(grpchoice == "fgroup"){
-				cat = "Focal";
-				order = ++fgroup;
-			}else{
-				cat = "Background";
-				order = ++bgroup;
-			}
-			
-			var checkedSpecies = $('input[name='+groupNum+'species]:checked').map(function(){
-				return this.value;
-			}).get().join(',');
-			
-			json = '{"Functional_Group":"'+ $(grp[i]).val() +'","Category":"'+cat+'","Species":"' + checkedSpecies + '","Order":"'+order+'"}';
-			
-			sessionStorage.setItem('group'+savectr, json);
-			savectr++;
-		}
-	}
-	return true;
-}*/
-
 function validateform1(){
 	if(document.stepForm.choose.value == "eco"){
 		if(document.stepForm.ecosystem.value == ""){
@@ -218,6 +175,33 @@ function validateform1(){
 		}
 		return true;
 	}
+}
+
+function changeNext(current, targetNext){
+	var steps = $(document.body).find("fieldset");
+    var count = steps.size();
+
+	var stepName = "step" + current;
+	$("#" + stepName + "Next").unbind("click");
+	
+	$("#" + stepName + "Next").bind("click", function(e) {
+		$("#" + stepName).hide();
+		$("#step" + targetNext).show();
+		if (targetNext + 1 == count)
+			$(submmitButtonName).show();
+	});
+}
+
+function changePrev(current, targetPrev){
+
+	var stepName = "step" + current;
+	$("#" + stepName + "Prev").unbind("click");
+	
+	$("#" + stepName + "Prev").bind("click", function(e) {
+		$("#" + stepName).hide();
+		$("#step" + targetPrev).show();
+		$(submmitButtonName).hide();
+	});
 }
 
 function populateProp(ctr, gen, sp, a){
