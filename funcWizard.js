@@ -202,7 +202,7 @@ function changePrev(current, targetPrev){
 }
 
 function populateProp(ctr, gen, sp, a){
-	var species = "https://fishbase.ropensci.org/species?fields=Length,DemersPelag,DepthRangeShallow,DepthRangeDeep";
+	var species = "https://fishbase.ropensci.org/species?fields=Length,DemersPelag,DepthRangeShallow,DepthRangeDeep,SpecCode";
 	
 	var out;
 	var sizeid;
@@ -237,19 +237,14 @@ function populateProp(ctr, gen, sp, a){
 					$('#'+depthid).append('<span id="'+a+depthid+'">'+out['DepthRangeShallow']+"-" + out['DepthRangeDeep'] +'</span><br>');
 				}
 			}
-			output = true;
+			output = out['SpecCode'];		//return speccode
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			alert("Can't find the species!"+"\n"+"Please go to fishbase.org to find alternative matches.");
+			alert("Can't find the species!"+"\n"+"Please go to fishbase.org or sealifebase.org to find alternative matches.");
 			output = false;
 		}
 	});
 	return output;
-}
-
-function findFamOrOrder(ctr, gen, sp, a){
-	
-
 }
 
 function deselect(ctr) {
@@ -392,12 +387,12 @@ function saveSname(snum,e){
 			
 			var result = populateProp(snum, gen, sp, nextSp);
 		
-			if(result){
+			if(result != false){
 				$('#td'+snum+'species div:first-child').append($('<input>', {
 					type: "checkbox",
 					name: snum+"species",
 					id: nextSp+"td"+snum+"species",
-					value: genspec,
+					value: genspec+result,
 					checked: "checked"
 				}));
 				
@@ -450,3 +445,69 @@ function addFGroup(){
 	}));
 
 }*/
+
+function download(){
+	var url = "https://fbob.herokuapp.com/osmose_config.zip";
+	var header = "Content-Type:application/json;charset=UTF-8";
+	var request;
+	
+	//compile data
+	var jsonArr = [];
+	
+	var groupctr = 1;
+	var ctr;
+	var urlsp;
+	
+	while(document.getElementsByName(groupctr+"species").length > 0){
+		if($("#selected"+groupctr).is(':checked')){
+			ctr = groupctr;
+			var group1 = document.getElementsByName(ctr+"species");
+			var len1 = group1.length;
+			var gname = $('#'+ctr+'fgroupname span').text();
+		
+			var fgroup = ($("input[name='sample"+ctr+"']:checked").val() == "fgroup" ? "focal" : "background");
+			var temp;
+			var taxaArr = [];
+			
+			temp = '{"name":"' + gname + '","type":"'+fgroup+'",';
+			
+			for(var a=0; a<len1; a++){
+				var genspec = group1[a].value.match(/[A-Z]?[a-z]+|[0-9]+/g);
+				var gen = genspec[0];	//genus
+				var sp = genspec[1];	//species
+				var id = genspec[2];	// speccode
+				var link = (genspec[3] == "Fb" ? "http://fishbase.org/summary/"+id : "http://sealifebase.org/summary/"+id); 	//fb or slb
+				
+				taxaArr.push('{"name": "'+gen+' '+sp.slice(0,1).toLowerCase() + sp.slice(1)+'","url": "'+link+'"}');
+			}
+			taxa = taxaArr.join(",");
+			temp += '"taxa":['+taxa+']}';
+			jsonArr.push(temp);
+		}
+		groupctr++;
+	}
+	
+	var output = "["+jsonArr.join(",")+"]";
+	//var output = jsonArr.join(",");
+	
+	request = $.ajax({
+		type: 'POST',
+		url: "https://fbob.herokuapp.com/osmose_config.zip",
+		data: output,
+		contentType: "application/json; charset=utf-8",
+		success: function (response, status, xhr) {
+			var type = xhr.getResponseHeader('Content-Type');
+			var blob = new Blob([response], { type: type });
+			
+			var URL = window.URL || window.webkitURL;
+            var downloadUrl = URL.createObjectURL(blob);
+			
+			window.location = downloadUrl;
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			alert(textStatus + " " + errorThrown);
+		}
+	});
+	
+	return false;
+}

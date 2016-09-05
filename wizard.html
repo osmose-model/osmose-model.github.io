@@ -72,7 +72,7 @@ $(document).ready(function(){
 		var len1 = group1.length;
 		
 		for(var a=0; a<len1; a++){
-			var genspec = group1[a].value.split(/(?=[A-Z])/);
+			var genspec = group1[a].value.match(/[A-Z]?[a-z]+|[0-9]+/g);
 			var gen = genspec[0];
 			var sp = genspec[1];
 			
@@ -87,7 +87,7 @@ $(document).ready(function(){
 </head>
 <body>
 	<div id="main">
-	<form action="" method="get" id="stepForm" name="stepForm">
+	<form action="" method="post" id="stepForm" name="stepForm" onsubmit="return download()">
 		<fieldset>
 		<legend>Step 1: Getting parameter estimates for your OSMOSE model</legend>
 		<div id="container">
@@ -247,11 +247,11 @@ $(document).ready(function(){
 				<td><div class="center"><input type="radio" name="sample1" value="fgroup" checked></input></div></td>
 				<td><div class="center"><input type="radio" name="sample1" value="bgroup"></input></div></td>
 				<td id="td1species">
-				<div class="floatLeft width80 overflow-hidden"><input type="checkbox" name="1species" value="SeriolaDumerili" id="0td1species" checked><i>Seriola dumerili</i>
+				<div class="floatLeft width80 overflow-hidden"><input type="checkbox" name="1species" value="SeriolaDumerili1005Fb" id="0td1species" checked><i>Seriola dumerili</i>
 				<br/>
-				<input type="checkbox" name="1species" id="1td1species" value="SeriolaFasciata" checked><i>Seriola fasciata</i>
+				<input type="checkbox" name="1species" id="1td1species" value="SeriolaFasciata1006Fb" checked><i>Seriola fasciata</i>
 				<br/>
-				<input type="checkbox" name="1species" id="2td1species" value="SeriolaZonata" checked><i>Seriola zonata</i></div>
+				<input type="checkbox" name="1species" id="2td1species" value="SeriolaZonata1008Fb" checked><i>Seriola zonata</i></div>
 				<div class="overflow-hidden"><img class="imgSize25" src="edit.png" onClick="changeSpecies('1');"></div></td>
 				<td id="td1size"></td>
 				<td id="td1habitat"></td>
@@ -263,13 +263,13 @@ $(document).ready(function(){
 				<td><div class="center"><input type="radio" name="sample2" value="fgroup" checked></input></div></td>
 				<td><div class="center"><input type="radio" name="sample2" value="bgroup"></input></div></td>
 				<td id="td2species">
-				<div class="floatLeft width80 overflow-hidden"><input type="checkbox" name="2species" id="0td2species" value="SardinellaAurita" checked>
+				<div class="floatLeft width80 overflow-hidden"><input type="checkbox" name="2species" id="0td2species" value="SardinellaAurita1043Fb" checked>
 				<i>Sardinella aurita</i>
 				<br/>
-				<input type="checkbox" name="2species" id="1td2species" value="HarengulaJaguana" checked><i>Harengula jaguana</i>
+				<input type="checkbox" name="2species" id="1td2species" value="HarengulaJaguana1480Fb" checked><i>Harengula jaguana</i>
 				<br/>
-				<input type="checkbox" name="2species" id="2td2species" value="OpisthonemaOglinum" checked><i>Opisthonema oglinum</i><br/>
-				<input type="checkbox" name="2species" id="3td2species" value="DecapterusPunctatus" checked><i>Decapterus punctatus</i></div>
+				<input type="checkbox" name="2species" id="2td2species" value="OpisthonemaOglinum1486Fb" checked><i>Opisthonema oglinum</i><br/>
+				<input type="checkbox" name="2species" id="3td2species" value="DecapterusPunctatus994Fb" checked><i>Decapterus punctatus</i></div>
 				<div class="overflow-hidden"><img class="imgSize25" src="edit.png" onClick="changeSpecies('2');"></div></td>
 				<td id="td2size"></td>
 				<td id="td2habitat"></td>
@@ -281,7 +281,7 @@ $(document).ready(function(){
 				<td><div class="center"><input type="radio" name="sample3" value="fgroup" checked></input></div></td>
 				<td><div class="center"><input type="radio" name="sample3" value="bgroup"></input></div></td>
 				<td id="td3species">
-				<div class="floatLeft width80 overflow-hidden"><input type="checkbox" name="3species" id="0td3species" value="ScomberomorusCavalla" checked>
+				<div class="floatLeft width80 overflow-hidden"><input type="checkbox" name="3species" id="0td3species" value="ScomberomorusCavalla120Fb" checked>
 				<i>Scomberomorus cavalla</i></div>
 				<div class="overflow-hidden"><img class="imgSize25" src="edit.png" onClick="changeSpecies('3');"></div></td>
 				<td id="td3size"></td>
@@ -293,7 +293,7 @@ $(document).ready(function(){
 				<td id="4fgroupname"><span>RedGrouper</span><div class="floatRight"><img class="imgSize25" src="edit.png" id="4fgroupedit" onClick="changeFname('4fgroupname');"></div></td>
 				<td><div class="center"><input type="radio" name="sample4" value="fgroup" checked></input></div></td>
 				<td><div class="center"><input type="radio" name="sample4" value="bgroup"></input></div></td>
-				<td id="td4species"><div class="floatLeft width80 overflow-hidden"><input type="checkbox" name="4species" id="0td4species" value="EpinephelusMorio" checked>
+				<td id="td4species"><div class="floatLeft width80 overflow-hidden"><input type="checkbox" name="4species" id="0td4species" value="EpinephelusMorio17Fb" checked>
 				<i>Epinephelus morio</i></div>
 				<div class="overflow-hidden"><img class="imgSize25" src="edit.png" onClick="changeSpecies('4');"></div></td>
 				<td id="td4size"></td>
@@ -450,7 +450,7 @@ $(document).ready(function(){
 			</div>
 		</fieldset>
 		<div class="padTop10">
-			<input type="button" id="submitBtn" name="submitBtn" value="Submit"/>
+			<input type="submit" id="submitBtn" name="submitBtn" value="Submit"/>
 			
 			<!--<input type="button" name="exit" value="Exit" onClick="parent.location='step1.html'"></input>-->
 		</div>
