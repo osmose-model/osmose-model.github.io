@@ -496,13 +496,13 @@ function download(){
 		data: output,
 		contentType: "application/json; charset=utf-8",
 		success: function (response, status, xhr) {
-			var type = xhr.getResponseHeader('Content-Type');
-			var blob = new Blob([response], { type: type });
+			//var type = xhr.getResponseHeader('Content-Type');
+			//var blob = new Blob([response], { type: type });
 			
-			var URL = window.URL || window.webkitURL;
-            var downloadUrl = URL.createObjectURL(blob);
+			//var URL = window.URL || window.webkitURL;
+           // var downloadUrl = URL.createObjectURL(blob);
 			
-			window.location = downloadUrl;
+			window.open(response, '_blank');
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
 			alert(textStatus + " " + errorThrown);
