@@ -487,8 +487,7 @@ function download(){
 		groupctr++;
 	}
 	
-	var output = "["+jsonArr.join(",")+"]";
-	//var output = jsonArr.join(",");
+	var output = JSON.stringify(jsonArr);
 	
 	request = $.ajax({
 		type: 'POST',
@@ -502,7 +501,7 @@ function download(){
 			//var URL = window.URL || window.webkitURL;
            // var downloadUrl = URL.createObjectURL(blob);
 			
-			window.open(response, '_blank');
+			window.location = response;
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
 			alert(textStatus + " " + errorThrown);
