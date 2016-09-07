@@ -494,6 +494,7 @@ function download(){
 		url: "https://fbob.herokuapp.com/osmose_config.zip",
 		data: output,
 		contentType: "application/json; charset=utf-8",
+		dataType: "json",
 		success: function (response, status, xhr) {
 			//var type = xhr.getResponseHeader('Content-Type');
 			//var blob = new Blob([response], { type: type });
