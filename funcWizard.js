@@ -487,22 +487,17 @@ function download(){
 		groupctr++;
 	}
 	
-	var output = "["+jsonArr.join(",")+"]";
-	//var output = jsonArr.join(",");
+	var output = JSON.stringify(jsonArr);
 	
 	request = $.ajax({
 		type: 'POST',
 		url: "https://fbob.herokuapp.com/osmose_config.zip",
 		data: output,
 		contentType: "application/json; charset=utf-8",
+		dataType:"json",
 		success: function (response, status, xhr) {
-			//var type = xhr.getResponseHeader('Content-Type');
-			//var blob = new Blob([response], { type: type });
 			
-			//var URL = window.URL || window.webkitURL;
-           // var downloadUrl = URL.createObjectURL(blob);
-			
-			window.open(response, '_blank');
+			window.location.href = response.url;
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
 			alert(textStatus + " " + errorThrown);
