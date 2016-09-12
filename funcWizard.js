@@ -447,16 +447,12 @@ function addFGroup(){
 }*/
 
 function download(){
-	var url = "https://fbob.herokuapp.com/osmose_config.zip";
-	var header = "Content-Type:application/json;charset=UTF-8";
-	var request;
 	
 	//compile data
 	var jsonArr = [];
 	
 	var groupctr = 1;
 	var ctr;
-	var urlsp;
 	
 	while(document.getElementsByName(groupctr+"species").length > 0){
 		if($("#selected"+groupctr).is(':checked')){
@@ -467,42 +463,36 @@ function download(){
 		
 			var fgroup = ($("input[name='sample"+ctr+"']:checked").val() == "fgroup" ? "focal" : "background");
 			var temp;
+			
 			var taxaArr = [];
 			
-			temp = '{"name":"' + gname + '","type":"'+fgroup+'",';
-			
 			for(var a=0; a<len1; a++){
-				var genspec = group1[a].value.match(/[A-Z]?[a-z]+|[0-9]+/g);
-				var gen = genspec[0];	//genus
-				var sp = genspec[1];	//species
-				var id = genspec[2];	// speccode
-				var link = (genspec[3] == "Fb" ? "http://fishbase.org/summary/"+id : "http://sealifebase.org/summary/"+id); 	//fb or slb
-				
-				taxaArr.push('{"name": "'+gen+' '+sp.slice(0,1).toLowerCase() + sp.slice(1)+'","url": "'+link+'"}');
+				if(group1[a].checked){
+					var genspec = group1[a].value.match(/[A-Z]?[a-z]+|[0-9]+/g);
+					var gen = genspec[0];	//genus
+					var sp = genspec[1];	//species
+					var id = genspec[2];	// speccode
+					var link = (genspec[3] == "Fb" ? "http://fishbase.org/summary/"+id : "http://sealifebase.org/summary/"+id); 	//fb or slb
+					var nameofspec = gen+' '+sp.slice(0,1).toLowerCase() + sp.slice(1);
+					
+					taxaArr.push({"name": nameofspec, "url": link});
+				}
 			}
-			taxa = taxaArr.join(",");
-			temp += '"taxa":['+taxa+']}';
-			jsonArr.push(temp);
+			
+			if(taxaArr.length > 0){
+				jsonArr.push({
+					"name": gname,
+					"type": fgroup,
+					"taxa": taxaArr
+				});
+			}
 		}
 		groupctr++;
 	}
-	
-	var output = JSON.stringify(jsonArr);
-	
-	request = $.ajax({
-		type: 'POST',
-		url: "https://fbob.herokuapp.com/osmose_config.zip",
-		data: output,
-		contentType: "application/json; charset=utf-8",
-		dataType:"json",
-		success: function (response, status, xhr) {
-			
-			window.location.href = response.url;
-		},
-		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			alert(textStatus + " " + errorThrown);
-		}
-	});
+
+	var generateConfig = osmose.generateConfig(jsonArr, function(err, resp, body) {
+        window.location = resp.url;
+    });
 	
 	return false;
 }
