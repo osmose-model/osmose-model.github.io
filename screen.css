@@ -3,7 +3,7 @@ body {
     text-align: left;
 }
  #main { 
-	width:800px; margin: 0px auto; -moz-border-radius:10px; padding:20px;}
+	width:925px; margin: 0px auto; -moz-border-radius:10px; padding:20px;}
 
 .pheader{
     background-color: #FFF;
@@ -32,13 +32,13 @@ legend {
 }
 
 #container {
-    width: 800px;
+    width: 925;
     margin: 0 auto;
 }
 
 fieldset {
 	border:none;
-	width: 800px;
+	width: 925;
     margin: 0 auto;
 }
 
@@ -109,6 +109,10 @@ td {
 	width: 25%;
 }
 
+.width22 {
+	width: 22%;
+}
+
 .width20 {
 	width: 20%;
 }
@@ -127,6 +131,14 @@ td {
 
 .width5 {
 	width: 5%;
+}
+
+.width8 {
+	width: 8%;
+}
+
+.width7 {
+	width: 7%;
 }
 
 .center {

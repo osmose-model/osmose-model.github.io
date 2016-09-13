@@ -409,19 +409,43 @@ var validateGroups = function (groups) {
     }
 };
 
-osmose.generateConfig = function generateConfig(functionalGroups, callback) {
-    var errors = validateGroups(functionalGroups);
+var validateConfig = function (config) {
+    if (Array.isArray(config)) {
+        return ['expected object, but got array: ' + JSON.stringify(config)];
+    }
+
+    if (config['groups'] === undefined) {
+        return ['[groups] undefined for ' + JSON.stringify(config)];
+    }
+
+    return validateGroups(config.groups);
+};
+
+osmose.generateConfig = function generateConfig(config, callback) {
+    var errors = validateConfig(config);
     if (errors.length > 0) {
         callback(new Error(errors.join()), null, null)
     } else {
+        var fileReader = new FileReader();
+        fileReader.addEventListener("load", function() {
+            callback(null, fileReader.result);
+        });
+
         xhr.post({
-            body: JSON.stringify(functionalGroups),
-            uri: "https://fbob.herokuapp.com/osmose_config.zip",
+            body: JSON.stringify(config),
+            uri: "https://fbob.herokuapp.com/v2/osmose_config.zip",
+            responseType: 'blob',
             headers: {
                 "Content-Type": "application/json"
             }
         }, function (err, resp, body) {
-            callback(err, resp, body);
+            if (resp.statusCode == 200) {
+                var blob = new Blob([body], { type: "application/zip" });
+                fileReader.readAsDataURL(blob);
+            } else {
+                callback(err, null);
+            }
+
         });
     }
 };

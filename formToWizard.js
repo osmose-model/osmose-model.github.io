@@ -11,17 +11,13 @@
         var submmitButtonName = "#" + options.submitButton;
         $(submmitButtonName).hide();
 
-        // 2
         $(element).before("<ul id='steps'></ul>");
 
         steps.each(function(i) {
             $(this).wrap("<div id='step" + i + "'></div>");
             $(this).append("<p id='step" + i + "commands'></p>");
 
-            // 2
             var name = $(this).find("legend").html();
-            /*$("#steps").append("<li id='stepDesc" + i + "'>Step " + (i + 1) + "<span>" //+ name 
-			+ "</span></li>");*/
 		
             if (i == 0) {
 				createNextButton(i);
@@ -55,7 +51,12 @@
             $("#" + stepName + "commands").append("<a href='#' id='" + stepName + "Next' class='next'>Proceed</a>");
 
             $("#" + stepName + "Next").bind("click", function(e) {
-				var valid = validateform1();
+				var valid = true;
+				if(i == 0){
+					valid = validateform1();
+				}else if(i == 6){
+					valid = validateStep();
+				}
 				
 				if(valid){
 					$("#" + stepName).hide();

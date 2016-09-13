@@ -446,7 +446,26 @@ function addFGroup(){
 
 }*/
 
+function validateStep(){
+	var steps = $('#stepsInput').val();
+
+	if(steps == ""){
+		alert("Please enter a valid number.");
+		return false;
+	}else return true;
+}
+
 function download(){
+	/*change status label to process ongoing */
+	var statusLabel = $('#status');
+	statusLabel.empty();
+	statusLabel.append("Preparing configuration...");
+	
+	var downloadEl = $('#downloadLink');
+	downloadEl.text(" ");
+	
+	//time steps per year
+	var steps = $('#stepsInput').val();
 	
 	//compile data
 	var jsonArr = [];
@@ -489,9 +508,19 @@ function download(){
 		}
 		groupctr++;
 	}
+	
+	var config = {
+        "timeStepsPerYear" : steps,
+        "groups" : jsonArr
+    };
 
-	var generateConfig = osmose.generateConfig(jsonArr, function(err, resp, body) {
-        window.location = resp.url;
+	var generateConfig = osmose.generateConfig(config, function(err, url) {
+		downloadEl.text("Click here to download");
+		downloadEl.attr("download", "osmose_config.zip");
+		downloadEl.attr("href", url);
+		
+		statusLabel.empty();
+		statusLabel.append("Done preparing configuration");
     });
 	
 	return false;
