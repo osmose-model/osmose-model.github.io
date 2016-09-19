@@ -54,6 +54,8 @@
 				var valid = true;
 				if(i == 0){
 					valid = validateform1();
+				}else if(i == 2){
+					valid = validateformGroup();
 				}else if(i == 6){
 					valid = validateStep();
 				}

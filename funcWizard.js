@@ -446,6 +446,32 @@ function addFGroup(){
 
 }*/
 
+function validateformGroup(){
+	var ctr = 1;
+	var bgroup = false;
+	var fgroup = false;
+	
+	while(document.getElementsByName("sample"+ctr).length > 0){
+		if(fgroup == false && $("input[name='sample"+ctr+"']:checked").val() == "fgroup"){
+			fgroup = true;
+		}
+		if(bgroup == false && $("input[name='sample"+ctr+"']:checked").val() == "bgroup"){
+			bgroup = true;
+		}
+		ctr++;
+	}
+	
+	if(fgroup == true && bgroup == true){
+		return true;
+	}else if(fgroup == false){
+		alert("Please select at least one focal functional group.");
+		return false;
+	}else if(bgroup == false){
+		alert("Please select at least one background functional group.");
+		return false;
+	}
+}
+
 function validateStep(){
 	var steps = $('#stepsInput').val();
 
