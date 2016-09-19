@@ -403,7 +403,21 @@ var validateGroup = function (errors, group) {
 
 var validateGroups = function (groups) {
     if (Array.isArray(groups)) {
-        return groups.reduce(validateGroup, []);
+        var errors = groups.reduce(validateGroup, []);
+        var backgroundGroups = groups.filter(function (group) {
+            return group.type === 'background';
+        });
+        if (backgroundGroups.length == 0) {
+            errors.push('expected at least one background group, but none were found in ' + JSON.stringify(groups));
+        }
+
+        var focalGroups = groups.filter(function (group) {
+            return group.type === 'focal';
+        });
+        if (focalGroups.length == 0) {
+            errors.push('expected at least one focal group, but none were found in ' + JSON.stringify(groups));
+        }
+        return errors;
     } else {
         return ['expected array, but got: ' + JSON.stringify(groups)];
     }
@@ -427,7 +441,7 @@ osmose.generateConfig = function generateConfig(config, callback) {
         callback(new Error(errors.join()), null, null)
     } else {
         var fileReader = new FileReader();
-        fileReader.addEventListener("load", function() {
+        fileReader.addEventListener("load", function () {
             callback(null, fileReader.result);
         });
 
