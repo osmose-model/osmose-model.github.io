@@ -39,9 +39,7 @@
 
             $("#" + stepName + "Prev").bind("click", function(e) {
                 $("#" + stepName).hide();
-				if(i == 3) $("#step" + (i - 1 - 1)).show();
-				else if(i == 4) $("#step" + (i - 1 - 1)).show();
-                else $("#step" + (i - 1)).show();
+                $("#step" + (i - 1)).show();
                 $(submmitButtonName).hide();
             });
         }
@@ -54,16 +52,15 @@
 				var valid = true;
 				if(i == 0){
 					valid = validateform1();
-				}else if(i == 2){
+				}else if(i == 1){
 					valid = validateformGroup();
-				}else if(i == 6){
+				}else if(i == 4){
 					valid = validateStep();
 				}
 				
 				if(valid){
 					$("#" + stepName).hide();
-					if(i == 2) $("#step" + (i + 1 + 1)).show();
-					else $("#step" + (i + 1)).show();
+					$("#step" + (i + 1)).show();
 					if (i + 2 == count)
 						$(submmitButtonName).show();
 				}
