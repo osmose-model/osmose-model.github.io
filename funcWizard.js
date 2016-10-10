@@ -1,11 +1,56 @@
 function listSubCountry(){
 	var c_code = document.getElementById("country").value;
+	var fao_code = document.getElementById("faoarea").value;
 
 	$('#subcountry').empty();
 	$('#subcountry').append($('<option>', {
 		text: "Select",
 		value: ""
 	}));
+	$('#subcountry').prop( "disabled", false );
+	
+	if(c_code!= ""){
+		var subArr = [];		//put the distinct subcountry in the array
+		
+		$.ajax({
+		type: 'GET',
+		url: "subcountryFao.json",
+		async:false,
+		success: function (result) {
+			
+			var filter = $.grep(result, function(element,index){
+				return (element.C_Code == c_code && element.AreaCode > 10);
+			});
+			
+			var len = Object.keys(filter).length;
+			
+			if(len > 0){
+				$.each(filter, function(index, element){
+					if ($.inArray(element.CSub_Code,subArr) === -1) {
+						subArr.push(element.CSub_Code);
+						$('#subcountry').append($('<option>', {
+							text: element.CountrySub,
+							value: element.CSub_Code
+						}));
+					}
+				});
+			}else{
+				$('#subcountry').prop( "disabled", true );
+			}
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			alert(textStatus);
+		}
+		});
+		
+		listFao();
+	}
+}
+
+function listFao(hasSubCountry = false){
+	var c_code = document.getElementById("country").value;
+	var c_subcode = document.getElementById("subcountry").value;
+	var file = "faoarea.json";
 	
 	$('#faoarea').empty();
 	$('#faoarea').append($('<option>', {
@@ -13,38 +58,26 @@ function listSubCountry(){
 		value: ""
 	}));
 	
-	if(c_code!= ""){
+	if(hasSubCountry && c_subcode != ""){
+		file = "subcountryFao.json";
+	}
+	
+	if(c_code != ""){	
 		$.ajax({
 		type: 'GET',
-		url: "subcountry.json",
+		url: file,
 		async:false,
 		success: function (result) {
 			
-			var filter = $.grep(result, function(element,index){
-				return element.C_Code == c_code;
-			});
-			
-			$.each(filter, function(index, element){
-				$('#subcountry').append($('<option>', {
-					text: element.CountrySub,
-					value: element.CSub_Code
-				}));
-			});
-		},
-		error: function(XMLHttpRequest, textStatus, errorThrown) {
-			alert(textStatus);
-		}
-		});
-		
-		$.ajax({
-		type: 'GET',
-		url: "faoarea.json",
-		async:false,
-		success: function (result) {
-
-			var filter = $.grep(result, function(element,index){
-				return element.C_Code == c_code;
-			});
+			if(hasSubCountry && c_subcode != ""){
+				var filter = $.grep(result, function(element,index){
+					return (element.CSub_Code == c_subcode && element.AreaCode > 10);
+				});
+			}else{
+				var filter = $.grep(result, function(element,index){
+					return (element.C_Code == c_code && element.AreaCode > 10);
+				});
+			}
 			
 			$.each(filter, function(index, element){
 				$('#faoarea').append($('<option>', {
@@ -161,16 +194,9 @@ function validateform1(){
 			document.stepForm.country.focus();
 			return false;
 		}
-		if(document.stepForm.country.value == "840"){
-			if(document.stepForm.subcountry.value == ""){
-				alert("Please select a subcountry!");
-				document.stepForm.subcountry.focus();
-				return false;
-			}
-		}
 		if(document.stepForm.faoarea.value == ""){
-			alert("Please select a faoarea!");
-			document.stepForm.faoarea.focus();
+			alert("Please select a FAO Area!");
+			document.stepForm.subcountry.focus();
 			return false;
 		}
 		return true;

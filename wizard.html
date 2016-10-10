@@ -107,6 +107,7 @@ $(document).ready(function(){
 				<select name="ecosystem" id="ecosystem" title="Please select ecosystem!">
 					<option value="" selected="selected">Select</option>
 				</select>
+				<span class="required"> * Required</span>
 			</div>
 		</div>
 			<hr>
@@ -122,12 +123,13 @@ $(document).ready(function(){
 					<select name="country" id="country" onchange="listSubCountry()" title="Please select country!" disabled>
 						<option value="">Select</option>
 					</select>
+					<span class="required"> * Required</span>
 				</div>
 				<div class="padTop10">
 					<div class="w200 floatLeft">
-						 <b><i>Sub-country</i></b> 
+						 <b><i>State/Province</i></b> 
 					</div>
-					<select name="subcountry" id="subcountry" title="Please select sub-country!" disabled>
+					<select name="subcountry" id="subcountry" onchange="listFao(true)" title="Please select sub-country!" disabled>
 						<option value="" selected="selected">Select</option>
 					</select>
 				</div>
@@ -138,6 +140,7 @@ $(document).ready(function(){
 					<select name="faoarea" id="faoarea" title="Please select FAO area!" disabled>
 						<option value="" selected>Select</option>
 					</select>
+					<span class="required"> * Required</span>
 				</div>
 			</div>
 		</div>
