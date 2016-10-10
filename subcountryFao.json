@@ -1,0 +1,2697 @@
+[
+ {
+   "C_Code": 36,
+   "CSub_Code": "AU-ACT",
+   "CountrySub": "Australian Capital Territory",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 36,
+   "CSub_Code": "AU-NSW",
+   "CountrySub": "New South Wales",
+   "AreaCode": 81,
+   "FAO": "Pacific, Southwest"
+ },
+ {
+   "C_Code": 36,
+   "CSub_Code": "AU-NT",
+   "CountrySub": "Northern Territory",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 36,
+   "CSub_Code": "AU-QLD",
+   "CountrySub": "Queensland",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 36,
+   "CSub_Code": "AU-SA",
+   "CountrySub": "South Australia",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 36,
+   "CSub_Code": "AU-TAS",
+   "CountrySub": "Tasmania",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 36,
+   "CSub_Code": "AU-VIC",
+   "CountrySub": "Victoria",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 36,
+   "CSub_Code": "AU-WA",
+   "CountrySub": "Western Australia",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-AC",
+   "CountrySub": "Acre",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-AL",
+   "CountrySub": "Alagoas",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-AL",
+   "CountrySub": "Alagoas",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-AM",
+   "CountrySub": "Amazonas",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-AP",
+   "CountrySub": "Amap�",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-AP",
+   "CountrySub": "Amap�",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-BA",
+   "CountrySub": "Bahia",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-BA",
+   "CountrySub": "Bahia",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-CE",
+   "CountrySub": "Cear�",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-CE",
+   "CountrySub": "Cear�",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-DF",
+   "CountrySub": "Distrito Federal",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-ES",
+   "CountrySub": "Esp�rito Santo",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-ES",
+   "CountrySub": "Esp�rito Santo",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-GO",
+   "CountrySub": "Goi�s",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-MA",
+   "CountrySub": "Maranh�o",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-MA",
+   "CountrySub": "Maranh�o",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-MG",
+   "CountrySub": "Minas Gerais",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-MG",
+   "CountrySub": "Minas Gerais",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-MS",
+   "CountrySub": "Mato Grosso do Sul",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-MT",
+   "CountrySub": "Mato Grosso",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-PA",
+   "CountrySub": "Par�",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-PA",
+   "CountrySub": "Par�",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-PB",
+   "CountrySub": "Para�ba",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-PB",
+   "CountrySub": "Para�ba",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-PE",
+   "CountrySub": "Pernambuco",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-PE",
+   "CountrySub": "Pernambuco",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-PI",
+   "CountrySub": "Piau�",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-PI",
+   "CountrySub": "Piau�",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-PR",
+   "CountrySub": "Paran�",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-PR",
+   "CountrySub": "Paran�",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-RJ",
+   "CountrySub": "Rio de Janeiro",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-RJ",
+   "CountrySub": "Rio de Janeiro",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-RN",
+   "CountrySub": "Rio Grande do Norte",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-RN",
+   "CountrySub": "Rio Grande do Norte",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-RO",
+   "CountrySub": "Rond�nia",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-RR",
+   "CountrySub": "Roraima",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-RS",
+   "CountrySub": "Rio Grande do Sul",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-RS",
+   "CountrySub": "Rio Grande do Sul",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-SC",
+   "CountrySub": "Santa Catarina",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-SC",
+   "CountrySub": "Santa Catarina",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-SE",
+   "CountrySub": "Sergipe",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-SE",
+   "CountrySub": "Sergipe",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-SP",
+   "CountrySub": "S�o Paulo",
+   "AreaCode": 41,
+   "FAO": "Atlantic, Southwest"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-SP",
+   "CountrySub": "S�o Paulo",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 76,
+   "CSub_Code": "BR-TO",
+   "CountrySub": "Tocantins",
+   "AreaCode": 3,
+   "FAO": "America, South - Inland waters"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-AB",
+   "CountrySub": "Alberta",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-BC",
+   "CountrySub": "British Columbia",
+   "AreaCode": 67,
+   "FAO": "Pacific, Northeast"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-BC",
+   "CountrySub": "British Columbia",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-MB",
+   "CountrySub": "Manitoba",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-NB",
+   "CountrySub": "New Brunswick",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-NB",
+   "CountrySub": "New Brunswick",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-NL",
+   "CountrySub": "Newfoundland and Labrador",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-NL",
+   "CountrySub": "Newfoundland and Labrador",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-NS",
+   "CountrySub": "Nova Scotia",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-NS",
+   "CountrySub": "Nova Scotia",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-NT",
+   "CountrySub": "Northwest Territories",
+   "AreaCode": 18,
+   "FAO": "Arctic Ocean"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-NT",
+   "CountrySub": "Northwest Territories",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-NU",
+   "CountrySub": "Nunavut",
+   "AreaCode": 18,
+   "FAO": "Arctic Ocean"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-NU",
+   "CountrySub": "Nunavut",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-ON",
+   "CountrySub": "Ontario",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-ON",
+   "CountrySub": "Ontario",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-PE",
+   "CountrySub": "Prince Edward Island",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-PE",
+   "CountrySub": "Prince Edward Island",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-QC",
+   "CountrySub": "Quebec",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-QC",
+   "CountrySub": "Quebec",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-SK",
+   "CountrySub": "Saskatchewan",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 124,
+   "CSub_Code": "CA-YT",
+   "CountrySub": "Yukon Territory",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-11",
+   "CountrySub": "Beijing",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-12",
+   "CountrySub": "Tianjin",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-13",
+   "CountrySub": "Hebei",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-14",
+   "CountrySub": "Shanxi",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-15",
+   "CountrySub": "Nei Mongol",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-21",
+   "CountrySub": "Liaoning",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-22",
+   "CountrySub": "Jilin",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-23",
+   "CountrySub": "Heilongjiang",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-31",
+   "CountrySub": "Shanghai",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-32",
+   "CountrySub": "Jiangsu",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-33",
+   "CountrySub": "Zhejiang",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-34",
+   "CountrySub": "Anhui",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-35",
+   "CountrySub": "Fujian",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-36",
+   "CountrySub": "Jiangxi",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-37",
+   "CountrySub": "Shandong",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-41",
+   "CountrySub": "Henan",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-42",
+   "CountrySub": "Hubei",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-43",
+   "CountrySub": "Hunan",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-44",
+   "CountrySub": "Guangdong",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-45",
+   "CountrySub": "Guangxi",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-46",
+   "CountrySub": "Hainan",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-50",
+   "CountrySub": "Chongqing",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-51",
+   "CountrySub": "Sichuan",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-52",
+   "CountrySub": "Guizhou",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-53",
+   "CountrySub": "Yunnan",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-54",
+   "CountrySub": "Xizang",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-61",
+   "CountrySub": "Shaanxi",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-62",
+   "CountrySub": "Gansu",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-63",
+   "CountrySub": "Qinghai",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-64",
+   "CountrySub": "Ningxia",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-65",
+   "CountrySub": "Xinjiang",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-71",
+   "CountrySub": "Taiwan",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-91",
+   "CountrySub": "Xianggang ",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 156,
+   "CSub_Code": "CN-92",
+   "CountrySub": "Aomen",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 258,
+   "CSub_Code": "PF-AU",
+   "CountrySub": "Austral Archipelago",
+   "AreaCode": 77,
+   "FAO": "Pacific, Eastern Central"
+ },
+ {
+   "C_Code": 258,
+   "CSub_Code": "PF-AU",
+   "CountrySub": "Austral Archipelago",
+   "AreaCode": 81,
+   "FAO": "Pacific, Southwest"
+ },
+ {
+   "C_Code": 258,
+   "CSub_Code": "PF-GA",
+   "CountrySub": "Gambier Archipelago",
+   "AreaCode": 77,
+   "FAO": "Pacific, Eastern Central"
+ },
+ {
+   "C_Code": 258,
+   "CSub_Code": "PF-MA",
+   "CountrySub": "Marquesas Archipelago",
+   "AreaCode": 77,
+   "FAO": "Pacific, Eastern Central"
+ },
+ {
+   "C_Code": 258,
+   "CSub_Code": "PF-SO",
+   "CountrySub": "Society Archipelago",
+   "AreaCode": 77,
+   "FAO": "Pacific, Eastern Central"
+ },
+ {
+   "C_Code": 258,
+   "CSub_Code": "PF-TU",
+   "CountrySub": "Tuamotu Archipelago",
+   "AreaCode": 77,
+   "FAO": "Pacific, Eastern Central"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-AN",
+   "CountrySub": "Andaman and Nicobar Islands",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-AP",
+   "CountrySub": "Andhra Pradesh",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-AR",
+   "CountrySub": "Arunachal Pradesh",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-AS",
+   "CountrySub": "Assam",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-BR",
+   "CountrySub": "Bihar",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-CH",
+   "CountrySub": "Chandigarh",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-CT",
+   "CountrySub": "Chhatt?sgarh",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-DD",
+   "CountrySub": "Daman and Diu",
+   "AreaCode": 51,
+   "FAO": "Indian Ocean, Western"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-DL",
+   "CountrySub": "Delhi",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-DN",
+   "CountrySub": "Dadra and Nagar Haveli",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-GA",
+   "CountrySub": "Goa",
+   "AreaCode": 51,
+   "FAO": "Indian Ocean, Western"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-GJ",
+   "CountrySub": "Gujarat",
+   "AreaCode": 51,
+   "FAO": "Indian Ocean, Western"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-HP",
+   "CountrySub": "Himachal Pradesh",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-HR",
+   "CountrySub": "Haryana",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-JH",
+   "CountrySub": "Jharkhand",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-JK",
+   "CountrySub": "Jammu and Kashmir",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-KA",
+   "CountrySub": "Karnataka",
+   "AreaCode": 51,
+   "FAO": "Indian Ocean, Western"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-KI",
+   "CountrySub": "Kerala",
+   "AreaCode": 51,
+   "FAO": "Indian Ocean, Western"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-LD",
+   "CountrySub": "Lakshadweep",
+   "AreaCode": 51,
+   "FAO": "Indian Ocean, Western"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-MH",
+   "CountrySub": "Maharashtra",
+   "AreaCode": 51,
+   "FAO": "Indian Ocean, Western"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-ML",
+   "CountrySub": "Meghalaya",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-MN",
+   "CountrySub": "Manipur",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-MP",
+   "CountrySub": "Madhya Pradesh",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-MZ",
+   "CountrySub": "Mizoram",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-NL",
+   "CountrySub": "Nagaland",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-OR",
+   "CountrySub": "Orissa",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-PB",
+   "CountrySub": "Punjab",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-PY",
+   "CountrySub": "Pondicherry",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-RJ",
+   "CountrySub": "R?jasth?n",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-SK",
+   "CountrySub": "Sikkim",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-TN",
+   "CountrySub": "Tamil Nadu",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-TR",
+   "CountrySub": "Tripura",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-UL",
+   "CountrySub": "Uttaranchal",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-UP",
+   "CountrySub": "Uttar Pradesh",
+   "AreaCode": 4,
+   "FAO": "Asia - Inland waters"
+ },
+ {
+   "C_Code": 356,
+   "CSub_Code": "IN-WB",
+   "CountrySub": "West Bengal",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-AC",
+   "CountrySub": "Nanggroe Aceh Darussalam",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-BA",
+   "CountrySub": "Bali",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-BB",
+   "CountrySub": "Bangka Belitung",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-BE",
+   "CountrySub": "Bengkulu",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-BT",
+   "CountrySub": "Banten",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-GO",
+   "CountrySub": "Gorontalo",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-JA",
+   "CountrySub": "Jambi",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-JB",
+   "CountrySub": "Jawa Barat",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-JB",
+   "CountrySub": "Jawa Barat",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-JI",
+   "CountrySub": "Jawa Timur",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-JI",
+   "CountrySub": "Jawa Timur",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-JK",
+   "CountrySub": "DKI Jakarta",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-JT",
+   "CountrySub": "Jawa Tengah",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-JT",
+   "CountrySub": "Jawa Tengah",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-KB",
+   "CountrySub": "Kalimantan Barat",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-KI",
+   "CountrySub": "Kalimantan Timur",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-KR",
+   "CountrySub": "Kepulauan Riau",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-KS",
+   "CountrySub": "Kalimantan Selatan",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-KT",
+   "CountrySub": "Kalimantan Tengah",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-LA",
+   "CountrySub": "Lampung",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-LA",
+   "CountrySub": "Lampung",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-MA",
+   "CountrySub": "Maluku",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-MU",
+   "CountrySub": "Maluku Utara",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-NB",
+   "CountrySub": "Nusa Tenggara Barat",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-NT",
+   "CountrySub": "Nusa Tenggara Timur",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-PA",
+   "CountrySub": "Papua",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-PB",
+   "CountrySub": "Papua Barat",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-RI",
+   "CountrySub": "Riau",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-SA",
+   "CountrySub": "Sulawesi Utara (North)",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-SB",
+   "CountrySub": "Sumatera Barat (West)",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-SG",
+   "CountrySub": "Sulawesi Tenggara (SE)",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-SN",
+   "CountrySub": "Sulawesi Selatan (South)",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-SR",
+   "CountrySub": "Sulawesi Barat (West)",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-SS",
+   "CountrySub": "Sumatera Selatan",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-ST",
+   "CountrySub": "Sulawesi Tengah",
+   "AreaCode": 71,
+   "FAO": "Pacific, Western Central"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-SU",
+   "CountrySub": "Sumatera Utara",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 360,
+   "CSub_Code": "ID-YO",
+   "CountrySub": "Yogyakarta",
+   "AreaCode": 57,
+   "FAO": "Indian Ocean, Eastern"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-AI",
+   "CountrySub": "Aichi",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-AK",
+   "CountrySub": "Akita",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-AO",
+   "CountrySub": "Aomori",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-CH",
+   "CountrySub": "Chiba",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-EH",
+   "CountrySub": "Ehime",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-FK",
+   "CountrySub": "Fukui",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-FO",
+   "CountrySub": "Fukuoka",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-FU",
+   "CountrySub": "Fukushima",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-GI",
+   "CountrySub": "Gifu",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-GU",
+   "CountrySub": "Gumma",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-HI",
+   "CountrySub": "Hiroshima",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-HO",
+   "CountrySub": "Hokkaido",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-HY",
+   "CountrySub": "Hyogo",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-IB",
+   "CountrySub": "Ibaraki",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-IS",
+   "CountrySub": "Ishikawa",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-IW",
+   "CountrySub": "Iwate",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-KA",
+   "CountrySub": "Kanagawa",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-KG",
+   "CountrySub": "Kagawa",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-KH",
+   "CountrySub": "Kagoshima",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-KM",
+   "CountrySub": "Kumamoto",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-KO",
+   "CountrySub": "Kochi",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-KY",
+   "CountrySub": "Kyoto",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-ME",
+   "CountrySub": "Mie",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-MI",
+   "CountrySub": "Miyagi",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-MY",
+   "CountrySub": "Miyazaki",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-NA",
+   "CountrySub": "Nagano",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-NG",
+   "CountrySub": "Nagasaki",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-NI",
+   "CountrySub": "Niigata",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-NR",
+   "CountrySub": "Nara",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-OI",
+   "CountrySub": "Oita",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-OK",
+   "CountrySub": "Okayama",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-ON",
+   "CountrySub": "Okinawa",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-OS",
+   "CountrySub": "Osaka",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-SA",
+   "CountrySub": "Saga",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-SG",
+   "CountrySub": "Shiga",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-SH",
+   "CountrySub": "Shizuoka",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-SI",
+   "CountrySub": "Saitama",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-SM",
+   "CountrySub": "Shimane",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-TK",
+   "CountrySub": "Tokyo",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-TO",
+   "CountrySub": "Tochigi",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-TS",
+   "CountrySub": "Tokushima",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-TT",
+   "CountrySub": "Tottori",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-TY",
+   "CountrySub": "Toyama",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-WA",
+   "CountrySub": "Wakayama",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-YA",
+   "CountrySub": "Yamagata",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-YG",
+   "CountrySub": "Yamaguchi",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 392,
+   "CSub_Code": "JP-YM",
+   "CountrySub": "Yamanashi",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-AD",
+   "CountrySub": "Adygeya, Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-AGB",
+   "CountrySub": "Aginskiy Buryatskiy avtonomnyyokrug ",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-AL",
+   "CountrySub": "Altay, Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-ALT",
+   "CountrySub": "Altayskiy kray",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-AMU",
+   "CountrySub": "Amurskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-ARK",
+   "CountrySub": "Arkhangel'skaya oblast'",
+   "AreaCode": 27,
+   "FAO": "Atlantic, Northeast"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-AST",
+   "CountrySub": "Astrakhanskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-BA",
+   "CountrySub": "Bashkortostan, Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-BEL",
+   "CountrySub": "Belgorodskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-BRY",
+   "CountrySub": "Bryanskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-BU",
+   "CountrySub": "Buryatiya, Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-CE",
+   "CountrySub": "Chechenskaya Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-CHE",
+   "CountrySub": "Chelyabinskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-CHI",
+   "CountrySub": "Chitinskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-CHU",
+   "CountrySub": "Chukotskiy avtonomnyy okrug ",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-CHU",
+   "CountrySub": "Chukotskiy avtonomnyy okrug ",
+   "AreaCode": 67,
+   "FAO": "Pacific, Northeast"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-CHU",
+   "CountrySub": "Chukotskiy avtonomnyy okrug ",
+   "AreaCode": 18,
+   "FAO": "Arctic Ocean"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-CU",
+   "CountrySub": "Chuvashskaya Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-DA",
+   "CountrySub": "Dagestan, Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-EVE",
+   "CountrySub": "Evenkiyskiy avtonomnyy okrug ",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-IN",
+   "CountrySub": "Respublika Ingushetiya",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-IRK",
+   "CountrySub": "Irkutskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-IVA",
+   "CountrySub": "Ivanovskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KAM",
+   "CountrySub": "Kamchatskaya oblast'",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KB",
+   "CountrySub": "Kabardino-Balkarskaya Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KC",
+   "CountrySub": "Karachayevo-Cherkesskay� Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KDA",
+   "CountrySub": "Krasnodarskiy kray",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KDA",
+   "CountrySub": "Krasnodarskiy kray",
+   "AreaCode": 37,
+   "FAO": "Mediterranean and Black Sea"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KEM",
+   "CountrySub": "Kemerovskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KGD",
+   "CountrySub": "Kaliningradskaya oblast'",
+   "AreaCode": 27,
+   "FAO": "Atlantic, Northeast"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KGN",
+   "CountrySub": "Kurganskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KHA",
+   "CountrySub": "Khabarovskiy kray",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KHM",
+   "CountrySub": "Khanty-Mansiyskiy avtonomnyy okrug [Yugra]",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KIR",
+   "CountrySub": "Kirovskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KK",
+   "CountrySub": "Khakasiya, Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KL",
+   "CountrySub": "Kalmykiya, Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KLU",
+   "CountrySub": "Kaluzhskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KO",
+   "CountrySub": "Komi, Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KOP",
+   "CountrySub": "Komi-Permyatskiy avtonomnyy okrug ",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KOR",
+   "CountrySub": "Koryakskiy avtonomnyy okrug ",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KOS",
+   "CountrySub": "Kostromskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KR",
+   "CountrySub": "Kareliya, Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KR",
+   "CountrySub": "Kareliya, Respublika",
+   "AreaCode": 27,
+   "FAO": "Atlantic, Northeast"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KRS",
+   "CountrySub": "Kurskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-KYA",
+   "CountrySub": "Krasnoyarskiy kray",
+   "AreaCode": 18,
+   "FAO": "Arctic Ocean"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-LEN",
+   "CountrySub": "Leningradskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-LEN",
+   "CountrySub": "Leningradskaya oblast'",
+   "AreaCode": 27,
+   "FAO": "Atlantic, Northeast"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-LIP",
+   "CountrySub": "Lipetskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-MAG",
+   "CountrySub": "Magadanskaya oblast'",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-ME",
+   "CountrySub": "Mariy El, Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-MO",
+   "CountrySub": "Mordoviya, Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-MOS",
+   "CountrySub": "Moskovskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-MOW",
+   "CountrySub": "Moskva",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-MUR",
+   "CountrySub": "Murmanskaya oblast'",
+   "AreaCode": 27,
+   "FAO": "Atlantic, Northeast"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-NEN",
+   "CountrySub": "Nenetskiy avtonomnyy okrug ",
+   "AreaCode": 18,
+   "FAO": "Arctic Ocean"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-NEN",
+   "CountrySub": "Nenetskiy avtonomnyy okrug ",
+   "AreaCode": 27,
+   "FAO": "Atlantic, Northeast"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-NGR",
+   "CountrySub": "Novgorodskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-NIZ",
+   "CountrySub": "Nizhegorodskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-NVS",
+   "CountrySub": "Novosibirskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-OMS",
+   "CountrySub": "Omskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-ORE",
+   "CountrySub": "Orenburgskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-ORL",
+   "CountrySub": "Orlovskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-PER",
+   "CountrySub": "Perm",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-PNZ",
+   "CountrySub": "Penzenskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-PRI",
+   "CountrySub": "Primorskiy kray",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-PSK",
+   "CountrySub": "Pskovskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-ROS",
+   "CountrySub": "Rostovskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-ROS",
+   "CountrySub": "Rostovskaya oblast'",
+   "AreaCode": 37,
+   "FAO": "Mediterranean and Black Sea"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-RYA",
+   "CountrySub": "Ryazanskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-SA",
+   "CountrySub": "Sakha, Respublika [Yakutiya]",
+   "AreaCode": 18,
+   "FAO": "Arctic Ocean"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-SAK",
+   "CountrySub": "Sakhalinskaya oblast'",
+   "AreaCode": 61,
+   "FAO": "Pacific, Northwest"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-SAM",
+   "CountrySub": "Samarskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-SAR",
+   "CountrySub": "Saratovskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-SE",
+   "CountrySub": "Respublika Severnaya Osetiya-Alaniya",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-SMO",
+   "CountrySub": "Smolenskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-SPE",
+   "CountrySub": "Sankt-Peterburg",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-SPE",
+   "CountrySub": "Sankt-Peterburg",
+   "AreaCode": 27,
+   "FAO": "Atlantic, Northeast"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-STA",
+   "CountrySub": "Stavropol'skiy kray",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-SVE",
+   "CountrySub": "Sverdlovskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-TA",
+   "CountrySub": "Tatarstan, Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-TAM",
+   "CountrySub": "Tambovskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-TAY",
+   "CountrySub": "Taymyrskiy (Dolgano-Nenetskiy) avtonomnyy okrug",
+   "AreaCode": 18,
+   "FAO": "Arctic Ocean"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-TOM",
+   "CountrySub": "Tomskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-TUL",
+   "CountrySub": "Tul'skaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-TVE",
+   "CountrySub": "Tverskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-TY",
+   "CountrySub": "Tyva, Respublika [Tuva]",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-TYU",
+   "CountrySub": "Tyumenskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-UD",
+   "CountrySub": "Udmurtskaya Respublika",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-ULY",
+   "CountrySub": "Ul'yanovskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-UOB",
+   "CountrySub": "Ust'-Ordynskiy Buryatskiy avtonomnyy okrug",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-VGG",
+   "CountrySub": "Volgogradskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-VLA",
+   "CountrySub": "Vladimirskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-VLG",
+   "CountrySub": "Vologodskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-VOR",
+   "CountrySub": "Voronezhskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-YAN",
+   "CountrySub": "Yamalo-Nenetskiy avtonomnyy okrug",
+   "AreaCode": 18,
+   "FAO": "Arctic Ocean"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-YAR",
+   "CountrySub": "Yaroslavskaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 643,
+   "CSub_Code": "RU-YEV",
+   "CountrySub": "Yevreyskaya avtonomnaya oblast'",
+   "AreaCode": 5,
+   "FAO": "Europe - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-AK",
+   "CountrySub": "Alaska",
+   "AreaCode": 18,
+   "FAO": "Arctic Ocean"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-AK",
+   "CountrySub": "Alaska",
+   "AreaCode": 67,
+   "FAO": "Pacific, Northeast"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-AL",
+   "CountrySub": "Alabama",
+   "AreaCode": 31,
+   "FAO": "Atlantic, Western Central"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-AR",
+   "CountrySub": "Arkansas",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-AZ",
+   "CountrySub": "Arizona",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-CA",
+   "CountrySub": "California",
+   "AreaCode": 67,
+   "FAO": "Pacific, Northeast"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-CA",
+   "CountrySub": "California",
+   "AreaCode": 77,
+   "FAO": "Pacific, Eastern Central"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-CO",
+   "CountrySub": "Colorado",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-CT",
+   "CountrySub": "Connecticut",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-DC",
+   "CountrySub": "District of Columbia",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-DE",
+   "CountrySub": "Delaware",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-FL",
+   "CountrySub": "Florida",
+   "AreaCode": 31,
+   "FAO": "Atlantic, Western Central"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-GA",
+   "CountrySub": "Georgia",
+   "AreaCode": 31,
+   "FAO": "Atlantic, Western Central"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-HI",
+   "CountrySub": "Hawaii",
+   "AreaCode": 77,
+   "FAO": "Pacific, Eastern Central"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-IA",
+   "CountrySub": "Iowa",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-ID",
+   "CountrySub": "Idaho",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-IL",
+   "CountrySub": "Illinois",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-IN",
+   "CountrySub": "Indiana",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-KS",
+   "CountrySub": "Kansas",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-KY",
+   "CountrySub": "Kentucky",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-LA",
+   "CountrySub": "Louisiana",
+   "AreaCode": 31,
+   "FAO": "Atlantic, Western Central"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-MA",
+   "CountrySub": "Massachusetts",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-MD",
+   "CountrySub": "Maryland",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-ME",
+   "CountrySub": "Maine",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-MI",
+   "CountrySub": "Michigan",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-MN",
+   "CountrySub": "Minnesota",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-MO",
+   "CountrySub": "Missouri",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-MS",
+   "CountrySub": "Mississippi",
+   "AreaCode": 31,
+   "FAO": "Atlantic, Western Central"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-MT",
+   "CountrySub": "Montana",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-NC",
+   "CountrySub": "North Carolina",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-NC",
+   "CountrySub": "North Carolina",
+   "AreaCode": 31,
+   "FAO": "Atlantic, Western Central"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-ND",
+   "CountrySub": "North Dakota",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-NE",
+   "CountrySub": "Nebraska",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-NH",
+   "CountrySub": "New Hampshire",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-NJ",
+   "CountrySub": "New Jersey",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-NM",
+   "CountrySub": "New Mexico",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-NV",
+   "CountrySub": "Nevada",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-NY",
+   "CountrySub": "New York",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-OH",
+   "CountrySub": "Ohio",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-OK",
+   "CountrySub": "Oklahoma",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-OR",
+   "CountrySub": "Oregon",
+   "AreaCode": 67,
+   "FAO": "Pacific, Northeast"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-PA",
+   "CountrySub": "Pennsylvania",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-RI",
+   "CountrySub": "Rhode Island",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-SC",
+   "CountrySub": "South Carolina",
+   "AreaCode": 31,
+   "FAO": "Atlantic, Western Central"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-SD",
+   "CountrySub": "South Dakota",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-TN",
+   "CountrySub": "Tennessee",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-TX",
+   "CountrySub": "Texas",
+   "AreaCode": 31,
+   "FAO": "Atlantic, Western Central"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-UT",
+   "CountrySub": "Utah",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-VA",
+   "CountrySub": "Virginia",
+   "AreaCode": 21,
+   "FAO": "Atlantic, Northwest"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-VT",
+   "CountrySub": "Vermont",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-WA",
+   "CountrySub": "Washington",
+   "AreaCode": 67,
+   "FAO": "Pacific, Northeast"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-WI",
+   "CountrySub": "Wisconsin",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-WV",
+   "CountrySub": "West Virginia",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ },
+ {
+   "C_Code": 840,
+   "CSub_Code": "US-WY",
+   "CountrySub": "Wyoming",
+   "AreaCode": 2,
+   "FAO": "America, North - Inland waters"
+ }
+]
