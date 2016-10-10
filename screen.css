@@ -42,6 +42,10 @@ fieldset {
     margin: 0 auto;
 }
 
+.required{
+	color: red;
+}
+
 .justify13 {
     text-align: justify;
     font-size: 13px;
