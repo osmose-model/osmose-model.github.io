@@ -186,18 +186,18 @@ $(document).ready(function(){
 		<img onClick="msgpop(2)" id="info2" class="imgSize25" src="info.png"></p>
 		<div class="messagepop pop" id="message2">
 			<p>To remove a species from a given functional group, deselect it from the column "Species" using the dedicated radio button.</p>
-			<p>To remove all the species belonging to the same order from a given functional group, deselect the order from the column "Order" using the dedicated radio button; this action will deselect all the species belonging to the order from the column "Species" of the functional group.</p>
+			<p>To remove all the species belonging to the same class from a given functional group, deselect the class from the column "Class" using the dedicated radio button; this action will deselect all the species belonging to the class from the column "Species" of the functional group.</p>
 			<input type="button" class="close" onClick="deselect(2)" name="okbutton" value="OK"></input>
 		</div>
 		
 		<p class="justify13"><b>(3)</b> Redistribute species between functional groups. <img onClick="msgpop(3)" id="info3" class="imgSize25" src="info.png"></p>
 		<div class="messagepop pop" id="message3">
-			<p>To redistribute a given species between two functional groups: </p>
+			<p>To redistribute species between two functional groups: </p>
 			<p>(i) Deselect a species from the column "Species" of its original functional group using the dedicated radio button.</p> 
 			<p>(ii) Then: In the column "Species" of the functional group in which you wish to reallocate the species, press the Edit button (<img class="imgSize25" src="edit.png">) and type the name of the species (Latin name); suggestions will be provided to you as you start typing something.</p>
 			<p>OR</p>
-			<p>(i) Deselect a given order from the column "Order" of its original functional group using the dedicated radio button; this action will deselect all the species belonging to the order from the column "Species" of the original functional group.</p>
-			<p>(ii) Then: In the column "Order" of the functional group in which you wish to reallocate the species, press the Edit button (<img class="imgSize25" src="edit.png">) and type the name of the order; suggestions will be provided to you as you start typing something. Once the order name is entered, the species belonging to that order will automatically appear in the "Species" column of the new functional group.</p>
+			<p>(i) FOR BACKGROUND FUNCTIONAL GROUPS ONLY: Deselect a given class from the column "Class" of its original functional group using the dedicated radio button; this action will deselect all the species belonging to the class from the column "Species" of the original functional group.</p>
+			<p>(ii) Then: In the column "Class" of the functional group in which you wish to reallocate the species, press the Edit button (<img class="imgSize25" src="edit.png">) and type the name of the class; suggestions will be provided to you as you start typing something. Once the class name is entered, the species belonging to that class will automatically appear in the "Species" column of the new functional group.</p>
 			<input type="button" class="close" onClick="deselect(3)" name="okbutton" value="OK"></input>
 		</div>
 		
@@ -212,10 +212,11 @@ $(document).ready(function(){
 			<p>To create a new functional group, press the Plus button at the bottom of the table (<img class="imgSize25" src="add.png">).</p>
 			<p>Then:</p> 
 			<p>(i) Enter the name of the new functional group.</p>
-			<p>(ii) Indicate whether the new functional group is a focal functional group or a background functional group, using dedicated radio buttons;</p> <p>(iii) In the column "Species", type the name of the different species making up the new functional group (Latin names); suggestions will be provided to you as you start typing something.</p>
+			<p>(ii) Indicate whether the new functional group is a focal functional group or a background functional group, using dedicated radio buttons;</p> 
+			<p>(iii) In the column "Species", type the name of the different species making up the new functional group (Latin names); suggestions will be provided to you as you start typing something.</p>
 			<p>OR</p>
-			<p>(iii) In the column "Order", type the name of the different orders making up the new functional group; suggestions will be provided to you as you start typing something. Once an order name is entered, the species belonging to that order will automatically appear in the "Species" column of the new functional group.</p>
-			<p>*Note: To identify relevant Latin names or order names for the new functional group, you can access FishBase/SealifeBase by clicking on the FishBase icon or the SealifeBase icon, which are both located at the top-right hand corner of the table provided below. FishBase provides data for fish, while SealifeBase provides data for all the other types of marine organisms.</p>
+			<p>(iii) FOR BACKGROUND FUNCTIONAL GROUPS ONLY: In the column "Class", type the name of the different classes making up the new functional group; suggestions will be provided to you as you start typing something. Once a class name is entered, the species belonging to that class will automatically appear in the "Species" column of the new functional group.</p>
+			<p>*Note: To identify relevant Latin names or class names for the new functional group, you can access FishBase/SealifeBase by clicking on the FishBase icon or the SealifeBase icon, which are both located at the top-right hand corner of the table provided below. FishBase provides data for fish, while SealifeBase provides data for all the other types of marine organisms.</p>
 			<input type="button" class="close" onClick="deselect(5)" name="okbutton" value="OK"></input>
 		</div>
 		
