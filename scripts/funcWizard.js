@@ -14,7 +14,7 @@ function listSubCountry(){
 		
 		$.ajax({
 		type: 'GET',
-		url: "data/subcountryFao.json",
+		url: "http://fin-casey.github.io/data/subcountryFao.json",
 		async:false,
 		success: function (result) {
 			
@@ -50,7 +50,7 @@ function listSubCountry(){
 function listFao(hasSubCountry = false){
 	var c_code = document.getElementById("country").value;
 	var c_subcode = document.getElementById("subcountry").value;
-	var file = "data/faoarea.json";
+	var file = "http://fin-casey.github.io/data/faoarea.json";
 	
 	$('#faoarea').empty();
 	$('#faoarea').append($('<option>', {
@@ -59,7 +59,7 @@ function listFao(hasSubCountry = false){
 	}));
 	
 	if(hasSubCountry && c_subcode != ""){
-		file = "data/subcountryFao.json";
+		file = "http://fin-casey.github.io/data/subcountryFao.json";
 	}
 	
 	if(c_code != ""){	
@@ -149,7 +149,7 @@ function populateFuncTable(){
 		$("#funcGrptable").find("tr:gt(0)").remove();
 		$.ajax({
 		type: 'GET',
-		url: "data/ecosystem_funcgrp.json",
+		url: "http://fin-casey.github.io/data/ecosystem_funcgrp.json",
 		async:false,
 		success: function (result) {
 			var filter = $.grep(result, function(element,index){
