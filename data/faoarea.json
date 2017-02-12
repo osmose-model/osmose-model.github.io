@@ -1,0 +1,1492 @@
+[
+ {
+   "C_Code":"008",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"012",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"016",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"024",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"024",
+   "AreaCode":47,
+   "FAO":"Atlantic, Southeast"
+ },
+ {
+   "C_Code":"028",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"032",
+   "AreaCode":41,
+   "FAO":"Atlantic, Southwest"
+ },
+ {
+   "C_Code":"036",
+   "AreaCode":57,
+   "FAO":"Indian Ocean, Eastern"
+ },
+ {
+   "C_Code":"036",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"036",
+   "AreaCode":81,
+   "FAO":"Pacific, Southwest"
+ },
+ {
+   "C_Code":"044",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"048",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"050",
+   "AreaCode":57,
+   "FAO":"Indian Ocean, Eastern"
+ },
+ {
+   "C_Code":"052",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"056",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"060",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"070",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"074",
+   "AreaCode":48,
+   "FAO":"Atlantic, Antarctic"
+ },
+ {
+   "C_Code":"076",
+   "AreaCode":41,
+   "FAO":"Atlantic, Southwest"
+ },
+ {
+   "C_Code":"084",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"086",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"090",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"092",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"096",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"100",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"104",
+   "AreaCode":57,
+   "FAO":"Indian Ocean, Eastern"
+ },
+ {
+   "C_Code":"10AL",
+   "AreaCode":58,
+   "FAO":"Indian Ocean, Antarctic"
+ },
+ {
+   "C_Code":"116",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"120",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"124",
+   "AreaCode":18,
+   "FAO":"Arctic Ocean"
+ },
+ {
+   "C_Code":"124",
+   "AreaCode":21,
+   "FAO":"Atlantic, Northwest"
+ },
+ {
+   "C_Code":"124",
+   "AreaCode":67,
+   "FAO":"Pacific, Northeast"
+ },
+ {
+   "C_Code":"132",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"136",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"144",
+   "AreaCode":57,
+   "FAO":"Indian Ocean, Eastern"
+ },
+ {
+   "C_Code":"152",
+   "AreaCode":41,
+   "FAO":"Atlantic, Southwest"
+ },
+ {
+   "C_Code":"152",
+   "AreaCode":87,
+   "FAO":"Pacific, Southeast"
+ },
+ {
+   "C_Code":"152A",
+   "AreaCode":87,
+   "FAO":"Pacific, Southeast"
+ },
+ {
+   "C_Code":"152B",
+   "AreaCode":87,
+   "FAO":"Pacific, Southeast"
+ },
+ {
+   "C_Code":"152D",
+   "AreaCode":87,
+   "FAO":"Pacific, Southeast"
+ },
+ {
+   "C_Code":"156",
+   "AreaCode":61,
+   "FAO":"Pacific, Northwest"
+ },
+ {
+   "C_Code":"156A",
+   "AreaCode":61,
+   "FAO":"Pacific, Northwest"
+ },
+ {
+   "C_Code":"162",
+   "AreaCode":57,
+   "FAO":"Indian Ocean, Eastern"
+ },
+ {
+   "C_Code":"166",
+   "AreaCode":57,
+   "FAO":"Indian Ocean, Eastern"
+ },
+ {
+   "C_Code":"170",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"170",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"170",
+   "AreaCode":87,
+   "FAO":"Pacific, Southeast"
+ },
+ {
+   "C_Code":"174",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"175",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"178",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"180",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"184",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"188",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"188",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"191",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"192",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"196",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"204",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"208",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"212",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"214",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"218",
+   "AreaCode":87,
+   "FAO":"Pacific, Southeast"
+ },
+ {
+   "C_Code":"218A",
+   "AreaCode":87,
+   "FAO":"Pacific, Southeast"
+ },
+ {
+   "C_Code":"222",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"226",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"233",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"234",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"238",
+   "AreaCode":41,
+   "FAO":"Atlantic, Southwest"
+ },
+ {
+   "C_Code":"239",
+   "AreaCode":48,
+   "FAO":"Atlantic, Antarctic"
+ },
+ {
+   "C_Code":"242",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"246",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"250",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"250",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"250A",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"250C",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"250D",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"254",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"254",
+   "AreaCode":41,
+   "FAO":"Atlantic, Southwest"
+ },
+ {
+   "C_Code":"258",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"258",
+   "AreaCode":81,
+   "FAO":"Pacific, Southwest"
+ },
+ {
+   "C_Code":"260A",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"260C",
+   "AreaCode":58,
+   "FAO":"Indian Ocean, Antarctic"
+ },
+ {
+   "C_Code":"260K",
+   "AreaCode":58,
+   "FAO":"Indian Ocean, Antarctic"
+ },
+ {
+   "C_Code":"260P",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"262",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"266",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"268",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"270",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"274",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"276",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"288",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"292",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"292",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"296",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"296",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"300",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"304",
+   "AreaCode":18,
+   "FAO":"Arctic Ocean"
+ },
+ {
+   "C_Code":"304",
+   "AreaCode":21,
+   "FAO":"Atlantic, Northwest"
+ },
+ {
+   "C_Code":"304",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"308",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"312",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"316",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"320",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"320",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"324",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"328",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"332",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"334",
+   "AreaCode":58,
+   "FAO":"Indian Ocean, Antarctic"
+ },
+ {
+   "C_Code":"340",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"340",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"344",
+   "AreaCode":61,
+   "FAO":"Pacific, Northwest"
+ },
+ {
+   "C_Code":"352",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"356",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"356",
+   "AreaCode":57,
+   "FAO":"Indian Ocean, Eastern"
+ },
+ {
+   "C_Code":"360",
+   "AreaCode":57,
+   "FAO":"Indian Ocean, Eastern"
+ },
+ {
+   "C_Code":"360",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"364",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"368",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"372",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"376",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"376",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"380",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"384",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"388",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"392",
+   "AreaCode":61,
+   "FAO":"Pacific, Northwest"
+ },
+ {
+   "C_Code":"392B",
+   "AreaCode":61,
+   "FAO":"Pacific, Northwest"
+ },
+ {
+   "C_Code":"396",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"400",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"404",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"408",
+   "AreaCode":61,
+   "FAO":"Pacific, Northwest"
+ },
+ {
+   "C_Code":"410",
+   "AreaCode":61,
+   "FAO":"Pacific, Northwest"
+ },
+ {
+   "C_Code":"414",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"422",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"428",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"430",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"434",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"440",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"446",
+   "AreaCode":61,
+   "FAO":"Pacific, Northwest"
+ },
+ {
+   "C_Code":"450",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"458",
+   "AreaCode":57,
+   "FAO":"Indian Ocean, Eastern"
+ },
+ {
+   "C_Code":"458",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"462",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"470",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"474",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"478",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"480",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"484",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"484",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"488",
+   "AreaCode":61,
+   "FAO":"Pacific, Northwest"
+ },
+ {
+   "C_Code":"492",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"499",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"500",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"504",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"504",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"508",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"512",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"516",
+   "AreaCode":47,
+   "FAO":"Atlantic, Southeast"
+ },
+ {
+   "C_Code":"520",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"528",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"531",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"532",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"533",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"540",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"548",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"554",
+   "AreaCode":81,
+   "FAO":"Pacific, Southwest"
+ },
+ {
+   "C_Code":"554A",
+   "AreaCode":81,
+   "FAO":"Pacific, Southwest"
+ },
+ {
+   "C_Code":"554C",
+   "AreaCode":81,
+   "FAO":"Pacific, Southwest"
+ },
+ {
+   "C_Code":"558",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"558",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"566",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"570",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"574",
+   "AreaCode":81,
+   "FAO":"Pacific, Southwest"
+ },
+ {
+   "C_Code":"578",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"580",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"581",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"582",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"582A",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"583",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"584",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"585",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"586",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"591",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"591",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"598",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"598A",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"604",
+   "AreaCode":87,
+   "FAO":"Pacific, Southeast"
+ },
+ {
+   "C_Code":"608",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"612",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"616",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"620",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"620A",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"620B",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"624",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"626",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"630",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"634",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"638",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"642",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"643",
+   "AreaCode":18,
+   "FAO":"Arctic Ocean"
+ },
+ {
+   "C_Code":"643",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"643",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"643",
+   "AreaCode":61,
+   "FAO":"Pacific, Northwest"
+ },
+ {
+   "C_Code":"654",
+   "AreaCode":47,
+   "FAO":"Atlantic, Southeast"
+ },
+ {
+   "C_Code":"659",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"660",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"662",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"666",
+   "AreaCode":21,
+   "FAO":"Atlantic, Northwest"
+ },
+ {
+   "C_Code":"670",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"678",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"682",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"686",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"690",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"694",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"702",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"704",
+   "AreaCode":61,
+   "FAO":"Pacific, Northwest"
+ },
+ {
+   "C_Code":"704",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"705",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"706",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"710",
+   "AreaCode":47,
+   "FAO":"Atlantic, Southeast"
+ },
+ {
+   "C_Code":"710",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"724",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"724",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"724A",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"732",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"736",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"740",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"744",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"744J",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"752",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"760",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"764",
+   "AreaCode":57,
+   "FAO":"Indian Ocean, Eastern"
+ },
+ {
+   "C_Code":"764",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"768",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"772",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"776",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"776",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"780",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"784",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"788",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"792",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"796",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"798",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"804",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"810B",
+   "AreaCode":61,
+   "FAO":"Pacific, Northwest"
+ },
+ {
+   "C_Code":"818",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"818",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"826",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"826A",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"826B",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"826C",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"826E",
+   "AreaCode":47,
+   "FAO":"Atlantic, Southeast"
+ },
+ {
+   "C_Code":"826F",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"826G",
+   "AreaCode":47,
+   "FAO":"Atlantic, Southeast"
+ },
+ {
+   "C_Code":"826H",
+   "AreaCode":48,
+   "FAO":"Atlantic, Antarctic"
+ },
+ {
+   "C_Code":"826I",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"830",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"833",
+   "AreaCode":27,
+   "FAO":"Atlantic, Northeast"
+ },
+ {
+   "C_Code":"834",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"840",
+   "AreaCode":18,
+   "FAO":"Arctic Ocean"
+ },
+ {
+   "C_Code":"840",
+   "AreaCode":21,
+   "FAO":"Atlantic, Northwest"
+ },
+ {
+   "C_Code":"840",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"840",
+   "AreaCode":67,
+   "FAO":"Pacific, Northeast"
+ },
+ {
+   "C_Code":"840",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"840A",
+   "AreaCode":18,
+   "FAO":"Arctic Ocean"
+ },
+ {
+   "C_Code":"840A",
+   "AreaCode":61,
+   "FAO":"Pacific, Northwest"
+ },
+ {
+   "C_Code":"840A",
+   "AreaCode":67,
+   "FAO":"Pacific, Northeast"
+ },
+ {
+   "C_Code":"840B",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"849",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"850",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"858",
+   "AreaCode":41,
+   "FAO":"Atlantic, Southwest"
+ },
+ {
+   "C_Code":"862",
+   "AreaCode":31,
+   "FAO":"Atlantic, Western Central"
+ },
+ {
+   "C_Code":"872",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"876",
+   "AreaCode":71,
+   "FAO":"Pacific, Western Central"
+ },
+ {
+   "C_Code":"882",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"887",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"891",
+   "AreaCode":37,
+   "FAO":"Mediterranean and Black Sea"
+ },
+ {
+   "C_Code":"F111",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"I02",
+   "AreaCode":48,
+   "FAO":"Atlantic, Antarctic"
+ },
+ {
+   "C_Code":"I04",
+   "AreaCode":58,
+   "FAO":"Indian Ocean, Antarctic"
+ },
+ {
+   "C_Code":"I076",
+   "AreaCode":34,
+   "FAO":"Atlantic, Eastern Central"
+ },
+ {
+   "C_Code":"I09",
+   "AreaCode":88,
+   "FAO":"Pacific, Antarctic"
+ },
+ {
+   "C_Code":"I10",
+   "AreaCode":88,
+   "FAO":"Pacific, Antarctic"
+ },
+ {
+   "C_Code":"I11",
+   "AreaCode":81,
+   "FAO":"Pacific, Southwest"
+ },
+ {
+   "C_Code":"I12",
+   "AreaCode":48,
+   "FAO":"Atlantic, Antarctic"
+ },
+ {
+   "C_Code":"I13",
+   "AreaCode":48,
+   "FAO":"Atlantic, Antarctic"
+ },
+ {
+   "C_Code":"I14",
+   "AreaCode":88,
+   "FAO":"Pacific, Antarctic"
+ },
+ {
+   "C_Code":"I15",
+   "AreaCode":48,
+   "FAO":"Atlantic, Antarctic"
+ },
+ {
+   "C_Code":"I16",
+   "AreaCode":57,
+   "FAO":"Indian Ocean, Eastern"
+ },
+ {
+   "C_Code":"I17",
+   "AreaCode":51,
+   "FAO":"Indian Ocean, Western"
+ },
+ {
+   "C_Code":"I188",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"I250",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"I484",
+   "AreaCode":77,
+   "FAO":"Pacific, Eastern Central"
+ },
+ {
+   "C_Code":"I555",
+   "AreaCode":48,
+   "FAO":"Atlantic, Antarctic"
+ },
+ {
+   "C_Code":"I555",
+   "AreaCode":58,
+   "FAO":"Indian Ocean, Antarctic"
+ },
+ {
+   "C_Code":"I555",
+   "AreaCode":88,
+   "FAO":"Pacific, Antarctic"
+ },
+ {
+   "C_Code":"I556",
+   "AreaCode":61,
+   "FAO":"Pacific, Northwest"
+ },
+ {
+   "C_Code":"I557",
+   "AreaCode":81,
+   "FAO":"Pacific, Southwest"
+ },
+ {
+   "C_Code":"I558",
+   "AreaCode":41,
+   "FAO":"Atlantic, Southwest"
+ }
+]
