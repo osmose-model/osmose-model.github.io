@@ -144,7 +144,11 @@ function populateFuncTable(){
 	var selected = $("input[name=choose]:checked").val();
 	var e_code = document.getElementById("ecosystem").value;
 	
-	if(selected == "eco" && e_code != ''){
+	if(e_code == '')
+	{
+		$("#funcGrptable").find("tr:gt(0)").remove();
+	}
+	else if(selected == "eco" && e_code != ''){
 		
 		$("#funcGrptable").find("tr:gt(0)").remove();
 		$.ajax({
