@@ -150,7 +150,7 @@ function populateFuncTable(){
 		$.ajax({
 		type: 'GET',
 		url: "http://fin-casey.github.io/data/ecosystem_funcgrp.json",
-		async:false,
+		//async:false,
 		success: function (result) {
 			var filter = $.grep(result, function(element,index){
 				return (element.E_CODE == e_code);
