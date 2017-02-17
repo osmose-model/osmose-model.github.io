@@ -1,7 +1,8 @@
 function listSubCountry(){
 	var c_code = document.getElementById("country").value;
 	var fao_code = document.getElementById("faoarea").value;
-
+	
+	$("#funcGrptable").find("tr:gt(0)").remove();
 	$('#subcountry').empty();
 	$('#subcountry').append($('<option>', {
 		text: "Select",
@@ -144,7 +145,7 @@ function populateFuncTable(){
 	var selected = $("input[name=choose]:checked").val();
 	var e_code = document.getElementById("ecosystem").value;
 	
-	if(e_code == '')
+	if(e_code == null)
 	{
 		$("#funcGrptable").find("tr:gt(0)").remove();
 	}
@@ -154,6 +155,7 @@ function populateFuncTable(){
 		$.ajax({
 		type: 'GET',
 		url: "http://fin-casey.github.io/data/ecosystem_funcgrp.json",
+		//url: "data/ecosystem_funcgrp.json",
 		//async:false,
 		success: function (result) {
 			var filter = $.grep(result, function(element,index){
@@ -168,6 +170,7 @@ function populateFuncTable(){
 			var curspstr = '';
 			var cursizestr = '';
 			var curhabstr = '';
+			var curdepthstr = '';
 			
 			var textToInsert = [];
 			var i = 0;
@@ -177,9 +180,12 @@ function populateFuncTable(){
 					
 					var curclass = element.Class;
 					var genspec = element.Genus + ' ' + element.Species;
-					var genspecval = element.Genus + element.Species.slice(0,1).toUpperCase() + element.Species.slice(1);
+					var genspecval = element.Genus + element.Species.slice(0,1).toUpperCase() + element.Species.slice(1) + element.SpecCode +'Fb';
+					console.log(genspecval);
 					var cursize = parseFloat(element.LengthEstimate);
 					var curhabitat = element.Habitat;
+					var curdepthshallow = element.DepthRangeShallow;
+					var curdepthdeep = element.DepthRangeDeep;
 					var prevFName = curName;
 					
 					if (curName != element.FuncGroup) {
@@ -191,13 +197,14 @@ function populateFuncTable(){
 							textToInsert[i++] = curspstr;
 							textToInsert[i++] = cursizestr +'</td>';
 							textToInsert[i++] = curhabstr+'</td>';
-							textToInsert[i++] = '<td id="td'+grpcount+'depth"></td>';
+							textToInsert[i++] = curdepthstr+'</td>';
 							textToInsert[i++] = '</tr>';
 						}
 						curName = element.FuncGroup;
 						grpcount++;
 						spcount = 0;
 						var grpid = grpcount+"fgroupname";
+						var depthid = 'td'+grpcount+'depth';
 						
 						textToInsert[i++] = '<tr id="group'+grpcount+'">';
 						textToInsert[i++] = '<td><div class="center"><input type="checkbox" name="selectedgroup" id="selected'+grpcount+'" value="'+curName+'" onclick="selectFunctionalGroup(this);" checked></div></td>';
@@ -210,7 +217,20 @@ function populateFuncTable(){
 						curspstr += '<input type="checkbox" name="'+grpcount+'species" value="'+genspecval+'" id="'+spcount+'td'+grpcount+'species" checked><i>'+genspec+'</i>';
 						cursizestr = '<td id="td'+grpcount+'size"><input type="checkbox" class="hide" name="'+grpcount+'size" value="'+cursize+'" id="'+spcount+'td'+grpcount+'size">'+cursize;
 						curhabstr = '<td id="td'+grpcount+'habitat"><input type="checkbox" class="hide" name="'+grpcount+'habitat" value="'+curhabitat+'" id="'+spcount+'td'+grpcount+'habitat">'+curhabitat;
-						 
+						
+						if(curdepthshallow == '' || curdepthshallow == 0){
+							if(curdepthdeep == null || curdepthdeep == 0){
+								curdepthstr = '<td id="'+depthid+'"><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth"><br/>';
+							}else{
+								curdepthstr = '<td id="'+depthid+'"><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth">'+curdepthdeep;
+							}
+						}else{
+							if(curdepthdeep == null || curdepthdeep == 0){
+								curdepthstr = '<td id="'+depthid+'"><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth">'+curdepthshallow;
+							}else{
+								curdepthstr = '<td id="'+depthid+'"><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth">'+curdepthshallow+"-" + curdepthdeep;
+							}
+						}
 					}else{		// the next species is included in the previous functional group
 					
 						spcount++;
@@ -220,6 +240,20 @@ function populateFuncTable(){
 						classnamesstr += '<input type="checkbox" class="hide" name="'+grpcount+'class" value="'+curclass+'" id="'+spcount+'td'+grpcount+'class">' + curclass;
 						cursizestr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'size" value="'+cursize+'" id="'+spcount+'td'+grpcount+'size">'+cursize;
 						curhabstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'habitat" value="'+curhabitat+'" id="'+spcount+'td'+grpcount+'habitat">'+curhabitat;
+						
+						if(curdepthshallow == '' || curdepthshallow == 0){
+							if(curdepthdeep == null || curdepthdeep == 0){
+								curdepthstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth">';
+							}else{
+								curdepthstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth">'+curdepthdeep;
+							}
+						}else{
+							if(curdepthdeep == null || curdepthdeep == 0){
+								curdepthstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth">'+curdepthshallow;
+							}else{
+								curdepthstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth">'+curdepthshallow+"-" + curdepthdeep;
+							}
+						}
 					}
 					
 					if(index == len-1){
@@ -525,7 +559,7 @@ function saveSname(snum,e){
 					type: "checkbox",
 					name: snum+"species",
 					id: nextSp+"td"+snum+"species",
-					value: genspec,
+					value: genspec+result+'Fb',
 					checked: "checked"
 				}));
 				
