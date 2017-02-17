@@ -706,6 +706,8 @@ function download(){
         "timeStepsPerYear" : steps,
         "groups" : jsonArr
     };
+	
+	console.log(jsonArr);
 
 	var generateConfig = osmose.generateConfig(config, function(err, url) {
 		downloadEl.text("Click here to download");
