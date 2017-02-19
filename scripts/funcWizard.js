@@ -590,7 +590,7 @@ function saveSname(snum,e){
 			$('input[name=new]').remove();
 			$('input[name=OKbtn]').remove();
 			
-			var result = populateProp(snum, gen, sp, nextSp);
+			var result = populateProp(snum, gen, sp.toLowerCase, nextSp);
 		
 			if(result != false){
 				$('#td'+snum+'species div:first-child').append($('<input>', {
