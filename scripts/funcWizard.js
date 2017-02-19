@@ -156,7 +156,7 @@ function populateFuncTable(){
 		type: 'GET',
 		url: "http://fin-casey.github.io/data/ecosystem_funcgrp.json",
 		//url: "data/ecosystem_funcgrp.json",
-		//async:false,
+		async:false,
 		success: function (result) {
 			var filter = $.grep(result, function(element,index){
 				return (element.E_CODE == e_code);
@@ -193,7 +193,7 @@ function populateFuncTable(){
 						if((curName != '' && curName != element.FuncGroup)){
 							grpcountstr = ""+grpcount+"";
 							curspstr += '</div><div class="overflow-hidden"><img class="imgSize25" src="images/edit.png" onClick="changeSpecies(\''+grpcountstr+'\');"></div></td>';
-							//textToInsert[i++] = classnamesstr + '</td>';
+							textToInsert[i++] = classnamesstr + '</td>';
 							textToInsert[i++] = curspstr;
 							textToInsert[i++] = cursizestr +'</td>';
 							textToInsert[i++] = curhabstr+'</td>';
@@ -217,18 +217,19 @@ function populateFuncTable(){
 						curspstr += '<input type="checkbox" name="'+grpcount+'species" value="'+genspecval+'" id="'+spcount+'td'+grpcount+'species" checked><i>'+genspec+'</i>';
 						cursizestr = '<td id="td'+grpcount+'size"><input type="checkbox" class="hide" name="'+grpcount+'size" value="'+cursize+'" id="'+spcount+'td'+grpcount+'size">'+cursize;
 						curhabstr = '<td id="td'+grpcount+'habitat"><input type="checkbox" class="hide" name="'+grpcount+'habitat" value="'+curhabitat+'" id="'+spcount+'td'+grpcount+'habitat">'+curhabitat;
+						curdepthstr = '<td id="'+depthid+'"><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+depthid+'">';
 						
 						if(curdepthshallow == '' || curdepthshallow == 0){
 							if(curdepthdeep == null || curdepthdeep == 0){
-								curdepthstr = '<td id="'+depthid+'"><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth"><br/>';
+								curdepthstr += '<br/>';
 							}else{
-								curdepthstr = '<td id="'+depthid+'"><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth">'+curdepthdeep;
+								curdepthstr += curdepthdeep;
 							}
 						}else{
 							if(curdepthdeep == null || curdepthdeep == 0){
-								curdepthstr = '<td id="'+depthid+'"><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth">'+curdepthshallow;
+								curdepthstr += curdepthshallow;
 							}else{
-								curdepthstr = '<td id="'+depthid+'"><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth">'+curdepthshallow+"-" + curdepthdeep;
+								curdepthstr += curdepthshallow+ "-" +curdepthdeep;
 							}
 						}
 					}else{		// the next species is included in the previous functional group
@@ -241,17 +242,18 @@ function populateFuncTable(){
 						cursizestr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'size" value="'+cursize+'" id="'+spcount+'td'+grpcount+'size">'+cursize;
 						curhabstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'habitat" value="'+curhabitat+'" id="'+spcount+'td'+grpcount+'habitat">'+curhabitat;
 						
+						curdepthstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+depthid+'">';
+						
 						if(curdepthshallow == '' || curdepthshallow == 0){
 							if(curdepthdeep == null || curdepthdeep == 0){
-								curdepthstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth">';
 							}else{
-								curdepthstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth">'+curdepthdeep;
+								curdepthstr += curdepthdeep;
 							}
 						}else{
 							if(curdepthdeep == null || curdepthdeep == 0){
-								curdepthstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth">'+curdepthshallow;
+								curdepthstr += curdepthshallow;
 							}else{
-								curdepthstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth">'+curdepthshallow+"-" + curdepthdeep;
+								curdepthstr += curdepthshallow+"-" + curdepthdeep;
 							}
 						}
 					}
@@ -259,7 +261,7 @@ function populateFuncTable(){
 					if(index == len-1){
 						classnamesstr += '</td>';
 						curspstr += '</div><div class="overflow-hidden"><img class="imgSize25" src="images/edit.png" onClick="changeSpecies(\''+grpcount+'\');"></div></td>';
-						//textToInsert[i++] = classnamesstr;
+						textToInsert[i++] = classnamesstr;
 						textToInsert[i++] = curspstr;
 						textToInsert[i++] = cursizestr +'</td>';
 						textToInsert[i++] = curhabstr+'</td>';
@@ -374,37 +376,73 @@ function populateProp(ctr, gen, sp, a){
 	var habitatid;
 	var depthid;
 	
-	urlsp = species + "&genus=" + gen + "&species=" + sp;
-			
+	//urlsp = species + "&genus=" + gen + "&species=" + sp;
+	urlsp = "http://fin-casey.github.io/data/ecosystem_funcgrp.json";
+	
 	$.ajax({
 		type: 'GET',
 		url: urlsp,
 		async:false,
 		success: function (result){
-			out = result.data[0];
+			//out = result.data[0];
 			sizeid= 'td'+ctr+'size';
 			habitatid = 'td'+ctr+'habitat';
 			depthid = 'td'+ctr+'depth';
+			classid='td'+ctr+'class';
+			var length = '';
+			var habitat = '';
+			var dshallow = '';
+			var ddeep = '';
+			var specCode = '';
+			var className = '';
 			
-			$('#'+sizeid).append('<br/><input type="checkbox" class="hide" name="'+ctr+'size" value="'+out['Length']+'" id="'+a+sizeid+'">'+out['Length']);
-			$('#'+habitatid).append('<br/><input type="checkbox" class="hide" name="'+ctr+'habitat" value="'+out['DemersPelag']+'" id="'+a+habitatid+'">'+out['DemersPelag']);
-			//$('#'+sizeid).append('<span id="'+a+sizeid+'">'+out['Length']+'</span><br>');
-			//$('#'+habitatid).append('<span id="'+a+habitatid+'">'+out['DemersPelag']+'</span><br>');
-			/*
-			if(out['DepthRangeShallow'] == null || out['DepthRangeShallow'] == 0){
-				if(out['DepthRangeDeep'] == null || out['DepthRangeDeep'] == 0){
-					$('#'+depthid).append('<br>');
+			/*var length = out['Length'];
+			var habitat = out['DemersPelag'];
+			var dshallow = out['DepthRangeShallow'];
+			var ddeep = out['DepthRangeDeep'];
+			var specCode = out['SpecCode'];*/
+			
+			var filter = $.grep(result, function(element,index){
+				return (element.Genus == gen && element.Species == sp);
+			});
+			
+			var len = Object.keys(filter).length;
+			
+			if (len > 0){
+				var element = filter[0];
+				length = element.LengthEstimate;
+				habitat = element.Habitat;
+				dshallow = element.DepthRangeShallow;
+				ddeep = element.DepthRangeDeep;	
+				specCode = element.SpecCode;
+				className = element.Class;
+				
+				$('#'+classid).append('<br/><input type="checkbox" class="hide" name="'+ctr+'class" value="'+className+'" id="'+a+classid+'">'+className);
+				$('#'+sizeid).append('<br/><input type="checkbox" class="hide" name="'+ctr+'size" value="'+length+'" id="'+a+sizeid+'">'+length);
+				$('#'+habitatid).append('<br/><input type="checkbox" class="hide" name="'+ctr+'habitat" value="'+habitat+'" id="'+a+habitatid+'">'+habitat);
+				
+				var depthtext = '<br/><input type="checkbox" class="hide" name="'+ctr+'depth" value="" id="'+a+depthid+'">';
+				
+				if(dshallow == null || dshallow == 0){
+					if(ddeep == null || ddeep == 0){
+						$('#'+depthid).append(depthtext);
+					}else{
+						$('#'+depthid).append(depthtext+ddeep);
+					}
 				}else{
-					$('#'+depthid).append('<span id="'+a+depthid+'">'+out['DepthRangeDeep'] +'</span><br>');
+					if(ddeep == null || ddeep == 0){
+						$('#'+depthid).append(depthtext+dshallow);
+					}else{
+						$('#'+depthid).append(depthtext+dshallow+"-" + ddeep);
+					}
 				}
+				//output = out['SpecCode'];		//return speccode
+				output = specCode;
+				
 			}else{
-				if(out['DepthRangeDeep'] == null || out['DepthRangeDeep'] == 0){
-					$('#'+depthid).append('<span id="'+a+depthid+'">'+out['DepthRangeShallow'] + '</span><br>');
-				}else{
-					$('#'+depthid).append('<span id="'+a+depthid+'">'+out['DepthRangeShallow']+"-" + out['DepthRangeDeep'] +'</span><br>');
-				}
-			}*/
-			output = out['SpecCode'];		//return speccode
+				alert("Can't find the species!"+"\n"+"Please go to fishbase.org or sealifebase.org to find alternative matches.");
+				output = false;
+			}
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown) {
 			alert("Can't find the species!"+"\n"+"Please go to fishbase.org or sealifebase.org to find alternative matches.");
