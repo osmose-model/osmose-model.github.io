@@ -574,23 +574,22 @@ function saveSname(snum,e){
 		var newSname = $('input[name=new]').val();
 		var nextSp = document.getElementsByName(snum+"species").length;
 		
-		newSname = newSname.slice(0,1).toUpperCase() + newSname.slice(1);
-		
 		var genspecA = newSname.split(" ");
 		
 		if(genspecA.length < 2){
 			alert("Invalid species name!");
 			return false;
 		}else{
-			var gen = genspecA[0];
-			var sp = genspecA[1];
+			var gen = genspecA[0].slice(0,1).toUpperCase() + genspecA[0].slice(1);
+			var sp = genspecA[1].toLowerCase();
 			
 			var genspec = gen + sp.slice(0,1).toUpperCase() + sp.slice(1);
+			newSname = gen + " " + sp;
 			
 			$('input[name=new]').remove();
 			$('input[name=OKbtn]').remove();
 			
-			var result = populateProp(snum, gen, sp.toLowerCase(), nextSp);
+			var result = populateProp(snum, gen, sp, nextSp);
 		
 			if(result != false){
 				$('#td'+snum+'species div:first-child').append($('<input>', {
@@ -605,6 +604,8 @@ function saveSname(snum,e){
 					'for': nextSp+"td"+snum+"species",
 					text: newSname
 				}));
+			}else{
+				$('#td'+snum+'species br:last-child').remove();
 			}
 		}
 		var div = $('<div>', {
