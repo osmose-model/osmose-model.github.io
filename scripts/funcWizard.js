@@ -96,7 +96,7 @@ function listFao(hasSubCountry = false){
 
 function selectFunctionalGroup(cb){
 	var whatgroup = $(cb).attr('id');
-	var groupNum = whatgroup.slice(-1);
+	var groupNum = whatgroup.replace('selected','');
 	
 	if(cb.checked){
 		document.getElementById("group"+groupNum).style.backgroundColor = "White";
@@ -181,7 +181,7 @@ function populateFuncTable(){
 					var curclass = element.Class;
 					var genspec = element.Genus + ' ' + element.Species;
 					var genspecval = element.Genus + element.Species.slice(0,1).toUpperCase() + element.Species.slice(1) + element.SpecCode +'Fb';
-					console.log(genspecval);
+					//console.log(genspecval);
 					var cursize = parseFloat(element.LengthEstimate);
 					var curhabitat = element.Habitat;
 					var curdepthshallow = element.DepthRangeShallow;
@@ -216,8 +216,11 @@ function populateFuncTable(){
 						curspstr += '<div class="floatLeft width80 overflow-hidden">';
 						curspstr += '<input type="checkbox" name="'+grpcount+'species" value="'+genspecval+'" id="'+spcount+'td'+grpcount+'species" checked><i>'+genspec+'</i>';
 						cursizestr = '<td id="td'+grpcount+'size"><input type="checkbox" class="hide" name="'+grpcount+'size" value="'+cursize+'" id="'+spcount+'td'+grpcount+'size">'+cursize;
+						//cursizestr = '<td id="td'+grpcount+'size"><span class="margin3top margin3bottom">'+cursize+'</span>';
 						curhabstr = '<td id="td'+grpcount+'habitat"><input type="checkbox" class="hide" name="'+grpcount+'habitat" value="'+curhabitat+'" id="'+spcount+'td'+grpcount+'habitat">'+curhabitat;
+						//curhabstr = '<td id="td'+grpcount+'habitat"><span class="margin3top margin3bottom">'+curhabitat+'</span>';
 						curdepthstr = '<td id="'+depthid+'"><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+depthid+'">';
+						//curdepthstr = '<td id="'+depthid+'"><span class="margin3top margin3bottom">';
 						
 						if(curdepthshallow == '' || curdepthshallow == 0){
 							if(curdepthdeep == null || curdepthdeep == 0){
@@ -232,15 +235,17 @@ function populateFuncTable(){
 								curdepthstr += curdepthshallow+ "-" +curdepthdeep;
 							}
 						}
+						curdepthstr += '</span>';
 					}else{		// the next species is included in the previous functional group
 					
 						spcount++;
-						curspstr += '<br/>';
-						curspstr += '<input type="checkbox" name="'+grpcount+'species" value="'+genspecval+'" id="'+spcount+'td'+grpcount+'species" checked><i>'+genspec+'</i>';
-						classnamesstr += "<br/>";
-						classnamesstr += '<input type="checkbox" class="hide" name="'+grpcount+'class" value="'+curclass+'" id="'+spcount+'td'+grpcount+'class">' + curclass;
+						curspstr += '<br/><input type="checkbox" name="'+grpcount+'species" value="'+genspecval+'" id="'+spcount+'td'+grpcount+'species" checked><i>'+genspec+'</i>';
+						classnamesstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'class" value="'+curclass+'" id="'+spcount+'td'+grpcount+'class">' + curclass;
+						//classnamesstr += '<br/><p>' + curclass + '</p>';
 						cursizestr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'size" value="'+cursize+'" id="'+spcount+'td'+grpcount+'size">'+cursize;
+						//cursizestr += '<br/><span class="margin3top margin3bottom">'+cursize +'</span>';
 						curhabstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'habitat" value="'+curhabitat+'" id="'+spcount+'td'+grpcount+'habitat">'+curhabitat;
+						//curhabstr += '<br/><span class="margin3top margin3bottom">'+curhabitat+'</span>';
 						
 						curdepthstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+depthid+'">';
 						
@@ -692,9 +697,10 @@ function download(){
 	var statusLabel = $('#status');
 	statusLabel.empty();
 	statusLabel.append("Preparing configuration...");
+	statusLabel.css('color', 'black');
 	
 	var downloadEl = $('#downloadLink');
-	downloadEl.text(" ");
+	downloadEl.html("&nbsp;");
 	
 	//time steps per year
 	var steps = $('#stepsInput').val();
@@ -746,15 +752,30 @@ function download(){
         "groups" : jsonArr
     };
 	
-	console.log(jsonArr);
+	//console.log(config);
 
 	var generateConfig = osmose.generateConfig(config, function(err, url) {
-		downloadEl.text("Click here to download");
-		downloadEl.attr("download", "osmose_config.zip");
-		downloadEl.attr("href", url);
 		
-		statusLabel.empty();
-		statusLabel.append("Done preparing configuration");
+		if(url != null){
+			statusLabel.empty();
+			statusLabel.append("Done preparing configuration");
+			
+			downloadEl.text("Click here to download Osmose configuration");
+			downloadEl.attr("download", "osmose_config.zip");
+			downloadEl.attr("href", url);
+			
+		}else{
+			
+			statusLabel.empty();
+			statusLabel.append("Generating configuration is not successful.");
+			statusLabel.css('color', 'red');
+			
+			var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(config));
+			
+			downloadEl.text("Click here to download the configuration JSON");
+			downloadEl.attr("download", "generated_config.json");
+			downloadEl.attr("href", "data:'"+data + "'");
+		}
     });
 	
 	return false;

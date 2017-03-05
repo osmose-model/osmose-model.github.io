@@ -133,6 +133,10 @@ td {
 	width: 80%;
 }
 
+.width70 {
+	width: 70%;
+}
+
 .width5 {
 	width: 5%;
 }
@@ -222,4 +226,12 @@ img.selected{
 
 .relativeposition{
 	position: relative;
+}
+
+.margin3top{
+	margin-top: 3px;
+}
+
+.margin3bottom{
+	margin-bottom: 3px;
 }
