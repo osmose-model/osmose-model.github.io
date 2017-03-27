@@ -159,8 +159,10 @@ function populateFuncTable(){
 		
 		if(c_code == '' || area_code == ''){
 			$("#funcGrptable").find("tr:gt(0)").remove();
+		
 		}else{
 			urldata = "http://fin-casey.github.io/data/countryFAO_funcgrp.json";
+			console.log("pasok");
 		}
 	}
 		
@@ -172,11 +174,12 @@ function populateFuncTable(){
 		async:false,
 		success: function (result) {
 			var filter = $.grep(result, function(element,index){
-				if(selected == "eco")	return (element.E_CODE == e_code);
-				else					return (element.C_CODE == c_code && element.AreaCode == area_code);
+				if(selected == "eco"){	return (element.E_CODE == e_code);	}
+				else{					return (element.C_Code == c_code && element.AreaCode == area_code);}
 			});
 			
 			var len = Object.keys(filter).length;
+			console.log("Length of selected data: " + len);
 			var grpcount = 0;
 			var curName = '';
 			var spcount = 0;
@@ -397,8 +400,12 @@ function populateProp(ctr, gen, sp, a){
 	
 	//urlsp = species + "&genus=" + gen + "&species=" + sp;
 	var selected = $("input[name=choose]:checked").val();
-	if(selected == 'eco')	urlsp = "http://fin-casey.github.io/data/ecosystem_funcgrp.json";
-	else urlsp = "http://fin-casey.github.io/data/countryFAO_funcgrp.json";
+	if(selected == "eco")
+	{
+		urlsp = "http://fin-casey.github.io/data/ecosystem_funcgrp.json";
+	}else{
+		urlsp = "http://fin-casey.github.io/data/countryFAO_funcgrp.json";
+	} 
 	
 	$.ajax({
 		type: 'GET',
@@ -416,12 +423,6 @@ function populateProp(ctr, gen, sp, a){
 			var ddeep = '';
 			var specCode = '';
 			var className = '';
-			
-			/*var length = out['Length'];
-			var habitat = out['DemersPelag'];
-			var dshallow = out['DepthRangeShallow'];
-			var ddeep = out['DepthRangeDeep'];
-			var specCode = out['SpecCode'];*/
 			
 			var filter = $.grep(result, function(element,index){
 				return (element.Genus == gen && element.Species == sp);
