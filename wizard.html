@@ -138,7 +138,7 @@ $(document).ready(function(){
 					<div class="w200 floatLeft">
 						 <b><i>FAO Area</i></b> 
 					</div>
-					<select name="faoarea" id="faoarea" title="Please select FAO area!" disabled>
+					<select name="faoarea" id="faoarea" onchange="populateFuncTable()" title="Please select FAO area!" disabled>
 						<option value="" selected>Select</option>
 					</select>
 					<span class="required"> * Required</span>
@@ -353,7 +353,3 @@ $(document).ready(function(){
 </div>
 </body>
 </html>
-
- These configuration files are compatible with OSMOSE 3 Update 2, which is available for download here: http://www.osmose-model.org/downloads
-When you are ready, press "Download configuration files". You will then get a zip file containing (1) all the OSMOSE configuration files; (2) a file called “functional_groups.csv”, which lists the species making up each of the functional groups of your OSMOSE model; and (3) a README file detailing which parameter estimates were obtained through FishBase/SeaLifeBase and which parameter estimates remain to be entered by you.
-*For technical assistance on OSMOSE, please contact Philippe Verley (philippe.Verley@ird.fr) or post a question on: http://www.osmose-model.org/forum
