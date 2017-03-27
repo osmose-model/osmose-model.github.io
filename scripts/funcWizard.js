@@ -143,23 +143,37 @@ function selectFunctionalGroup(cb){
 
 function populateFuncTable(){
 	var selected = $("input[name=choose]:checked").val();
-	var e_code = document.getElementById("ecosystem").value;
+	var urldata = '';
 	
-	if(e_code == null)
+	if(selected == "eco"){
+		var e_code = document.getElementById("ecosystem").value;
+		if(e_code == ''){
+			$("#funcGrptable").find("tr:gt(0)").remove();
+		}else{
+			urldata = "http://fin-casey.github.io/data/ecosystem_funcgrp.json";
+		}
+	}else if(selected == "cntry")
 	{
-		$("#funcGrptable").find("tr:gt(0)").remove();
-	}
-	else if(selected == "eco" && e_code != ''){
+		var c_code = document.getElementById("country").value;
+		var area_code = document.getElementById("faoarea").value;
 		
+		if(c_code == '' || area_code == ''){
+			$("#funcGrptable").find("tr:gt(0)").remove();
+		}else{
+			urldata = "http://fin-casey.github.io/data/countryFAO_funcgrp.json";
+		}
+	}
+		
+	if(urldata != ''){
 		$("#funcGrptable").find("tr:gt(0)").remove();
 		$.ajax({
 		type: 'GET',
-		url: "http://fin-casey.github.io/data/ecosystem_funcgrp.json",
-		//url: "data/ecosystem_funcgrp.json",
+		url: urldata,
 		async:false,
 		success: function (result) {
 			var filter = $.grep(result, function(element,index){
-				return (element.E_CODE == e_code);
+				if(selected == "eco")	return (element.C_Code == c_code);
+				else					return (element.AreaCode == area_code);
 			});
 			
 			var len = Object.keys(filter).length;
