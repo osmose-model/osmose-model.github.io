@@ -172,8 +172,8 @@ function populateFuncTable(){
 		async:false,
 		success: function (result) {
 			var filter = $.grep(result, function(element,index){
-				if(selected == "eco")	return (element.C_Code == c_code);
-				else					return (element.AreaCode == area_code);
+				if(selected == "eco")	return (element.E_CODE == e_code);
+				else					return (element.C_CODE == c_code && element.AreaCode == area_code);
 			});
 			
 			var len = Object.keys(filter).length;
@@ -396,7 +396,9 @@ function populateProp(ctr, gen, sp, a){
 	var depthid;
 	
 	//urlsp = species + "&genus=" + gen + "&species=" + sp;
-	urlsp = "http://fin-casey.github.io/data/ecosystem_funcgrp.json";
+	var selected = $("input[name=choose]:checked").val();
+	if(selected == 'eco')	urlsp = "http://fin-casey.github.io/data/ecosystem_funcgrp.json";
+	else urlsp = "http://fin-casey.github.io/data/countryFAO_funcgrp.json";
 	
 	$.ajax({
 		type: 'GET',
