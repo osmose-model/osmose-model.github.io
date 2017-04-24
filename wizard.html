@@ -60,28 +60,7 @@ $.ajax({
 
 $(document).ready(function(){
 	$("#stepForm").formToWizard({ submitButton: 'submitBtn' });
-	
-	//for step2: reorganize functional groups
-	/*
-	var groupctr = 1;
-	var ctr;
-	var urlsp;
-	
-	// for populating the size, habitat and depth of species 
-	while(document.getElementsByName(groupctr+"species").length > 0){
-		ctr = groupctr;
-		var group1 = document.getElementsByName(ctr+"species");
-		var len1 = group1.length;
-		
-		for(var a=0; a<len1; a++){
-			var genspec = group1[a].value.match(/[A-Z]?[a-z]+|[0-9]+/g);
-			var gen = genspec[0];
-			var sp = genspec[1];
-			
-			populateProp(ctr, gen, sp, a);
-		}
-		groupctr++;
-	}*/
+
 });
 
 //});

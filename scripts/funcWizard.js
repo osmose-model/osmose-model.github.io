@@ -31,7 +31,7 @@ function listSubCountry(){
 						subArr.push(element.CSub_Code);
 						$('#subcountry').append($('<option>', {
 							text: element.CountrySub,
-							value: element.CSub_Code
+							value: element.CountrySub
 						}));
 					}
 				});
@@ -72,7 +72,7 @@ function listFao(hasSubCountry = false){
 			
 			if(hasSubCountry && c_subcode != ""){
 				var filter = $.grep(result, function(element,index){
-					return (element.CSub_Code == c_subcode && element.AreaCode > 10);
+					return (element.CountrySub == c_subcode && element.AreaCode > 10);
 				});
 			}else{
 				var filter = $.grep(result, function(element,index){
@@ -156,13 +156,15 @@ function populateFuncTable(){
 	{
 		var c_code = document.getElementById("country").value;
 		var area_code = document.getElementById("faoarea").value;
+		var c_subcode = document.getElementById("subcountry").value;
 		
 		if(c_code == '' || area_code == ''){
 			$("#funcGrptable").find("tr:gt(0)").remove();
 		
-		}else{
+		}else if (c_subcode == ''){
 			urldata = "http://fin-casey.github.io/data/countryFAO_funcgrp.json";
-			console.log("pasok");
+		}else{
+			urldata = "http://fin-casey.github.io/data/countrySubFAO_funcgrp.json";
 		}
 	}
 		
@@ -175,11 +177,13 @@ function populateFuncTable(){
 		success: function (result) {
 			var filter = $.grep(result, function(element,index){
 				if(selected == "eco"){	return (element.E_CODE == e_code);	}
-				else{					return (element.C_Code == c_code && element.AreaCode == area_code);}
+				else if(c_subcode == ''){		return (element.C_Code == c_code && element.AreaCode == area_code);}
+				else{	return (element.C_Code == c_code && element.CountrySub == c_subcode && element.AreaCode == area_code);}
 			});
 			
 			var len = Object.keys(filter).length;
 			console.log("Length of selected data: " + len);
+			console.log("data file: " + urldata);
 			var grpcount = 0;
 			var curName = '';
 			var spcount = 0;
@@ -400,12 +404,15 @@ function populateProp(ctr, gen, sp, a){
 	
 	//urlsp = species + "&genus=" + gen + "&species=" + sp;
 	var selected = $("input[name=choose]:checked").val();
+	var c_subcode = $("input[name=subcountry]:checked").val();
 	if(selected == "eco")
 	{
 		urlsp = "http://fin-casey.github.io/data/ecosystem_funcgrp.json";
-	}else{
+	}else if(c_subcode == ''){
 		urlsp = "http://fin-casey.github.io/data/countryFAO_funcgrp.json";
-	} 
+	}else{
+		urlsp = "http://fin-casey.github.io/data/countrySubFAO_funcgrp.json";
+	}
 	
 	$.ajax({
 		type: 'GET',
