@@ -3,7 +3,7 @@ body {
     text-align: left;
 }
  #main { 
-	width:1300px; margin: 0px auto; -moz-border-radius:10px; padding:20px;}
+	width:1110px; margin: 0px auto; -moz-border-radius:10px; padding:20px;}
 
 .pheader{
     background-color: #FFF;
@@ -156,10 +156,6 @@ td {
 
 .hide{
 	visibility: hidden;
-}
-
-.hide-collapse{
-	display: none;
 }
 
 .overflow-hidden{
