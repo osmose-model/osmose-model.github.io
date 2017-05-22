@@ -34,24 +34,15 @@ $.ajax({
 
 $.ajax({
 	type: 'GET',
-	url: "https://fishbase.ropensci.org/countref?limit=500&fields=C_Code,Note",
+	url: "http://fin-casey.github.io/country.json",
 	success: function (result) {
 		
-		var byCountry = result.data.slice(0);
-		byCountry.sort(function(a,b){
-			var x = a.Note.toLowerCase();
-			var y = b.Note.toLowerCase();
-			return x < y ? -1 : x > y ? 1 : 0;
-		});
-		
-		$.each(byCountry, function(index, element){
-			
+		$.each(result, function(index, element){
 			$('#country').append($('<option>', {
-				text: element.Note,
+				text: element.Country,
 				value: "" + element.C_Code
 			}));
 		});
-		
 	},
 	error: function(XMLHttpRequest, textStatus, errorThrown) {
 		alert(textStatus);
@@ -125,29 +116,6 @@ $(document).ready(function(){
 			</div>
 		</div>
 		</fieldset>
-		<!--<fieldset>
-		<legend>Step 2: Indicate how functional groups should be defined</legend>
-		<div id="container">
-		<p class="justify13">Please choose one of the following options:</p>
-		
-			<div class="padTop10">
-				<div class="floatLeft">
-					 <input type="radio" onChange="changeNext(1,2); changePrev(4,2)" name="fgroup" value="define" checked> </input>
-				</div>
-				<div class="label">
-					Define functional groups for me
-				</div> 
-			</div>
-			<div class="padTop10">
-				<div class="floatLeft">
-					<input type="radio" onChange="changeNext(1,3); changePrev(4,3)" name="fgroup" value="undefine"></input>
-				</div>
-				<div class="labelDiv label">
-					Let me define functional groups
-				</div>
-			</div>
-		</div>
-		</fieldset>-->
 		<fieldset>
 		<legend>Step 2: Reorganize functional groups</legend>
 		<div id="container">
@@ -219,13 +187,13 @@ $(document).ready(function(){
 		
 		<table class="padTop10 collapse" border="1" id="funcGrptable">
 			<th class="width5">Select/ deselect</th>
-			<th class="width10">Functional Group</th>
-			<th class="width7">Focal Functional Group</th>
+			<th class="width13">Functional Group</th>
+			<th class="width5">Focal Functional Group</th>
 			<th class="width7">Background Functional Group</th>
 			<th class="width13">Class</th>
 			<th>Species</th>
 			<th class="width7">Size Category</th>
-			<th class="width15">Habitat</th>
+			<th class="width13">Habitat</th>
 			<th class="width10">Depth</th>
 		</table>
 		<div class="padTop10"> 
