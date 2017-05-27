@@ -1,3 +1,8 @@
+/****** Global variable ********/
+var MAX_Sp_perFuncGroup = 20;
+
+/****** End of Global variable ******/
+
 function listSubCountry(){
 	var c_code = document.getElementById("country").value;
 	var fao_code = document.getElementById("faoarea").value;
@@ -166,9 +171,7 @@ function populateFuncTable(){
 		
 		}else if (c_subcode == ''){
 			urldata = "http://fin-casey.github.io/data/countryFAO_funcgrp.json";
-			urldata2 = "http://fin-casey.github.io/data/countryFAO_funcgrp2.json";
 			//urldata = "http://localhost/Osmose/data/countryFAO_funcgrp.json";
-			//urldata2 = "http://localhost/Osmose/data/countryFAO_funcgrp2.json";
 		}else{
 			urldata = "http://fin-casey.github.io/data/countrySubFAO_funcgrp.json";
 			//urldata = "http://localhost/Osmose/data/countrySubFAO_funcgrp.json";
@@ -187,19 +190,8 @@ function populateFuncTable(){
 				success: function (result) {
 					resultData = result;
 				}
-			}),
-			$.ajax({
-				type: 'GET',
-				url: urldata2,
-				async:false,
-				success: function (result) {
-					resultData2 = result;
-				}
 			})
 		).then(function() {
-			if(resultData && resultData2){
-				resultData = resultData.concat(resultData2);
-			}
 			if(resultData){
 				var filter = $.grep(resultData, function(element,index){
 					if(selected == "eco"){	return (element.E_CODE == e_code);	}
@@ -239,11 +231,11 @@ function populateFuncTable(){
 						if(element.BackgroundGroup == '1' || element.BackgroundGroup == 1){
 							bgroundselected = "checked";
 							focalselected = "";
-						} 
+						}
 						
 						if (curName != element.FuncGroup) {
 							
-							if((curName != '' && curName != element.FuncGroup)){
+							if(curName != ''){
 								grpcountstr = ""+grpcount+"";
 								classnamesstr += '</div><div class="overflow-hidden"><img class="imgSize25" src="images/edit.png" onClick="changeClass(\''+grpcount+'\');"></div></td>';
 								curspstr += '</div><div class="overflow-hidden"><img class="imgSize25" src="images/edit.png" onClick="changeSpecies(\''+grpcountstr+'\');"></div></td>';
@@ -289,26 +281,29 @@ function populateFuncTable(){
 							}
 							curdepthstr += '</span>';
 						}else{		// the next species is included in the previous functional group
-						
+								
 							spcount++;
 							
-							curspstr += '<br/><input type="checkbox" name="'+grpcount+'species" value="'+genspecval+'" id="'+spcount+'td'+grpcount+'species" checked><i>'+genspec+'</i>';
-							classnamesstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'class" value="'+curclass+'" id="'+spcount+'td'+grpcount+'class">' + curclass;
-							cursizestr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'size" value="'+cursize+'" id="'+spcount+'td'+grpcount+'size">'+cursize;
-							curhabstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'habitat" value="'+curhabitat+'" id="'+spcount+'td'+grpcount+'habitat">'+curhabitat;
-							
-							curdepthstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+depthid+'">';
-							
-							if(curdepthshallow == '' || curdepthshallow == 0){
-								if(curdepthdeep == null || curdepthdeep == 0){
+								if(spcount < MAX_Sp_perFuncGroup){
+															
+								curspstr += '<br/><input type="checkbox" name="'+grpcount+'species" value="'+genspecval+'" id="'+spcount+'td'+grpcount+'species" checked><i>'+genspec+'</i>';
+								classnamesstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'class" value="'+curclass+'" id="'+spcount+'td'+grpcount+'class">' + curclass;
+								cursizestr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'size" value="'+cursize+'" id="'+spcount+'td'+grpcount+'size">'+cursize;
+								curhabstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'habitat" value="'+curhabitat+'" id="'+spcount+'td'+grpcount+'habitat">'+curhabitat;
+								
+								curdepthstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+depthid+'">';
+								
+								if(curdepthshallow == '' || curdepthshallow == 0){
+									if(curdepthdeep == null || curdepthdeep == 0){
+									}else{
+										curdepthstr += curdepthdeep;
+									}
 								}else{
-									curdepthstr += curdepthdeep;
-								}
-							}else{
-								if(curdepthdeep == null || curdepthdeep == 0){
-									curdepthstr += curdepthshallow;
-								}else{
-									curdepthstr += curdepthshallow+"-" + curdepthdeep;
+									if(curdepthdeep == null || curdepthdeep == 0){
+										curdepthstr += curdepthshallow;
+									}else{
+										curdepthstr += curdepthshallow+"-" + curdepthdeep;
+									}
 								}
 							}
 						}
@@ -424,6 +419,7 @@ function populateProp(ctr, gen, sp, a, classname){
 	var habitatid;
 	var depthid;
 	var urlsp, urlsp2;
+	var output = true;
 	
 	if(gen != '' && gen != null){
 		var category = 'species';
@@ -439,147 +435,147 @@ function populateProp(ctr, gen, sp, a, classname){
 	$('#td'+ctr+category+' br:last-child').remove();
 	
 	urlsp = "http://fin-casey.github.io/data/ecosystem_funcgrp.json";
-	urlsp2 = "http://fin-casey.github.io/data/countryFAO_funcgrp2.json";
 	urlsp3 = "http://fin-casey.github.io/data/countryFAO_funcgrp.json";
 	//urlsp = "http://localhost/Osmose/data/ecosystem_funcgrp.json";
-	//urlsp2 = "http://localhost/Osmose/data/countryFAO_funcgrp2.json";
 	//urlsp3 = "http://localhost/Osmose/data/countryFAO_funcgrp.json";
-	/*}else{ 
-		//if(c_subcode == ''){
-		//urlsp = "http://fin-casey.github.io/data/countryFAO_funcgrp.json";
-		urlsp = "http://localhost/Osmose/data/countryFAO_funcgrp.json";
-		urlsp2 = "http://localhost/Osmose/data/countryFAO_funcgrp2.json";
-	/*}else{
-		//urlsp = "http://fin-casey.github.io/data/countrySubFAO_funcgrp.json";
-		urlsp = "/Osmose/data/countrySubFAO_funcgrp.json";
-		*/
-	//}
 	
-	var resultData, resultData2, resultData3;
-	$.when(
-		$.ajax({
-			type: 'GET',
-			url: urlsp,
-			async:false,
-			success: function (result) {
-				resultData = result;
+	//get the maximum allowable number of species to add in the functional group
+	var nextSp = document.getElementsByName(ctr+"species").length;
+	var maxSpToAdd = MAX_Sp_perFuncGroup - parseInt(nextSp);
+	
+	if(maxSpToAdd <= 0){
+		alert("Can't add species!"+"\n"+"The maximum number of species per functional group has been reached.");
+		output = false;
+	}else{
+	
+		var resultData, resultData3;
+		$.when(
+			$.ajax({
+				type: 'GET',
+				url: urlsp,
+				async:false,
+				success: function (result) {
+					resultData = result;
+				}
+			}),
+			$.ajax({
+				type: 'GET',
+				url: urlsp3,
+				async:false,
+				success: function (result) {
+					resultData3 = result;
+				}
+			})
+		).then(function() {
+			if(resultData3){
+				resultData = resultData.concat(resultData3);
 			}
-		}),
-		$.ajax({
-			type: 'GET',
-			url: urlsp2,
-			async:false,
-			success: function (result) {
-				resultData2 = result;
-			}
-		}),
-		$.ajax({
-			type: 'GET',
-			url: urlsp3,
-			async:false,
-			success: function (result) {
-				resultData3 = result;
-			}
-		})
-	).then(function() {
-		if(resultData2){
-			resultData = resultData.concat(resultData2);
-		}
-		if(resultData3){
-			resultData = resultData.concat(resultData3);
-		}
-		if(resultData){
-			sizeid= 'td'+ctr+'size';
-			habitatid = 'td'+ctr+'habitat';
-			depthid = 'td'+ctr+'depth';
-			classid='td'+ctr+'class';
-			var length = '';
-			var habitat = '';
-			var dshallow = '';
-			var ddeep = '';
-			var specCode = '';
-			var classN = '';
-			var source = '';
-			var genus = '';
-			var species = '';
-			
-			if(gen != '' && gen != null){
-				var filter = $.grep(resultData, function(element,index){
-					return (element.Genus == gen && element.Species == sp);
-				});
-				var getCount = 1;
+			if(resultData){
+				sizeid= 'td'+ctr+'size';
+				habitatid = 'td'+ctr+'habitat';
+				depthid = 'td'+ctr+'depth';
+				classid='td'+ctr+'class';
+				var length = '';
+				var habitat = '';
+				var dshallow = '';
+				var ddeep = '';
+				var specCode = '';
+				var classN = '';
+				var source = '';
+				var genus = '';
+				var species = '';
 				
-			}else{ //get species by class name
+				if(gen != '' && gen != null){
+					var filter = $.grep(resultData, function(element,index){
+						return (element.Genus == gen && element.Species == sp);
+					});
+					var getCount = 1;
+					
+				}else{ //get species by class name
+					
+					var filter = $.grep(resultData, function(element,index){
+						return (element.Class == classname);
+					});
+					filter.sort(function(a,b){
+						var x = a.DataRichness;
+						var y = b.DataRichness;
+						return y-x;
+					});
+					
+					//get the maximum allowable number of species to add in the functional group
+					var getCount = maxSpToAdd;		
+				}
 				
-				var filter = $.grep(resultData, function(element,index){
-					return (element.Class == classname);
-				});
-				filter.sort(function(a,b){
-					var x = a.DataRichness;
-					var y = b.DataRichness;
-					return y-x;
-				});
-				var getCount = 100;
-			}
-			
-			var len = Object.keys(filter).length;
-			if (len > 0){
-				for(var i=0; i<getCount && i<len; i++){
-					var element = filter[i];
-					length = element.LengthEstimate;
-					habitat = element.Habitat;
-					dshallow = element.DepthRangeShallow;
-					ddeep = element.DepthRangeDeep;	
-					specCode = element.SpecCode;
-					className = element.Class;
-					source = element.Source;
-					genus = element.Genus;
-					species = element.Species;
+				var len = Object.keys(filter).length;
+				
+				if (len > 0){
+					var uniqueNames = [];
 					
-					$('#'+classid+ ' div:first-child').append('<br/><input type="checkbox" class="hide" name="'+ctr+'class" value="'+className+'" id="'+a+classid+'">'+className);
-					$('#'+sizeid).append('<br/><input type="checkbox" class="hide" name="'+ctr+'size" value="'+length+'" id="'+a+sizeid+'">'+length);
-					$('#'+habitatid).append('<br/><input type="checkbox" class="hide" name="'+ctr+'habitat" value="'+habitat+'" id="'+a+habitatid+'">'+habitat);
-					
-					var depthtext = '<br/><input type="checkbox" class="hide" name="'+ctr+'depth" value="" id="'+a+depthid+'">';
-					
-					if(dshallow == null || dshallow == 0){
-						if(ddeep == null || ddeep == 0){
-							$('#'+depthid).append(depthtext);
+					for(var i=0, k=0; k<getCount && i<len; i++, k++){
+						var element = filter[i];
+						length = element.LengthEstimate;
+						habitat = element.Habitat;
+						dshallow = element.DepthRangeShallow;
+						ddeep = element.DepthRangeDeep;	
+						specCode = element.SpecCode;
+						className = element.Class;
+						source = element.Source;
+						genus = element.Genus;
+						species = element.Species;
+						var genusspecies = genus + " " + species
+						 
+						if(uniqueNames.indexOf(genusspecies) === -1){
+							uniqueNames.push(genusspecies);        
+						
+							$('#'+classid+ ' div:first-child').append('<br/><input type="checkbox" class="hide" name="'+ctr+'class" value="'+className+'" id="'+a+classid+'">'+className);
+							$('#'+sizeid).append('<br/><input type="checkbox" class="hide" name="'+ctr+'size" value="'+length+'" id="'+a+sizeid+'">'+length);
+							$('#'+habitatid).append('<br/><input type="checkbox" class="hide" name="'+ctr+'habitat" value="'+habitat+'" id="'+a+habitatid+'">'+habitat);
+							
+							var depthtext = '<br/><input type="checkbox" class="hide" name="'+ctr+'depth" value="" id="'+a+depthid+'">';
+							
+							if(dshallow == null || dshallow == 0){
+								if(ddeep == null || ddeep == 0){
+									$('#'+depthid).append(depthtext);
+								}else{
+									$('#'+depthid).append(depthtext+ddeep);
+								}
+							}else{
+								if(ddeep == null || ddeep == 0){
+									$('#'+depthid).append(depthtext+dshallow);
+								}else{
+									$('#'+depthid).append(depthtext+dshallow+"-" + ddeep);
+								}
+							}
+							//output = out['SpecCode'];		//return speccode
+							output = specCode;
+							
+							var genspec = genus + species.slice(0,1).toUpperCase() + species.slice(1);
+							$('#td'+ctr+'species div:first-child').append('<br/>');
+							$('#td'+ctr+'species div:first-child').append($('<input>', {
+								type: "checkbox",
+								name: ctr+"species",
+								id: a+"td"+ctr+"species",
+								value: genspec+specCode+source,
+								checked: "checked"
+							}));
+							
+							$('#td'+ctr+'species div:first-child').append($('<label>', {
+								'for': a+"td"+ctr+"species",
+								text: genus + " " + species
+							}));
+							a++;
 						}else{
-							$('#'+depthid).append(depthtext+ddeep);
-						}
-					}else{
-						if(ddeep == null || ddeep == 0){
-							$('#'+depthid).append(depthtext+dshallow);
-						}else{
-							$('#'+depthid).append(depthtext+dshallow+"-" + ddeep);
+							k--;
 						}
 					}
-					//output = out['SpecCode'];		//return speccode
-					output = specCode;
-					var nextSp = document.getElementsByName(ctr+"species").length;
-					var genspec = genus + species.slice(0,1).toUpperCase() + species.slice(1);
-					$('#td'+ctr+'species div:first-child').append('<br/>');
-					$('#td'+ctr+'species div:first-child').append($('<input>', {
-						type: "checkbox",
-						name: ctr+"species",
-						id: nextSp+"td"+ctr+"species",
-						value: genspec+specCode+source,
-						checked: "checked"
-					}));
+				}else if(len == 0){
+					alert("Can't find the "+category+"!"+"\n"+"Please go to fishbase.org or sealifebase.org to find alternative matches.");
 					
-					$('#td'+ctr+'species div:first-child').append($('<label>', {
-						'for': nextSp+"td"+ctr+"species",
-						text: genus + " " + species
-					}));
+					output=false;
 				}
-			}else{
-				alert("Can't find the "+category+"!"+"\n"+"Please go to fishbase.org or sealifebase.org to find alternative matches.");
-				
-				output=false;
 			}
-		}
-	});
+		});
+	}
 	return output;
 }
 
