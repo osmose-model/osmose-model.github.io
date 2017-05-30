@@ -1,5 +1,7 @@
 /****** Global variable ********/
-var MAX_Sp_perFuncGroup = 20;
+var MAX_Sp_perFuncGroup = 30;
+var NewFunctionalGroup = false;
+var NewFuncGroupStep = 0;
 
 /****** End of Global variable ******/
 
@@ -20,7 +22,7 @@ function listSubCountry(){
 		
 		$.ajax({
 		type: 'GET',
-		url: "http://fin-casey.github.io/data/subcountryFao.json",
+		url: "data/subcountryFao.json",
 		async:false,
 		success: function (result) {
 			
@@ -56,7 +58,7 @@ function listSubCountry(){
 function listFao(hasSubCountry = false){
 	var c_code = document.getElementById("country").value;
 	var c_subcode = document.getElementById("subcountry").value;
-	var file = "http://fin-casey.github.io/data/faoarea.json";
+	var file = "data/faoarea.json";
 	
 	$('#faoarea').empty();
 	$('#faoarea').append($('<option>', {
@@ -65,7 +67,7 @@ function listFao(hasSubCountry = false){
 	}));
 	
 	if(hasSubCountry && c_subcode != ""){
-		file = "http://fin-casey.github.io/data/subcountryFao.json";
+		file = "data/subcountryFao.json";
 	}
 	
 	if(c_code != ""){	
@@ -157,8 +159,8 @@ function populateFuncTable(){
 		if(e_code == ''){
 			$("#funcGrptable").find("tr:gt(0)").remove();
 		}else{
-			urldata = "http://fin-casey.github.io/data/ecosystem_funcgrp.json";
-			//urldata = "http://localhost/Osmose/data/ecosystem_funcgrp.json";
+			//urldata = "http://fin-casey.github.io/data/ecosystem_funcgrp.json";
+			urldata = "data/ecosystem_funcgrp.json";
 		}
 	}else if(selected == "cntry")
 	{
@@ -170,11 +172,11 @@ function populateFuncTable(){
 			$("#funcGrptable").find("tr:gt(0)").remove();
 		
 		}else if (c_subcode == ''){
-			urldata = "http://fin-casey.github.io/data/countryFAO_funcgrp.json";
-			//urldata = "http://localhost/Osmose/data/countryFAO_funcgrp.json";
+			//urldata = "http://fin-casey.github.io/data/countryFAO_funcgrp.json";
+			urldata = "data/countryFAO_funcgrp.json";
 		}else{
-			urldata = "http://fin-casey.github.io/data/countrySubFAO_funcgrp.json";
-			//urldata = "http://localhost/Osmose/data/countrySubFAO_funcgrp.json";
+			//urldata = "http://fin-casey.github.io/data/countrySubFAO_funcgrp.json";
+			urldata = "data/countrySubFAO_funcgrp.json";
 		}
 	}
 		
@@ -420,6 +422,7 @@ function populateProp(ctr, gen, sp, a, classname){
 	var depthid;
 	var urlsp, urlsp2;
 	var output = true;
+	var counterArStart = a;
 	
 	if(gen != '' && gen != null){
 		var category = 'species';
@@ -434,10 +437,10 @@ function populateProp(ctr, gen, sp, a, classname){
 	
 	$('#td'+ctr+category+' br:last-child').remove();
 	
-	urlsp = "http://fin-casey.github.io/data/ecosystem_funcgrp.json";
-	urlsp3 = "http://fin-casey.github.io/data/countryFAO_funcgrp.json";
-	//urlsp = "http://localhost/Osmose/data/ecosystem_funcgrp.json";
-	//urlsp3 = "http://localhost/Osmose/data/countryFAO_funcgrp.json";
+	//urlsp = "http://fin-casey.github.io/data/ecosystem_funcgrp.json";
+	//urlsp3 = "http://fin-casey.github.io/data/countryFAO_funcgrp.json";
+	urlsp = "data/ecosystem_funcgrp.json";
+	urlsp3 = "data/countryFAO_funcgrp.json";
 	
 	//get the maximum allowable number of species to add in the functional group
 	var nextSp = document.getElementsByName(ctr+"species").length;
@@ -526,12 +529,18 @@ function populateProp(ctr, gen, sp, a, classname){
 						 
 						if(uniqueNames.indexOf(genusspecies) === -1){
 							uniqueNames.push(genusspecies);        
-						
-							$('#'+classid+ ' div:first-child').append('<br/><input type="checkbox" class="hide" name="'+ctr+'class" value="'+className+'" id="'+a+classid+'">'+className);
-							$('#'+sizeid).append('<br/><input type="checkbox" class="hide" name="'+ctr+'size" value="'+length+'" id="'+a+sizeid+'">'+length);
-							$('#'+habitatid).append('<br/><input type="checkbox" class="hide" name="'+ctr+'habitat" value="'+habitat+'" id="'+a+habitatid+'">'+habitat);
+							if(a > 0){
+								$('#'+classid+ ' div:first-child').append('<br/>');
+								$('#td'+ctr+'species div:first-child').append('<br/>');
+								$('#'+sizeid).append('<br/>');
+								$('#'+habitatid).append('<br/>');
+								$('#'+depthid).append('<br/>');
+							}
+							$('#'+classid+ ' div:first-child').append('<input type="checkbox" class="hide" name="'+ctr+'class" value="'+className+'" id="'+a+classid+'">'+className);
+							$('#'+sizeid).append('<input type="checkbox" class="hide" name="'+ctr+'size" value="'+length+'" id="'+a+sizeid+'">'+length);
+							$('#'+habitatid).append('<input type="checkbox" class="hide" name="'+ctr+'habitat" value="'+habitat+'" id="'+a+habitatid+'">'+habitat);
 							
-							var depthtext = '<br/><input type="checkbox" class="hide" name="'+ctr+'depth" value="" id="'+a+depthid+'">';
+							var depthtext = '<input type="checkbox" class="hide" name="'+ctr+'depth" value="" id="'+a+depthid+'">';
 							
 							if(dshallow == null || dshallow == 0){
 								if(ddeep == null || ddeep == 0){
@@ -547,10 +556,9 @@ function populateProp(ctr, gen, sp, a, classname){
 								}
 							}
 							//output = out['SpecCode'];		//return speccode
-							output = specCode;
 							
 							var genspec = genus + species.slice(0,1).toUpperCase() + species.slice(1);
-							$('#td'+ctr+'species div:first-child').append('<br/>');
+							
 							$('#td'+ctr+'species div:first-child').append($('<input>', {
 								type: "checkbox",
 								name: ctr+"species",
@@ -568,10 +576,24 @@ function populateProp(ctr, gen, sp, a, classname){
 							k--;
 						}
 					}
+					if(counterArStart == 0 && category == 'class'){
+						var div = $('<div>', {
+						class: "overflow-hidden"
+						});
+							
+						$('#td'+ctr+'species').append(div);
+						div.prepend($('<img>', {
+							class: "imgSize25",
+							src: "images/edit.png",
+							onClick: "changeSpecies('"+ctr+"');"
+						}));
+					}
+					
+					output = false;
 				}else if(len == 0){
 					alert("Can't find the "+category+"!"+"\n"+"Please go to fishbase.org or sealifebase.org to find alternative matches.");
 					
-					output=false;
+					output=true;
 				}
 			}
 		});
@@ -612,21 +634,7 @@ function msgpop(ctr){
 $.fn.slideFadeToggle = function(easing, callback) {
   return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
 };
-/*
-$(document).mouseup(function (e)
-{
-	if($('.selected')[0]){
-		var ctrpopup = $('.selected').attr('id').slice(-1);
-		var container = $('#message'+ctrpopup);
-		
-		if (!container.is(e.target) // if the target of the click isn't the container...
-			&& container.has(e.target).length === 0) // ... nor a descendant of the container
-		{
-			closeSelected();
-		}
-	}
-});
-*/
+
 function changeFname(fname){
 	$('input[name=new]').remove();
 	$('input[name=OKbtn]').remove();
@@ -664,6 +672,10 @@ function saveFname(fn,e,prev){
 	if(e== 13 || e==0){
 		if(e == 13){
 			var newFname = $('input[name=new]').val();
+			if(newFname.match(/[^A-Za-z]/) || newFname == ''){
+				alert("The name of the functional group is not valid!");
+				return true;
+			}
 		}else if(e==0){
 			var newFname = prev;
 		}
@@ -681,8 +693,7 @@ function saveFname(fn,e,prev){
 			class: "imgSize25",
 			src: "images/edit.png",
 			onClick: "changeFname('"+fn+"');"
-		}))
-		return false;
+		}));
 	}
 }
 
@@ -693,7 +704,10 @@ function changeSpecies(spnum){
 	
 	$('#td'+spnum+'species div:nth-child(2)').remove();
 	
-	$('#td'+spnum+'species div:first-child').append("<br>");
+	var nextSp = document.getElementsByName(spnum+"species").length;
+	if(nextSp > 0){
+		$('#td'+spnum+'species div:first-child').append("<br>");
+	}
 	
 	$('#td'+spnum+'species div:first-child').append($('<input>', {
 		type: "text",
@@ -752,17 +766,7 @@ function saveSname(snum,e){
 		if(genspecA.length < 2){
 			alert("Invalid species name!");
 			
-			var div = $('<div>', {
-				class: "overflow-hidden"
-			});
-				
-			$('#td'+snum+'species').append(div);
-			div.prepend($('<img>', {
-				class: "imgSize25",
-				src: "images/edit.png",
-				onClick: "changeSpecies('"+snum+"');"
-			}));
-			return false;
+			return true;
 		}else{
 			var gen = genspecA[0].slice(0,1).toUpperCase() + genspecA[0].slice(1);
 			var sp = genspecA[1].toLowerCase();
@@ -770,11 +774,15 @@ function saveSname(snum,e){
 			var genspec = gen + sp.slice(0,1).toUpperCase() + sp.slice(1);
 			newSname = gen + " " + sp;
 			
+			var result = populateProp(snum, gen, sp, nextSp);
+			
+			if(result){
+				return true;
+			}
+			
 			$('input[name=new]').remove();
 			$('input[name=OKbtn]').remove();
 			$('input[name=Cancelbtn]').remove();
-			
-			var result = populateProp(snum, gen, sp, nextSp);
 			
 			var div = $('<div>', {
 				class: "overflow-hidden"
@@ -799,7 +807,10 @@ function changeClass(spnum){
 	
 	$('#td'+spnum+'class div:nth-child(2)').remove();
 	
-	$('#td'+spnum+'class div:first-child').append("<br>");
+	var nextSp = document.getElementsByName(spnum+"class").length;
+	if(nextSp > 0){
+		$('#td'+spnum+'class div:first-child').append("<br>");
+	}
 	
 	$('#td'+spnum+'class div:first-child').append($('<input>', {
 		type: "text",
@@ -830,11 +841,15 @@ function saveClassname(snum,e){
 		
 		newCname = newCname.slice(0,1).toUpperCase() + newCname.slice(1);
 		
+		var result = populateProp(snum, '', '', nextSp, newCname);
+		
+		if(result){
+			return true;
+		}
+		
 		$('input[name=new]').remove();
 		$('input[name=OKbtn]').remove();
 		$('input[name=Cancelbtn]').remove();
-		
-		var result = populateProp(snum, '', '', nextSp, newCname);
 		
 		var div = $('<div>', {
 			class: "overflow-hidden"
@@ -851,17 +866,23 @@ function saveClassname(snum,e){
 	}		
 }
 
-/*
+
 function addFGroup(){
-	var nextgrp = document.getElementsByName("selectedgroup").length;
+	var currgrp = document.getElementsByName("selectedgroup").length;
+	NewFunctionalGroup = true;
 	
-	$('table').append($('<tr>', {
+	var nextgrp = parseInt(currgrp) + 1;
+	
+	var fnameid = nextgrp+"fgroupname";
+	//console.log(nextgrp);
+	
+	$('#funcGrptable').append($('<tr>', {
 		id: "group"+nextgrp	
 	}));
 	
-	var nextTr = $('#group'+nextgrp);
+	var nextTr = '#group'+nextgrp;
 	
-	$(nextTr).append($('<td>'));
+	$(nextTr).append($('<td>'));		//Select or deselect column
 	
 	var divFname = $('<div>', {
 		class: "center"
@@ -872,14 +893,94 @@ function addFGroup(){
 		type: "checkbox",
 		name: "selectedgroup",
 		id: "selected"+nextgrp,
-		checked: "checked"
+		checked: "checked",
+		onclick: "selectFunctionalGroup(this)"
 	}));
 	
-	$(nextTr).append($('<td>', {
-		id: nextgrp+"fgroupname"
+	$(nextTr).append($('<td>', {		//Functional Group column
+		id: fnameid
 	}));
 
-}*/
+	$(nextTr).append($('<td>'));		//Focal Functional Group column
+	
+	var divFocal = $('<div>', {
+		class: "center"
+	});
+	
+	$(nextTr+' td:last').append(divFocal);
+	divFocal.prepend($('<input>', {
+		type: "radio",
+		name: "sample"+nextgrp,
+		//checked: "checked",
+		value: "fgroup",
+		onClick: "addNext("+nextgrp+")",
+		id: "fgroupradio"+nextgrp
+	}));
+	
+	$(nextTr).append($('<td>'));		//Background Functional Group column
+	
+	var divBackground = $('<div>', {
+		class: "center"
+	});
+	
+	$(nextTr+' td:last').append(divBackground);
+	divBackground.prepend($('<input>', {
+		type: "radio",
+		name: "sample"+nextgrp,
+		value: "bgroup",
+		onClick: "addNext("+nextgrp+")",
+		id: "bgroupradio"+nextgrp
+	}));
+	
+	$(nextTr).append($('<td>', {		//Class column
+		id: "td"+nextgrp+"class"
+	}));
+	
+	var divClass = $('<div>', {
+		class: "floatLeft width80 overflow-hidden"
+	});
+	
+	$("#td"+nextgrp+"class").append(divClass);
+	
+	$(nextTr).append($('<td>', {		//Species column
+		id: "td"+nextgrp+"species"
+	}));
+	
+	var divSpecies = $('<div>', {
+		class: "floatLeft width80 overflow-hidden"
+	});
+	
+	$("#td"+nextgrp+"species").append(divSpecies);
+	
+	$(nextTr).append($('<td>', {		//Size column
+		id: "td"+nextgrp+"size"
+	}));
+	
+	$(nextTr).append($('<td>', {		//habitat column
+		id: "td"+nextgrp+"habitat"
+	}));
+	
+	$(nextTr).append($('<td>', {		//depth column
+		id: "td"+nextgrp+"depth"
+	}));
+
+	changeFname(fnameid);
+}
+
+function addNext(grpCount){
+
+	var focalorbground = $("input[name='sample"+grpCount+"']:checked").val();
+	
+	$('#bgroupradio'+grpCount).attr('onclick',null).unbind('click');
+	$('#fgroupradio'+grpCount).attr('onclick',null).unbind('click');
+	
+	if(focalorbground == "bgroup"){
+		changeClass(grpCount);
+	}else{
+		changeSpecies(grpCount);
+	}
+	
+}
 
 function validateformGroup(){
 	var ctr = 1;
