@@ -101,6 +101,30 @@ function listFao(hasSubCountry = false){
 	}
 }
 
+function unSelectClass(cbClass){
+	if(!cbClass.checked){
+		var className = $(cbClass).attr('value');
+		var cbName = $(cbClass).attr('name');
+		var clnum = cbName.replace('class','');
+		
+		var speciescount = $('input[name="'+clnum+'class"]').length;
+		
+		for(var a=0; a<speciescount; a++)
+		{
+			var classId = a+"td"+clnum+"class";
+			var classCurrent = $('#'+classId).val();
+			
+			if(className == classCurrent)
+			{
+				var speciesId = a+"td"+clnum+"species";
+				
+				$('#'+classId).prop('checked', false);
+				$('#'+speciesId).prop('checked', false);
+			}
+		}
+	}
+}
+
 function selectFunctionalGroup(cb){
 	var whatgroup = $(cb).attr('id');
 	var groupNum = whatgroup.replace('selected','');
@@ -159,7 +183,6 @@ function populateFuncTable(){
 		if(e_code == ''){
 			$("#funcGrptable").find("tr:gt(0)").remove();
 		}else{
-			//urldata = "http://fin-casey.github.io/data/ecosystem_funcgrp.json";
 			urldata = "data/ecosystem_funcgrp.json";
 		}
 	}else if(selected == "cntry")
@@ -172,10 +195,8 @@ function populateFuncTable(){
 			$("#funcGrptable").find("tr:gt(0)").remove();
 		
 		}else if (c_subcode == ''){
-			//urldata = "http://fin-casey.github.io/data/countryFAO_funcgrp.json";
 			urldata = "data/countryFAO_funcgrp.json";
 		}else{
-			//urldata = "http://fin-casey.github.io/data/countrySubFAO_funcgrp.json";
 			urldata = "data/countrySubFAO_funcgrp.json";
 		}
 	}
@@ -260,7 +281,7 @@ function populateFuncTable(){
 							textToInsert[i++] = '<td><div class="center"><input type="radio" name="sample'+grpcount+'" value="fgroup" '+focalselected+'></input></div></td>';
 							textToInsert[i++] = '<td><div class="center"><input type="radio" name="sample'+grpcount+'" value="bgroup" '+bgroundselected+'></input></div></td>';
 							classnamesstr = '<td id="td'+grpcount+'class">';
-							classnamesstr += '<div class="floatLeft width80 overflow-hidden"><input type="checkbox" class="hide" name="'+grpcount+'class" value="'+curclass+'" id="'+spcount+'td'+grpcount+'class">'+curclass;
+							classnamesstr += '<div class="floatLeft width80 overflow-hidden"><input type="checkbox" name="'+grpcount+'class" value="'+curclass+'" id="'+spcount+'td'+grpcount+'class" checked onClick="unSelectClass(this);">'+curclass;
 							curspstr = '<td id="td'+grpcount+'species">';
 							curspstr += '<div class="floatLeft width80 overflow-hidden">';
 							curspstr += '<input type="checkbox" name="'+grpcount+'species" value="'+genspecval+'" id="'+spcount+'td'+grpcount+'species" checked><i>'+genspec+'</i>';
@@ -289,7 +310,7 @@ function populateFuncTable(){
 								if(spcount < MAX_Sp_perFuncGroup){
 															
 								curspstr += '<br/><input type="checkbox" name="'+grpcount+'species" value="'+genspecval+'" id="'+spcount+'td'+grpcount+'species" checked><i>'+genspec+'</i>';
-								classnamesstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'class" value="'+curclass+'" id="'+spcount+'td'+grpcount+'class">' + curclass;
+								classnamesstr += '<br/><input type="checkbox" name="'+grpcount+'class" value="'+curclass+'" id="'+spcount+'td'+grpcount+'class" checked onClick="unSelectClass(this);">' + curclass;
 								cursizestr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'size" value="'+cursize+'" id="'+spcount+'td'+grpcount+'size">'+cursize;
 								curhabstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'habitat" value="'+curhabitat+'" id="'+spcount+'td'+grpcount+'habitat">'+curhabitat;
 								
@@ -435,10 +456,6 @@ function populateProp(ctr, gen, sp, a, classname){
 	var selected = $("input[name=choose]:checked").val();
 	var c_subcode = $("input[name=subcountry]:checked").val();
 	
-	$('#td'+ctr+category+' br:last-child').remove();
-	
-	//urlsp = "http://fin-casey.github.io/data/ecosystem_funcgrp.json";
-	//urlsp3 = "http://fin-casey.github.io/data/countryFAO_funcgrp.json";
 	urlsp = "data/ecosystem_funcgrp.json";
 	urlsp3 = "data/countryFAO_funcgrp.json";
 	
@@ -450,6 +467,10 @@ function populateProp(ctr, gen, sp, a, classname){
 		alert("Can't add species!"+"\n"+"The maximum number of species per functional group has been reached.");
 		output = false;
 	}else{
+		$('input[name=new]').remove();
+		$('input[name=OKbtn]').remove();
+		$('input[name=Cancelbtn]').remove();
+		$('#td'+ctr+category+' br:last-child').remove();
 	
 		var resultData, resultData3;
 		$.when(
@@ -530,13 +551,13 @@ function populateProp(ctr, gen, sp, a, classname){
 						if(uniqueNames.indexOf(genusspecies) === -1){
 							uniqueNames.push(genusspecies);        
 							if(a > 0){
-								$('#'+classid+ ' div:first-child').append('<br/>');
+								$('#'+classid+' div:first-child').append('<br/>');
 								$('#td'+ctr+'species div:first-child').append('<br/>');
 								$('#'+sizeid).append('<br/>');
 								$('#'+habitatid).append('<br/>');
 								$('#'+depthid).append('<br/>');
 							}
-							$('#'+classid+ ' div:first-child').append('<input type="checkbox" class="hide" name="'+ctr+'class" value="'+className+'" id="'+a+classid+'">'+className);
+							$('#'+classid+' div:first-child').append('<input type="checkbox" name="'+ctr+'class" value="'+className+'" id="'+a+classid+'" onClick="unSelectClass(this);" checked>'+className);
 							$('#'+sizeid).append('<input type="checkbox" class="hide" name="'+ctr+'size" value="'+length+'" id="'+a+sizeid+'">'+length);
 							$('#'+habitatid).append('<input type="checkbox" class="hide" name="'+ctr+'habitat" value="'+habitat+'" id="'+a+habitatid+'">'+habitat);
 							
@@ -576,18 +597,18 @@ function populateProp(ctr, gen, sp, a, classname){
 							k--;
 						}
 					}
-					if(counterArStart == 0 && category == 'class'){
-						var div = $('<div>', {
-						class: "overflow-hidden"
-						});
-							
-						$('#td'+ctr+'species').append(div);
-						div.prepend($('<img>', {
-							class: "imgSize25",
-							src: "images/edit.png",
-							onClick: "changeSpecies('"+ctr+"');"
-						}));
-					}
+				//	if(counterArStart == 0 && category == 'class'){
+					var div = $('<div>', {
+					class: "overflow-hidden"
+					});
+						
+					$('#td'+ctr+category).append(div);
+					div.prepend($('<img>', {
+						class: "imgSize25",
+						src: "images/edit.png",
+						onClick: "change"+categoryCap+"('"+ctr+"');"
+					}));
+				//	}
 					
 					output = false;
 				}else if(len == 0){
@@ -735,6 +756,7 @@ function cancelEdit(spnum, content){
 	$('input[name=new]').remove();
 	$('input[name=OKbtn]').remove();
 	$('input[name=Cancelbtn]').remove();
+	$('#td'+spnum+content+' br:last-child').remove();
 	
 	var div = $('<div>', {
 		class: "overflow-hidden"
@@ -779,21 +801,6 @@ function saveSname(snum,e){
 			if(result){
 				return true;
 			}
-			
-			$('input[name=new]').remove();
-			$('input[name=OKbtn]').remove();
-			$('input[name=Cancelbtn]').remove();
-			
-			var div = $('<div>', {
-				class: "overflow-hidden"
-			});
-				
-			$('#td'+snum+'species').append(div);
-			div.prepend($('<img>', {
-				class: "imgSize25",
-				src: "images/edit.png",
-				onClick: "changeSpecies('"+snum+"');"
-			}));
 		}
 		
 		return false;
@@ -846,21 +853,6 @@ function saveClassname(snum,e){
 		if(result){
 			return true;
 		}
-		
-		$('input[name=new]').remove();
-		$('input[name=OKbtn]').remove();
-		$('input[name=Cancelbtn]').remove();
-		
-		var div = $('<div>', {
-			class: "overflow-hidden"
-		});
-			
-		$('#td'+snum+'class').append(div);
-		div.prepend($('<img>', {
-			class: "imgSize25",
-			src: "images/edit.png",
-			onClick: "changeClass('"+snum+"');"
-		}));
 		
 		return false;
 	}		
