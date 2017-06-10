@@ -2,6 +2,12 @@
 var MAX_Sp_perFuncGroup = 30;
 var NewFunctionalGroup = false;
 var NewFuncGroupStep = 0;
+var FuncGroupArr = new Array();
+var defaultFuncGroup = new Array();
+defaultFunchGroup = [
+					{funcname:"zooplankton", funcgroup:"background"},
+					{funcname:"phytoplankton", funcgroup:"background"}
+					];
 
 /****** End of Global variable ******/
 
@@ -146,6 +152,14 @@ function selectFunctionalGroup(cb){
 		$(arrayOfEdit[1]).attr('onclick', 'changeSpecies("'+groupNum+'")');
 		
 	}else{
+		for(var b=0; b<defaultFunchGroup.length; b++){
+			if(defaultFunchGroup[b].funcname == $(cb).attr('value')){
+				alert("The functional group cannot be deselected.");
+				$(cb).prop('checked', true);
+				return true;
+			}
+		}
+		
 		document.getElementById("group"+groupNum).style.backgroundColor = "LightGrey";
 		document.getElementsByName("sample"+groupNum)[0].disabled = true;
 		document.getElementsByName("sample"+groupNum)[1].disabled = true;
@@ -170,6 +184,16 @@ function selectFunctionalGroup(cb){
 		});
 	}
 
+}
+
+function alertCantChange(cbFuncGroup){
+	var whatgroup = $(cbFuncGroup).attr('id');
+	var groupNum = whatgroup.replace('fgroupradio','');
+	var funcName = $("#selected"+groupNum).attr('value');
+	funcName = funcName.slice(0,1).toUpperCase() + funcName.slice(1);
+	
+	alert("The "+funcName+ " group can only be defined as a background functional group.");
+	$("#bgroupradio"+groupNum).prop('checked', true);
 }
 
 function populateFuncTable(){
@@ -270,6 +294,7 @@ function populateFuncTable(){
 								textToInsert[i++] = '</tr>';
 							}
 							curName = element.FuncGroup;
+							FuncGroupArr.push(curName);						
 							grpcount++;
 							spcount = 0;
 							var grpid = grpcount+"fgroupname";
@@ -343,6 +368,108 @@ function populateFuncTable(){
 						}
 					});
 					$('#funcGrptable').append(textToInsert.join(''));
+					/*	check if current functional groups has zooplankton and phytoplankton	*/
+					
+					for(var b=0; b<defaultFunchGroup.length; b++){
+						if(FuncGroupArr.indexOf(defaultFunchGroup[b].funcname) === -1){
+							grpcount++;
+							
+							var fnameid = grpcount+"fgroupname";
+							
+							$('#funcGrptable').append($('<tr>', {
+								id: "group"+grpcount	
+							}));
+							
+							var nextTr = '#group'+grpcount;
+							
+							$(nextTr).append($('<td>'));		//Select or deselect column
+							
+							var divFname = $('<div>', {
+								class: "center"
+							});
+							
+							$(nextTr+' td:last').append(divFname);
+							divFname.prepend($('<input>', {
+								type: "checkbox",
+								name: "selectedgroup",
+								id: "selected"+grpcount,
+								checked: "checked",
+								onclick: "selectFunctionalGroup(this);",
+								value: defaultFunchGroup[b].funcname
+							}));
+							
+							$(nextTr).append($('<td>', {		//Functional Group column
+								id: fnameid
+							}));
+							$(nextTr+' td:last').append($('<span>', {
+								text: defaultFunchGroup[b].funcname
+							}));
+
+							$(nextTr).append($('<td>'));		//Focal Functional Group column
+							
+							var divFocal = $('<div>', {
+								class: "center"
+							});
+							
+							$(nextTr+' td:last').append(divFocal);
+							divFocal.prepend($('<input>', {
+								type: "radio",
+								name: "sample"+grpcount,
+								value: "fgroup",
+								onClick: "alertCantChange(this);",
+								id: "fgroupradio"+grpcount
+							}));
+							
+							$(nextTr).append($('<td>'));		//Background Functional Group column
+							
+							var divBackground = $('<div>', {
+								class: "center"
+							});
+							
+							$(nextTr+' td:last').append(divBackground);
+							divBackground.prepend($('<input>', {
+								type: "radio",
+								name: "sample"+grpcount,
+								value: "bgroup",
+								id: "bgroupradio"+grpcount,
+								checked: "checked"
+							}));
+							
+							$(nextTr).append($('<td>', {		//Class column
+								id: "td"+grpcount+"class"
+							}));
+							
+							var divClass = $('<div>', {
+								class: "floatLeft width80 overflow-hidden"
+							});
+							
+							$("#td"+grpcount+"class").append(divClass);
+							
+							$(nextTr).append($('<td>', {		//Species column
+								id: "td"+grpcount+"species"
+							}));
+							
+							var divSpecies = $('<div>', {
+								class: "floatLeft width80 overflow-hidden"
+							});
+							
+							$("#td"+grpcount+"species").append(divSpecies);
+							
+							$(nextTr).append($('<td>', {		//Size column
+								id: "td"+grpcount+"size"
+							}));
+							
+							$(nextTr).append($('<td>', {		//habitat column
+								id: "td"+grpcount+"habitat"
+							}));
+							
+							$(nextTr).append($('<td>', {		//depth column
+								id: "td"+grpcount+"depth"
+							}));
+						}	
+					}
+					
+					/*				*/
 				}
 			}
 		});
@@ -1028,7 +1155,7 @@ function download(){
 	var groupctr = 1;
 	var ctr;
 	
-	while(document.getElementsByName(groupctr+"species").length > 0){
+	while($('#group'+groupctr).length){
 		if($("#selected"+groupctr).is(':checked')){
 			ctr = groupctr;
 			var group1 = document.getElementsByName(ctr+"species");
@@ -1053,13 +1180,13 @@ function download(){
 				}
 			}
 			
-			if(taxaArr.length > 0){
+			//if(taxaArr.length > 0){
 				jsonArr.push({
 					"name": gname,
 					"type": fgroup,
 					"taxa": taxaArr
 				});
-			}
+			//}
 		}
 		groupctr++;
 	}
@@ -1069,7 +1196,7 @@ function download(){
         "groups" : jsonArr
     };
 	
-	//console.log(config);
+	console.log(config);
 
 	var generateConfig = osmose.generateConfig(config, function(err, url) {
 		
