@@ -154,7 +154,7 @@ function selectFunctionalGroup(cb){
 	}else{
 		for(var b=0; b<defaultFunchGroup.length; b++){
 			if(defaultFunchGroup[b].funcname == $(cb).attr('value')){
-				alert("The functional group cannot be deselected.");
+				alert("The "+defaultFunchGroup[b].funcname+" group cannot be deselected.");
 				$(cb).prop('checked', true);
 				return true;
 			}
