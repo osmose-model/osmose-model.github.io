@@ -4,54 +4,20 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>FB-Osmose Bridge</title>
-<link rel="stylesheet" href="http://fin-casey.github.io/scripts/screen.css" type="text/css">
-<!--<link rel="stylesheet" href="scripts/screen.css" type="text/css">-->
-<script type="text/javascript" src="http://fin-casey.github.io/scripts/jquery.min.js"></script>
-<script type="text/javascript" src="http://fin-casey.github.io/scripts/formToWizard.js"></script>
-<script type="text/javascript" src="http://fin-casey.github.io/scripts/fb-osmose-bridge.js"></script>
-<script src="http://fin-casey.github.io/scripts/funcWizard.js"></script>
-<!--<script src="scripts/funcWizard.js"></script>-->
-<script type="text/javascript" src="http://fin-casey.github.io/scripts/underscore-min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="scripts/screen.css" type="text/css">
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/formToWizard.js"></script>
+<script type="text/javascript" src="scripts/fb-osmose-bridge.js"></script>
+<script type="text/javascript" src="scripts/underscore-min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="scripts/funcWizard.js"></script>
 <script type="text/javascript">
-//$(document).ready(function () {
-$.ajax({
-	type: 'GET',
-	url: "http://fin-casey.github.io/data/ecosystem.json",
-	success: function (result) {
-		
-		$.each(result, function(index, element){
-			$('#ecosystem').append($('<option>', {
-				text: element.EcosystemName,
-				value: element.E_CODE + ""
-			}));
-		});
-		
-	},
-	error: function(XMLHttpRequest, textStatus, errorThrown) {
-		alert(textStatus);
-	}
-});
-
-$.ajax({
-	type: 'GET',
-	url: "http://fin-casey.github.io/data/country.json",
-	success: function (result) {
-		
-		$.each(result, function(index, element){
-			$('#country').append($('<option>', {
-				text: element.Country,
-				value: "" + element.C_Code
-			}));
-		});
-	},
-	error: function(XMLHttpRequest, textStatus, errorThrown) {
-		alert(textStatus);
-	}
-});
 
 $(document).ready(function(){
 	$("#stepForm").formToWizard({ submitButton: 'submitBtn' });
-
+	$( "#ftabletbody" ).sortable();
+	$( "#btabletbody" ).sortable();
 });
 
 //});
@@ -126,7 +92,7 @@ $(document).ready(function(){
 		<p class="justify13"><b>(1)</b> Indicate whether each functional group is a focal functional group or a background functional group, using dedicated radio buttons. <img onClick="msgpop(1)" id="info1" class="imgSize25" src="images/info.png"></p>
 		<div class="messagepop pop" id="message1">
 			<p>Focal functional groups are groups of species/species which are explicitly considered in OSMOSE (i.e., their whole life cycle is modeled), while background functional groups are groups of species/species which are implicitly considered in OSMOSE (fields of biomass for these groups are used to force the OSMOSE model). </p>
-			<p>By default, FishBase/SeaLifeBase defined all functional groups as focal functional groups.</p>
+			<p>By default, FishBase/SeaLifeBase defined all functional groups as focal functional groups, except the phytoplankton and zooplankton groups; the phytoplankton and zooplankton groups can only be defined as background functional groups.</p>
 			<input type="button" class="close" onClick="deselect(1)" name="okbutton" value="OK"></input>
 		</div>
 		
@@ -179,8 +145,6 @@ $(document).ready(function(){
 		<p class="justify13 padTop10">When you are ready, press Proceed to go to the next step.</p>
 		
 		<div class="padTop10 padBottom10 autooverflow relativeposition">
-			<!--<div class="vbottom">Sort by: <input type="radio" name="sortby" value="size" checked>Size</input> <input type="radio" name="sortby" value="habitat">Habitat</input> <input type="radio" name="sortby" value="depth">Depth</input>
-			</div>-->
 		<a href="http://sealifebase.org"  target="_blank"><img class="imgSize50 floatRight" src="images/SeaLifeLogo.gif"></a>
 		<a href="http://fishbase.org" target="_blank"><img class="imgSize50 floatRight" src="images/FBLogo_s.gif"></a>
 		</div>
@@ -198,7 +162,7 @@ $(document).ready(function(){
 		</table>
 		<div class="padTop10"> 
 			<div class="floatleft">
-			<img class="imgSize25" src="images/add.png" onClick="addFGroup();">
+			<img class="imgSize25" id="addImage" src="images/add.png" onClick="addFGroup();">
 			</div>
 		</div>
 		</fieldset>
@@ -206,11 +170,13 @@ $(document).ready(function(){
 			<legend>Step 3: Order Focal functional groups</legend>
 			<div id="container">
 				<p class="justify13">Please order focal functional groups</p>
-				<div class="padTop10">
-					<table class="padTop10 collapse" width="100%" border="1" id="ftable"> 
+				<div class="padTop10" name="focaldiv">
+					<table class="padTop10 collapse" width="100%" border="1" id="ftable">
+					<tbody id="ftabletbody">
 					<th></th>
 					<th>Focal Functional Group</th>
 					<th>Species</th>
+					</tbody>
 					</table>
 				</div>
 			</div>
@@ -219,41 +185,13 @@ $(document).ready(function(){
 			<legend>Step 4: Order Background functional groups</legend>
 			<div id="container">
 				<p class="justify13">Please order background functional groups</p>
-				<div class="padTop10">
-					<table class="padTop10 collapse" width="100%" border="1" id="btable"> 
+				<div class="padTop10" name="backgrounddiv">
+					<table class="padTop10 collapse" width="100%" border="1" id="btable">
+					<tbody id="btabletbody">
 					<th></th>
 					<th>Background Functional Group</th>
 					<th>Species</th>
-					<!--<tr>
-						<td class="centerContents"><select name="pplankton">
-						  <option value="1">1</option>
-						  <option value="2">2</option>
-						  <option value="3">3</option>
-						  <option value="4">4</option>
-						</select></td>
-						<td>Small Phytoplankton</td>
-						<td><i>Mastogophora</i></td>
-					</tr>
-					<tr>
-						<td class="centerContents"><select name="diatoms">
-						  <option value="1">1</option>
-						  <option value="2" selected>2</option>
-						  <option value="3">3</option>
-						  <option value="4">4</option>
-						</select></td>
-						<td>Diatoms</td>
-						<td><i>Chrysophyta</i></td>
-					</tr>
-					<tr>
-						<td class="centerContents"><select name="crabs">
-						  <option value="1">1</option>
-						  <option value="2">2</option>
-						  <option value="3" selected>3</option>
-						  <option value="4">4</option>
-						</select></td>
-						<td>Echinoderms ...</td>
-						<td><i>Murex</i><br/><i>Anthenoides</i></td>
-					</tr>-->
+					</tbody>
 					</table>
 				</div>
 			</div>
