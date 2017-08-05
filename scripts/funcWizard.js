@@ -1164,6 +1164,7 @@ function validateformGroup(){
 	$("#ftable").find("tr:gt(0)").remove();
 	 $("#btable").find("tr:gt(0)").remove();
 	
+	/*
 	while(document.getElementsByName(ctr+"species").length > 0){
 		if($("input[name='sample"+ctr+"']:checked").val() == "fgroup"){
 			fgroupcount++;
@@ -1183,7 +1184,8 @@ function validateformGroup(){
 	}else if(bgroupcount == 0){
 		alert("Please select at least one background functional group.");
 		return false;
-	}
+	}*/
+	return true;
 }
 
 function separateFocalandBackground(fgroupcnt, bgroupcnt){
