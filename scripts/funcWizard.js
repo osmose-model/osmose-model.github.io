@@ -1162,23 +1162,25 @@ function validateformGroup(){
 	var fgroupcount = 0;
 	
 	$("#ftable").find("tr:gt(0)").remove();
-	 $("#btable").find("tr:gt(0)").remove();
+	$("#btable").find("tr:gt(0)").remove();
 	
-	/*
-	while(document.getElementsByName(ctr+"species").length > 0){
-		if($("input[name='sample"+ctr+"']:checked").val() == "fgroup"){
-			fgroupcount++;
+	while($("#selected"+ctr).length > 0){
+		if($("#selected"+ctr).is(':checked')){
+			if($("input[name='sample"+ctr+"']:checked").val() == "fgroup"){
+				fgroupcount++;
+			}
+			if($("input[name='sample"+ctr+"']:checked").val() == "bgroup"){
+				bgroupcount++;
+			}
+			ctr++;
 		}
-		if($("input[name='sample"+ctr+"']:checked").val() == "bgroup"){
-			bgroupcount++;
-		}
-		ctr++;
 	}
 	
 	if(fgroupcount > 0 && bgroupcount > 0){
-		//separateFocalandBackground(fgroupcount, bgroupcount);
+		separateFocalandBackground(fgroupcount, bgroupcount);
 		return true;
-	}else if(fgroupcount == 0){
+	}
+	/*else if(fgroupcount == 0){
 		alert("Please select at least one focal functional group.");
 		return false;
 	}else if(bgroupcount == 0){
@@ -1195,7 +1197,7 @@ function separateFocalandBackground(fgroupcnt, bgroupcnt){
 	var focalhtml = "";
 	var backgroundhtml = "";
 	
-	while(document.getElementsByName(ctr+"species").length > 0){
+	while($("#selected"+ctr).length > 0){
 		if($("#selected"+ctr).is(':checked')){
 			
 			var group1 = document.getElementsByName(ctr+"species");
@@ -1224,9 +1226,9 @@ function separateFocalandBackground(fgroupcnt, bgroupcnt){
 				var dropdownhtml = "<td><select name='focalfuncgrouporder'>";
 				for(var k=1; k<=fgroupcnt; k++){
 					if(k==forder){
-						dropdownhtml += "<option value='"+k+"' selected>"+k+"</option>";
+						dropdownhtml += "<option value='"+k+"_"+ctr+"' selected>"+k+"</option>";
 					}else{
-						dropdownhtml += "<option value='"+k+"'>"+k+"</option>";
+						dropdownhtml += "<option value='"+k+"_"+ctr+"'>"+k+"</option>";
 					}
 				}
 				dropdownhtml += "</select></td>";
@@ -1238,9 +1240,9 @@ function separateFocalandBackground(fgroupcnt, bgroupcnt){
 				var dropdownhtml = "<td><select name='backgroundfuncgrouporder'>";
 				for(var j=1; j<=bgroupcnt; j++){
 					if(j==border){
-						dropdownhtml += "<option value='"+j+"' selected>"+j+"</option>";
+						dropdownhtml += "<option value='"+j+"_"+ctr+"' selected>"+j+"</option>";
 					}else{
-						dropdownhtml += "<option value='"+j+"'>"+j+"</option>";
+						dropdownhtml += "<option value='"+j+"_"+ctr+"'>"+j+"</option>";
 					}
 				}
 				dropdownhtml += "</select></td>";
@@ -1251,9 +1253,8 @@ function separateFocalandBackground(fgroupcnt, bgroupcnt){
 		}
 		ctr++;
 	}
-	//console.log("focalhtml"+focalhtml);
+
 	$('#ftable tr:last').after(focalhtml);
-	//console.log(backgroundhtml);
 	$('#btable tr:last').after(backgroundhtml);
 }
 
@@ -1264,6 +1265,54 @@ function validateStep(){
 		alert("Please enter a valid number.");
 		return false;
 	}else return true;
+}
+
+function getOrderThenSort(elementName){
+	var tempArr = [];
+	var orderEls = document.getElementsByName(elementName);
+	for(var t=0; t<orderEls.length; t++){
+		tempArr.push(orderEls[t].value);
+	}
+	
+	tempArr.sort(function(a,b) {
+		return a.split('_')[0] - b.split('_')[0];
+	});
+	
+	return tempArr;
+}
+
+function convertGroupsIntoJSON(funcgr, orderArray, combineArr){
+	
+	for(var b=0; b<orderArray.length; b++){
+		var ctr = orderArray[b].split('_')[1];	
+		
+		var group1 = document.getElementsByName(ctr+"species");
+		var len1 = group1.length;
+		var gname = $('#'+ctr+'fgroupname span').text();
+	
+		//var fgroup = ($("input[name='sample"+ctr+"']:checked").val() == "fgroup" ? "focal" : "background");
+		var taxaArr = [];
+		
+		for(var a=0; a<len1; a++){
+			if(group1[a].checked){
+				var genspec = group1[a].value.match(/[A-Z]?[a-z]+|[0-9]+/g);
+				var gen = genspec[0];	//genus
+				var sp = genspec[1];	//species
+				var id = genspec[2];	// speccode
+				var link = (genspec[3] == "Fb" ? "http://fishbase.org/summary/"+id : "http://sealifebase.org/summary/"+id); 	//fb or slb
+				var nameofspec = gen+' '+sp.slice(0,1).toLowerCase() + sp.slice(1);
+				
+				taxaArr.push({"name": nameofspec, "url": link});
+			}
+		}
+	
+		combineArr.push({
+			"name": gname,
+			"type": funcgr,
+			"taxa": taxaArr
+		});
+	}
+	return combineArr;
 }
 
 function download(){
@@ -1280,50 +1329,17 @@ function download(){
 	var steps = $('#stepsInput').val();
 	
 	//compile data
-	var jsonArr = [];
+	var jsonCombineData = [];
 	
-	var groupctr = 1;
-	var ctr;
+	var focalArr = getOrderThenSort('focalfuncgrouporder');
+	var bgArr = getOrderThenSort('backgroundfuncgrouporder');
 	
-	while($('#group'+groupctr).length){
-		if($("#selected"+groupctr).is(':checked')){
-			ctr = groupctr;
-			var group1 = document.getElementsByName(ctr+"species");
-			var len1 = group1.length;
-			var gname = $('#'+ctr+'fgroupname span').text();
-		
-			var fgroup = ($("input[name='sample"+ctr+"']:checked").val() == "fgroup" ? "focal" : "background");
-			var temp;
-			
-			var taxaArr = [];
-			
-			for(var a=0; a<len1; a++){
-				if(group1[a].checked){
-					var genspec = group1[a].value.match(/[A-Z]?[a-z]+|[0-9]+/g);
-					var gen = genspec[0];	//genus
-					var sp = genspec[1];	//species
-					var id = genspec[2];	// speccode
-					var link = (genspec[3] == "Fb" ? "http://fishbase.org/summary/"+id : "http://sealifebase.org/summary/"+id); 	//fb or slb
-					var nameofspec = gen+' '+sp.slice(0,1).toLowerCase() + sp.slice(1);
-					
-					taxaArr.push({"name": nameofspec, "url": link});
-				}
-			}
-			
-			//if(taxaArr.length > 0){
-				jsonArr.push({
-					"name": gname,
-					"type": fgroup,
-					"taxa": taxaArr
-				});
-			//}
-		}
-		groupctr++;
-	}
+	jsonCombineData = convertGroupsIntoJSON('focal', focalArr, jsonCombineData);
+	jsonCombineData = convertGroupsIntoJSON('background', bgArr, jsonCombineData);
 	
 	var config = {
         "timeStepsPerYear" : steps,
-        "groups" : jsonArr
+        "groups" : jsonCombineData
     };
 	
 	console.log(config);
