@@ -6,10 +6,17 @@ var FuncGroupArr = new Array();
 var defaultFuncGroup = new Array();
 var classArr = new Array();
 var genSpecArr = new Array();
+var genusArr = new Array();
+var familyArr = new Array();
+var orderArr = new Array();
+var allFuncGroup = new Object();
 defaultFunchGroup = [
 					{funcname:"zooplankton", funcgroup:"background"},
 					{funcname:"phytoplankton", funcgroup:"background"}
 					];
+var url1 = "data/ecosystem_funcgrp.json";
+var url2 = "data/countryFAO_funcgrp.json";
+var url3 = "data/countrySubFAO_funcgrp.json";
 
 /****** End of Global variable ******/
 
@@ -314,7 +321,6 @@ function populateFuncTable(){
 				});
 				
 				var len = Object.keys(filter).length;
-				console.log("Length of selected data: " + len);
 
 				var grpcount = 0;
 				var curName = '';
@@ -332,12 +338,15 @@ function populateFuncTable(){
 					$.each(filter, function(index, element){
 						
 						var curclass = element.Class;
+						var curFamily = element.Family;
+						var curOrder = element.Order;
 						var genspec = element.Genus + ' ' + element.Species;
-						var genspecval = element.Genus + element.Species.slice(0,1).toUpperCase() + element.Species.slice(1) + element.SpecCode +'Fb';
+						var genspecval = element.Genus + element.Species.slice(0,1).toUpperCase() + element.Species.slice(1) + element.SpecCode +'Fb'+curFamily+curOrder;
 						var cursize = (element.LengthEstimate) ? parseFloat(element.LengthEstimate) : '';
 						var curhabitat = element.Habitat;
 						var curdepthshallow = element.DepthRangeShallow;
 						var curdepthdeep = element.DepthRangeDeep;
+						
 						var prevFName = curName;
 						
 						var focalselected ="checked";
@@ -535,8 +544,6 @@ function populateFuncTable(){
 							}));
 						}	
 					}
-					
-					/*				*/
 				}
 			}
 		});
@@ -678,6 +685,8 @@ function populateProp(ctr, gen, sp, a, classname){
 				var source = '';
 				var genus = '';
 				var species = '';
+				var family = '';
+				var order = '';
 				
 				if(gen != '' && gen != null){
 					var filter = $.grep(resultData, function(element,index){
@@ -716,10 +725,13 @@ function populateProp(ctr, gen, sp, a, classname){
 						source = element.Source;
 						genus = element.Genus;
 						species = element.Species;
+						family = element.Family;
+						order = element.Order;
 						var genusspecies = genus + " " + species
-						 
+						
 						if(uniqueNames.indexOf(genusspecies) === -1){
-							uniqueNames.push(genusspecies);        
+							uniqueNames.push(genusspecies);
+								
 							if(a > 0){
 								$('#'+classid+' div:first-child').append('<br/>');
 								$('#td'+ctr+'species div:first-child').append('<br/>');
@@ -754,7 +766,7 @@ function populateProp(ctr, gen, sp, a, classname){
 								type: "checkbox",
 								name: ctr+"species",
 								id: a+"td"+ctr+"species",
-								value: genspec+specCode+source,
+								value: genspec+specCode+source+family+order,
 								checked: "checked"
 							}));
 							
@@ -1281,10 +1293,10 @@ function getOrderThenSort(elementName){
 	return tempArr;
 }
 
-function convertGroupsIntoJSON(funcgr, orderArray, combineArr){
+function convertGroupsIntoJSON(funcgr, sortArray, combineArr){
 	
-	for(var b=0; b<orderArray.length; b++){
-		var ctr = orderArray[b].split('_')[1];	
+	for(var b=0; b<sortArray.length; b++){
+		var ctr = sortArray[b].split('_')[1];	
 		
 		var group1 = document.getElementsByName(ctr+"species");
 		var len1 = group1.length;
@@ -1292,6 +1304,9 @@ function convertGroupsIntoJSON(funcgr, orderArray, combineArr){
 	
 		//var fgroup = ($("input[name='sample"+ctr+"']:checked").val() == "fgroup" ? "focal" : "background");
 		var taxaArr = [];
+		var genusList = [];
+		var famList = [];
+		var ordList = [];
 		
 		for(var a=0; a<len1; a++){
 			if(group1[a].checked){
@@ -1300,12 +1315,96 @@ function convertGroupsIntoJSON(funcgr, orderArray, combineArr){
 				var sp = genspec[1];	//species
 				var id = genspec[2];	// speccode
 				var link = (genspec[3] == "Fb" ? "http://fishbase.org/summary/"+id : "http://sealifebase.org/summary/"+id); 	//fb or slb
+				var fam = genspec[4];
+				var order = genspec[5];
 				var nameofspec = gen+' '+sp.slice(0,1).toLowerCase() + sp.slice(1);
+				
+				if(genusList.indexOf(gen) === -1){
+					genusList.push(gen);
+				}
+				
+				if(famList.indexOf(fam) === -1){
+					famList.push(fam);
+				}
+				
+				if(ordList.indexOf(order) === -1){
+					ordList.push(order);
+				}
 				
 				taxaArr.push({"name": nameofspec, "url": link});
 			}
 		}
-	
+		
+		var resultData1, resultData2, resultData3;
+		$.when(
+			$.ajax({
+				type: 'GET',
+				url: url1,
+				async:false,
+				success: function (result) {
+					resultData1 = result;
+				}
+			}),
+			$.ajax({
+				type: 'GET',
+				url: url2,
+				async:false,
+				success: function (result) {
+					resultData2 = result;
+				}
+			}),
+			$.ajax({
+				type: 'GET',
+				url: url3,
+				async:false,
+				success: function (result) {
+					resultData3 = result;
+				}
+			})
+		).then(function() {
+			var resultData = resultData1.concat(resultData2);
+			resultData = resultData.concat(resultData3);
+
+			if(resultData){
+				
+				var genus = '';
+				var species = '';
+				var family = '';
+				var order = '';
+				
+				var filter = $.grep(resultData, function(element,index){
+					return ($.inArray(element.Genus,genusList) > 0 || $.inArray(element.Family,famList) > 0 || $.inArray(element.Order,ordList) > 0);
+				});
+				
+				filter.sort(function(a,b){
+					var x = a.DataRichness;
+					var y = b.DataRichness;
+					return y-x;
+				});
+				
+				var len = Object.keys(filter).length;
+				
+				if (len > 0){
+					for(var i=0; i<len; i++){
+						var e = filter[i];
+						var gen = e.Genus;
+						var spec = e.Species;
+						var nameofspec = gen+' '+spec.slice(0,1).toLowerCase() + spec.slice(1);
+						
+						var item = $.grep(taxaArr, function(item) {
+							return item.name == nameofspec;
+						});
+						if(!(item.length)){
+							var specCode = e.SpecCode;
+							var link = (e.Source == "Fb" ? "http://fishbase.org/summary/"+specCode : "http://sealifebase.org/summary/"+specCode);
+							
+							taxaArr.push({"name": nameofspec, "url": link, "selectionCriteria": "implicit"});
+						}
+					}
+				}
+			}
+		});
+		
 		combineArr.push({
 			"name": gname,
 			"type": funcgr,
