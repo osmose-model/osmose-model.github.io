@@ -1053,7 +1053,6 @@ function addFGroup(){
 	var nextgrp = parseInt(currgrp) + 1;
 	
 	var fnameid = nextgrp+"fgroupname";
-	//console.log(nextgrp);
 	
 	$('#funcGrptable').append($('<tr>', {
 		id: "group"+nextgrp	
@@ -1306,7 +1305,6 @@ function convertGroupsIntoJSON(funcgr, sortArray, combineArr){
 		for(var a=0; a<len1; a++){
 			if(group1[a].checked){
 				var genspec = group1[a].value.match(/[A-Z]?[a-z]+|[0-9]+/g);
-				console.log(genspec);
 				var gen = genspec[0];	//genus
 				var sp = genspec[1];	//species
 				var id = genspec[2];	// speccode
@@ -1330,10 +1328,6 @@ function convertGroupsIntoJSON(funcgr, sortArray, combineArr){
 				taxaArr[taxaArrlen++] = {"name": nameofspec, "url": link};
 			}
 		}
-		
-		console.log("Genuslist:" + genusList);
-		console.log("FamList" + famList);
-		console.log("OrderList" + ordList);
 		
 		var resultData1, resultData2, resultData3;
 		$.when(
@@ -1436,8 +1430,6 @@ function download(){
         "timeStepsPerYear" : steps,
         "groups" : jsonCombineData
     };
-	
-	console.log(config);
 
 	var generateConfig = osmose.generateConfig(config, function(err, url) {
 		
