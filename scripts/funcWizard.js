@@ -2,15 +2,18 @@
 var MAX_Sp_perFuncGroup = 30;
 var NewFunctionalGroup = false;
 var NewFuncGroupStep = 0;
-var FuncGroupArr = new Array();
-var defaultFuncGroup = new Array();
-var classArr = new Array();
-var genSpecArr = new Array();
-var genusArr = new Array();
-var familyArr = new Array();
-var orderArr = new Array();
-var allFuncGroup = new Object();
-defaultFunchGroup = [
+var FuncGroupArr = [];
+var FuncGroupArrlen = 0;
+var defaultFuncGroup = [];
+var classArr = [];
+var classArrlen = 0;
+var genSpecArr = [];
+var genSpecArrlen = 0;
+var genusArr = [];
+var familyArr = [];
+var orderArr = [];
+var allFuncGroup = {};
+var defaultFunchGroup = [
 					{funcname:"zooplankton", funcgroup:"background"},
 					{funcname:"phytoplankton", funcgroup:"background"}
 					];
@@ -62,7 +65,7 @@ $.ajax({
 	success: function (result) {
 		
 		$.each(result, function(index, element){
-			classArr.push(element.Class);
+			classArr[classArrlen++] = element.Class;
 		});
 	}
 });
@@ -74,7 +77,7 @@ $.ajax({
 		
 		$.each(result, function(index, element){
 			var genSpec = element.Genus + " " + element.Species;
-			genSpecArr.push(genSpec);
+			genSpecArr[genSpecArrlen++] = genSpec;
 		});
 	}
 });
@@ -83,7 +86,6 @@ $.ajax({
 
 function listSubCountry(){
 	var c_code = document.getElementById("country").value;
-	var fao_code = document.getElementById("faoarea").value;
 	
 	$("#funcGrptable").find("tr:gt(0)").remove();
 	$('#subcountry').empty();
@@ -95,6 +97,7 @@ function listSubCountry(){
 	
 	if(c_code!= ""){
 		var subArr = [];		//put the distinct subcountry in the array
+		var subArrlen = 0;
 		
 		$.ajax({
 		type: 'GET',
@@ -111,7 +114,7 @@ function listSubCountry(){
 			if(len > 0){
 				$.each(filter, function(index, element){
 					if ($.inArray(element.CSub_Code,subArr) === -1) {
-						subArr.push(element.CSub_Code);
+						subArr[subArrlen++] = element.CSub_Code;
 						$('#subcountry').append($('<option>', {
 							text: element.CountrySub,
 							value: element.CountrySub
@@ -135,6 +138,7 @@ function listFao(hasSubCountry = false){
 	var c_code = document.getElementById("country").value;
 	var c_subcode = document.getElementById("subcountry").value;
 	var file = "data/faoarea.json";
+	var filter;
 	
 	$('#faoarea').empty();
 	$('#faoarea').append($('<option>', {
@@ -154,11 +158,11 @@ function listFao(hasSubCountry = false){
 		success: function (result) {
 			
 			if(hasSubCountry && c_subcode != ""){
-				var filter = $.grep(result, function(element,index){
+				filter = $.grep(result, function(element,index){
 					return (element.CountrySub == c_subcode && element.AreaCode > 10);
 				});
 			}else{
-				var filter = $.grep(result, function(element,index){
+				filter = $.grep(result, function(element,index){
 					return (element.C_Code == c_code && element.AreaCode > 10);
 				});
 			}
@@ -204,13 +208,15 @@ function unSelectClass(cbClass){
 function selectFunctionalGroup(cb){
 	var whatgroup = $(cb).attr('id');
 	var groupNum = whatgroup.replace('selected','');
+	var spcount = 0;
+	var a = 0;
 	
 	if(cb.checked){
 		document.getElementById("group"+groupNum).style.backgroundColor = "White";
 		document.getElementsByName("sample"+groupNum)[0].disabled = false;
 		document.getElementsByName("sample"+groupNum)[1].disabled = false;
-		var spcount = document.getElementsByName(groupNum+"species").length;
-		for(var a=0; a<spcount; a++){
+		spcount = document.getElementsByName(groupNum+"species").length;
+		for(a=0; a<spcount; a++){
 			document.getElementsByName(groupNum+"species")[a].disabled = false;
 			document.getElementsByName(groupNum+"class")[a].disabled = false;
 		}
@@ -236,8 +242,8 @@ function selectFunctionalGroup(cb){
 		document.getElementsByName("sample"+groupNum)[0].disabled = true;
 		document.getElementsByName("sample"+groupNum)[1].disabled = true;
 	
-		var spcount = document.getElementsByName(groupNum+"species").length;
-		for(var a=0; a<spcount; a++){
+		spcount = document.getElementsByName(groupNum+"species").length;
+		for(a=0; a<spcount; a++){
 			document.getElementsByName(groupNum+"species")[a].disabled = true;
 			document.getElementsByName(groupNum+"species")[a].checked = false;
 			document.getElementsByName(groupNum+"class")[a].disabled = true;
@@ -273,8 +279,6 @@ function alertCantChange(cbFuncGroup){
 function populateFuncTable(){
 	var selected = $("input[name=choose]:checked").val();
 	var urldata = '';
-	var urldata2 = '';
-	var resultArr;
 	
 	if(selected == "eco"){
 		var e_code = document.getElementById("ecosystem").value;
@@ -302,7 +306,7 @@ function populateFuncTable(){
 	if(urldata != ''){
 		$("#funcGrptable").find("tr:gt(0)").remove();
 		
-		var resultData, resultData2;
+		var resultData;
 		$.when(
 			$.ajax({
 				type: 'GET',
@@ -347,8 +351,6 @@ function populateFuncTable(){
 						var curdepthshallow = element.DepthRangeShallow;
 						var curdepthdeep = element.DepthRangeDeep;
 						
-						var prevFName = curName;
-						
 						var focalselected ="checked";
 						var bgroundselected = "";
 						if(element.BackgroundGroup == '1' || element.BackgroundGroup == 1){
@@ -370,7 +372,7 @@ function populateFuncTable(){
 								textToInsert[i++] = '</tr>';
 							}
 							curName = element.FuncGroup;
-							FuncGroupArr.push(curName);						
+							FuncGroupArr[FuncGroupArrlen++] = curName;						
 							grpcount++;
 							spcount = 0;
 							var grpid = grpcount+"fgroupname";
@@ -415,7 +417,7 @@ function populateFuncTable(){
 								cursizestr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'size" value="'+cursize+'" id="'+spcount+'td'+grpcount+'size">'+cursize;
 								curhabstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'habitat" value="'+curhabitat+'" id="'+spcount+'td'+grpcount+'habitat">'+curhabitat;
 								
-								curdepthstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+depthid+'">';
+								curdepthstr += '<br/><input type="checkbox" class="hide" name="'+grpcount+'depth" value="" id="'+spcount+'td'+grpcount+'depth">';
 								
 								if(curdepthshallow == '' || curdepthshallow == 0){
 									if(curdepthdeep == null || curdepthdeep == 0){
@@ -614,27 +616,19 @@ function validateform1(){
 
 function populateProp(ctr, gen, sp, a, classname){
 	
-	var out;
-	var sizeid;
-	var habitatid;
-	var depthid;
-	var urlsp, urlsp2;
+	var sizeid, habitatid, depthid, category, urlsp, urlsp2, categoryCap;
 	var output = true;
-	var counterArStart = a;
 	
 	if(gen != '' && gen != null){
-		var category = 'species';
-		var categoryCap = 'Species';
+		category = 'species';
+		categoryCap = 'Species';
 	}else{
-		var category = 'class';
-		var categoryCap = 'Class';
+		category = 'class';
+		categoryCap = 'Class';
 	}
 	
-	var selected = $("input[name=choose]:checked").val();
-	var c_subcode = $("input[name=subcountry]:checked").val();
-	
 	urlsp = "data/ecosystem_funcgrp.json";
-	urlsp3 = "data/countryFAO_funcgrp.json";
+	urlsp2 = "data/countryFAO_funcgrp.json";
 	
 	//get the maximum allowable number of species to add in the functional group
 	var nextSp = document.getElementsByName(ctr+"species").length;
@@ -649,7 +643,7 @@ function populateProp(ctr, gen, sp, a, classname){
 		$('input[name=Cancelbtn]').remove();
 		$('#td'+ctr+category+' br:last-child').remove();
 	
-		var resultData, resultData3;
+		var resultData, resultData2;
 		$.when(
 			$.ajax({
 				type: 'GET',
@@ -661,15 +655,15 @@ function populateProp(ctr, gen, sp, a, classname){
 			}),
 			$.ajax({
 				type: 'GET',
-				url: urlsp3,
+				url: urlsp2,
 				async:false,
 				success: function (result) {
-					resultData3 = result;
+					resultData2 = result;
 				}
 			})
 		).then(function() {
-			if(resultData3){
-				resultData = resultData.concat(resultData3);
+			if(resultData2){
+				resultData = resultData.concat(resultData2);
 			}
 			if(resultData){
 				sizeid= 'td'+ctr+'size';
@@ -681,22 +675,23 @@ function populateProp(ctr, gen, sp, a, classname){
 				var dshallow = '';
 				var ddeep = '';
 				var specCode = '';
-				var classN = '';
 				var source = '';
 				var genus = '';
 				var species = '';
 				var family = '';
 				var order = '';
+				var filter;
+				var getCount =0;
 				
 				if(gen != '' && gen != null){
-					var filter = $.grep(resultData, function(element,index){
+					filter = $.grep(resultData, function(element,index){
 						return (element.Genus == gen && element.Species == sp);
 					});
-					var getCount = 1;
+					getCount = 1;
 					
 				}else{ //get species by class name
 					
-					var filter = $.grep(resultData, function(element,index){
+					filter = $.grep(resultData, function(element,index){
 						return (element.Class == classname);
 					});
 					filter.sort(function(a,b){
@@ -706,13 +701,14 @@ function populateProp(ctr, gen, sp, a, classname){
 					});
 					
 					//get the maximum allowable number of species to add in the functional group
-					var getCount = maxSpToAdd;		
+					getCount = maxSpToAdd;		
 				}
 				
 				var len = Object.keys(filter).length;
 				
 				if (len > 0){
 					var uniqueNames = [];
+					var uniqueNameslen = 0;
 					
 					for(var i=0, k=0; k<getCount && i<len; i++, k++){
 						var element = filter[i];
@@ -727,10 +723,10 @@ function populateProp(ctr, gen, sp, a, classname){
 						species = element.Species;
 						family = element.Family;
 						order = element.Order;
-						var genusspecies = genus + " " + species
+						var genusspecies = genus + " " + species;
 						
 						if(uniqueNames.indexOf(genusspecies) === -1){
-							uniqueNames.push(genusspecies);
+							uniqueNames[uniqueNameslen++] = genusspecies;
 								
 							if(a > 0){
 								$('#'+classid+' div:first-child').append('<br/>');
@@ -779,8 +775,6 @@ function populateProp(ctr, gen, sp, a, classname){
 							k--;
 						}
 					}
-				//	if(counterArStart == 0 && category == 'class'){
-				//	}
 					
 					output = false;
 				}else if(len == 0){
@@ -874,14 +868,15 @@ function changeFname(fname){
 
 function saveFname(fn,e,prev){
 	if(e== 13 || e==0){
+		var newFname;
 		if(e == 13){
-			var newFname = $('input[name=new]').val();
+			newFname = $('input[name=new]').val();
 			if(newFname.match(/[^A-Za-z]/) || newFname == ''){
 				alert("The name of the functional group is not valid!");
 				return true;
 			}
-		}else if(e==0){
-			var newFname = prev;
+		}else{
+			newFname = prev;
 		}
 		$('#'+fn).empty();
 		$('#'+fn).append($('<span>', {
@@ -952,11 +947,12 @@ function cancelEdit(spnum, content){
 	});
 	
 	$('#td'+spnum+content).append(div);
+	var onClickFunc;
 	
 	if(content=='species'){
-		var onClickFunc = "changeSpecies('"+spnum+"');";
+		onClickFunc = "changeSpecies('"+spnum+"');";
 	}else if(content == 'class'){
-		var onClickFunc = "changeClass('"+spnum+"');";
+		onClickFunc = "changeClass('"+spnum+"');";
 	}
 	
 	$('#td'+spnum+content).append(div);
@@ -979,11 +975,8 @@ function saveSname(snum,e){
 			
 			return true;
 		}else{
-			var gen = genspecA[0].slice(0,1).toUpperCase() + genspecA[0].slice(1);
+			var gen = genspecA[0].slice(0,1).toUpperCase() + genspecA[0].slice(1).toLowerCase();
 			var sp = genspecA[1].toLowerCase();
-			
-			var genspec = gen + sp.slice(0,1).toUpperCase() + sp.slice(1);
-			newSname = gen + " " + sp;
 			
 			var result = populateProp(snum, gen, sp, nextSp);
 			
@@ -1040,7 +1033,7 @@ function saveClassname(snum,e){
 		var newCname = $('input[name=new]').val();
 		var nextSp = document.getElementsByName(snum+"class").length;
 		
-		newCname = newCname.slice(0,1).toUpperCase() + newCname.slice(1);
+		newCname = newCname.slice(0,1).toUpperCase() + newCname.slice(1).toLowerCase();
 		
 		var result = populateProp(snum, '', '', nextSp, newCname);
 		
@@ -1191,14 +1184,13 @@ function validateformGroup(){
 	if(fgroupcount > 0 && bgroupcount > 0){
 		separateFocalandBackground(fgroupcount, bgroupcount);
 		return true;
-	}
-	/*else if(fgroupcount == 0){
+	}else if(fgroupcount == 0){
 		alert("Please select at least one focal functional group.");
 		return false;
 	}else if(bgroupcount == 0){
 		alert("Please select at least one background functional group.");
 		return false;
-	}*/
+	}
 	return true;
 }
 
@@ -1235,32 +1227,30 @@ function separateFocalandBackground(fgroupcnt, bgroupcnt){
 			
 			if($("input[name='sample"+ctr+"']:checked").val() == "fgroup"){
 				
-				var dropdownhtml = "<td><select name='focalfuncgrouporder'>";
+				var dropdownhtmlfocal = "<td><select name='focalfuncgrouporder'>";
 				for(var k=1; k<=fgroupcnt; k++){
 					if(k==forder){
-						dropdownhtml += "<option value='"+k+"_"+ctr+"' selected>"+k+"</option>";
+						dropdownhtmlfocal += "<option value='"+k+"_"+ctr+"' selected>"+k+"</option>";
 					}else{
-						dropdownhtml += "<option value='"+k+"_"+ctr+"'>"+k+"</option>";
+						dropdownhtmlfocal += "<option value='"+k+"_"+ctr+"'>"+k+"</option>";
 					}
 				}
-				dropdownhtml += "</select></td>";
+				dropdownhtmlfocal += "</select></td>";
 				forder++;
-				var tablename = "ftable";
-				focalhtml += "<tr>"+dropdownhtml+funcgrouphtml+specieshtml+"</tr>";
+				focalhtml += "<tr>"+dropdownhtmlfocal+funcgrouphtml+specieshtml+"</tr>";
 				
-			}else if($("input[name='sample"+ctr+"']:checked").val() == "bgroup"){
-				var dropdownhtml = "<td><select name='backgroundfuncgrouporder'>";
+			}else{
+				var dropdownhtmlback = "<td><select name='backgroundfuncgrouporder'>";
 				for(var j=1; j<=bgroupcnt; j++){
 					if(j==border){
-						dropdownhtml += "<option value='"+j+"_"+ctr+"' selected>"+j+"</option>";
+						dropdownhtmlback += "<option value='"+j+"_"+ctr+"' selected>"+j+"</option>";
 					}else{
-						dropdownhtml += "<option value='"+j+"_"+ctr+"'>"+j+"</option>";
+						dropdownhtmlback += "<option value='"+j+"_"+ctr+"'>"+j+"</option>";
 					}
 				}
-				dropdownhtml += "</select></td>";
+				dropdownhtmlback += "</select></td>";
 				border++;
-				var tablename = "btable";
-				backgroundhtml += "<tr>"+dropdownhtml+funcgrouphtml+specieshtml+"</tr>";
+				backgroundhtml += "<tr>"+dropdownhtmlback+funcgrouphtml+specieshtml+"</tr>";
 			}
 		}
 		ctr++;
@@ -1283,7 +1273,7 @@ function getOrderThenSort(elementName){
 	var tempArr = [];
 	var orderEls = document.getElementsByName(elementName);
 	for(var t=0; t<orderEls.length; t++){
-		tempArr.push(orderEls[t].value);
+		tempArr[t] = orderEls[t].value;
 	}
 	
 	tempArr.sort(function(a,b) {
@@ -1308,9 +1298,15 @@ function convertGroupsIntoJSON(funcgr, sortArray, combineArr){
 		var famList = [];
 		var ordList = [];
 		
+		var taxaArrlen = 0;
+		var genusListlen = 0;
+		var famListlen = 0;
+		var ordListlen = 0;
+		
 		for(var a=0; a<len1; a++){
 			if(group1[a].checked){
 				var genspec = group1[a].value.match(/[A-Z]?[a-z]+|[0-9]+/g);
+				console.log(genspec);
 				var gen = genspec[0];	//genus
 				var sp = genspec[1];	//species
 				var id = genspec[2];	// speccode
@@ -1320,20 +1316,24 @@ function convertGroupsIntoJSON(funcgr, sortArray, combineArr){
 				var nameofspec = gen+' '+sp.slice(0,1).toLowerCase() + sp.slice(1);
 				
 				if(genusList.indexOf(gen) === -1){
-					genusList.push(gen);
+					genusList[genusListlen++] = gen;
 				}
 				
 				if(famList.indexOf(fam) === -1){
-					famList.push(fam);
+					famList[famListlen++] = fam;
 				}
 				
 				if(ordList.indexOf(order) === -1){
-					ordList.push(order);
+					ordList[ordListlen++] = order;
 				}
 				
-				taxaArr.push({"name": nameofspec, "url": link});
+				taxaArr[taxaArrlen++] = {"name": nameofspec, "url": link};
 			}
 		}
+		
+		console.log("Genuslist:" + genusList);
+		console.log("FamList" + famList);
+		console.log("OrderList" + ordList);
 		
 		var resultData1, resultData2, resultData3;
 		$.when(
@@ -1341,24 +1341,24 @@ function convertGroupsIntoJSON(funcgr, sortArray, combineArr){
 				type: 'GET',
 				url: url1,
 				async:false,
-				success: function (result) {
-					resultData1 = result;
+				success: function (result1) {
+					resultData1 = result1;
 				}
 			}),
 			$.ajax({
 				type: 'GET',
 				url: url2,
 				async:false,
-				success: function (result) {
-					resultData2 = result;
+				success: function (result2) {
+					resultData2 = result2;
 				}
 			}),
 			$.ajax({
 				type: 'GET',
 				url: url3,
 				async:false,
-				success: function (result) {
-					resultData3 = result;
+				success: function (result3) {
+					resultData3 = result3;
 				}
 			})
 		).then(function() {
@@ -1367,13 +1367,8 @@ function convertGroupsIntoJSON(funcgr, sortArray, combineArr){
 
 			if(resultData){
 				
-				var genus = '';
-				var species = '';
-				var family = '';
-				var order = '';
-				
 				var filter = $.grep(resultData, function(element,index){
-					return ($.inArray(element.Genus,genusList) > 0 || $.inArray(element.Family,famList) > 0 || $.inArray(element.Order,ordList) > 0);
+					return (genusList.indexOf(element.Genus) > 0 || famList.indexOf(element.Family) > 0 || ordList.indexOf(element.Order) > 0);
 				});
 				
 				filter.sort(function(a,b){
@@ -1398,18 +1393,19 @@ function convertGroupsIntoJSON(funcgr, sortArray, combineArr){
 							var specCode = e.SpecCode;
 							var link = (e.Source == "Fb" ? "http://fishbase.org/summary/"+specCode : "http://sealifebase.org/summary/"+specCode);
 							
-							taxaArr.push({"name": nameofspec, "url": link, "selectionCriteria": "implicit"});
+							taxaArr[taxaArrlen++] = {"name": nameofspec, "url": link, "selectionCriteria": "implicit"};
 						}
 					}
 				}
 			}
 		});
 		
-		combineArr.push({
+		combineArrlen = combineArr.length;
+		combineArr[combineArrlen++] = {
 			"name": gname,
 			"type": funcgr,
 			"taxa": taxaArr
-		});
+		};
 	}
 	return combineArr;
 }
