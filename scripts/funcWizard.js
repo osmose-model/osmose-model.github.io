@@ -102,7 +102,6 @@ function listSubCountry(){
 		$.ajax({
 		type: 'GET',
 		url: "data/subcountryFao.json",
-		async:false,
 		success: function (result) {
 			
 			var filter = $.grep(result, function(element,index){
@@ -154,7 +153,6 @@ function listFao(hasSubCountry = false){
 		$.ajax({
 		type: 'GET',
 		url: file,
-		async:false,
 		success: function (result) {
 			
 			if(hasSubCountry && c_subcode != ""){
@@ -311,7 +309,6 @@ function populateFuncTable(){
 			$.ajax({
 				type: 'GET',
 				url: urldata,
-				async:false,
 				success: function (result) {
 					resultData = result;
 				}
@@ -648,7 +645,6 @@ function populateProp(ctr, gen, sp, a, classname){
 			$.ajax({
 				type: 'GET',
 				url: urlsp,
-				async:false,
 				success: function (result) {
 					resultData = result;
 				}
@@ -656,7 +652,6 @@ function populateProp(ctr, gen, sp, a, classname){
 			$.ajax({
 				type: 'GET',
 				url: urlsp2,
-				async:false,
 				success: function (result) {
 					resultData2 = result;
 				}
@@ -1334,7 +1329,6 @@ function convertGroupsIntoJSON(funcgr, sortArray, combineArr){
 			$.ajax({
 				type: 'GET',
 				url: url1,
-				async:false,
 				success: function (result1) {
 					resultData1 = result1;
 				}
@@ -1342,7 +1336,6 @@ function convertGroupsIntoJSON(funcgr, sortArray, combineArr){
 			$.ajax({
 				type: 'GET',
 				url: url2,
-				async:false,
 				success: function (result2) {
 					resultData2 = result2;
 				}
@@ -1350,7 +1343,6 @@ function convertGroupsIntoJSON(funcgr, sortArray, combineArr){
 			$.ajax({
 				type: 'GET',
 				url: url3,
-				async:false,
 				success: function (result3) {
 					resultData3 = result3;
 				}
