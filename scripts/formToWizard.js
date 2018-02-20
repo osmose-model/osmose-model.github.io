@@ -31,6 +31,21 @@
                 createPrevButton(i);
                 createNextButton(i);
             }
+		
+	    $(this).prepend("<p id='step" + i + "commands'></p>");	
+            var name = $(this).find("legend").html();
+		
+            if (i == 0) {
+				
+            }
+            else if (i == count - 1) {
+
+            }
+            else {
+                $("#step" + i).hide();
+                createPrevButton(i);
+                createNextButton(i);
+            }
         });
 
         function createPrevButton(i) {
