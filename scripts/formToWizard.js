@@ -41,6 +41,9 @@
             else if (i == count - 1) {
 
             }
+	    else if (i == count - 2) {
+
+            }
             else {
                 $("#step" + i).hide();
                 createPrevButton(i);
