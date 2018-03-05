@@ -91,7 +91,7 @@ $(document).ready(function(){
 		
 		<p class="justify13"><b>(1)</b> Indicate whether each functional group is a focal functional group or a biotic resources, using dedicated radio buttons. <img onClick="msgpop(1)" id="info1" class="imgSize25" src="images/info.png"></p>
 		<div class="messagepop pop" id="message1">
-			<p>Focal functional groups are groups of species/species which are explicitly considered in OSMOSE (i.e., their whole life cycle is modeled), while background functional groups are groups of species/species which are implicitly considered in OSMOSE (fields of biomass for these groups are used to force the OSMOSE model). </p>
+			<p>Focal functional groups are groups of species/species which are explicitly considered in OSMOSE (i.e., their whole life cycle is modeled), while biotic resources are groups of species/species which are implicitly considered in OSMOSE (fields of biomass for these groups are used to force the OSMOSE model). </p>
 			<p>By default, FishBase/SeaLifeBase defined all functional groups as focal functional groups, except the phytoplankton and zooplankton groups; the phytoplankton and zooplankton groups can only be defined as background functional groups.</p>
 			<input type="button" class="close" onClick="deselect(1)" name="okbutton" value="OK"></input>
 		</div>
@@ -110,7 +110,7 @@ $(document).ready(function(){
 			<p>(i) Deselect a species from the column "Species" of its original functional group using the dedicated radio button.</p> 
 			<p>(ii) Then: In the column "Species" of the functional group in which you wish to reallocate the species, press the Edit button (<img class="imgSize25" src="images/edit.png">) and type the name of the species (Latin name); suggestions will be provided to you as you start typing something.</p>
 			<p>OR</p>
-			<p>(i) FOR BACKGROUND FUNCTIONAL GROUPS ONLY: Deselect a given class from the column "Class" of its original functional group using the dedicated radio button; this action will deselect all the species belonging to the class from the column "Species" of the original functional group.</p>
+			<p>(i) FOR BIOTIC RESOURCES ONLY: Deselect a given class from the column "Class" of its original functional group using the dedicated radio button; this action will deselect all the species belonging to the class from the column "Species" of the original functional group.</p>
 			<p>(ii) Then: In the column "Class" of the functional group in which you wish to reallocate the species, press the Edit button (<img class="imgSize25" src="images/edit.png">) and type the name of the class; suggestions will be provided to you as you start typing something. Once the class name is entered, the species belonging to that class will automatically appear in the "Species" column of the new functional group.</p>
 			<input type="button" class="close" onClick="deselect(3)" name="okbutton" value="OK"></input>
 		</div>
@@ -129,7 +129,7 @@ $(document).ready(function(){
 			<p>(ii) Indicate whether the new functional group is a focal functional group or a background functional group, using dedicated radio buttons;</p> 
 			<p>(iii) In the column "Species", type the name of the different species making up the new functional group (Latin names); suggestions will be provided to you as you start typing something.</p>
 			<p>OR</p>
-			<p>(iii) FOR BACKGROUND FUNCTIONAL GROUPS ONLY: In the column "Class", type the name of the different classes making up the new functional group; suggestions will be provided to you as you start typing something. Once a class name is entered, the species belonging to that class will automatically appear in the "Species" column of the new functional group.</p>
+			<p>(iii) FOR BIOTIC RESOURCES ONLY: In the column "Class", type the name of the different classes making up the new functional group; suggestions will be provided to you as you start typing something. Once a class name is entered, the species belonging to that class will automatically appear in the "Species" column of the new functional group.</p>
 			<p>*Note: To identify relevant Latin names or class names for the new functional group, you can access FishBase/SealifeBase by clicking on the FishBase icon or the SealifeBase icon, which are both located at the top-right hand corner of the table provided below. FishBase provides data for fish, while SealifeBase provides data for all the other types of marine organisms.</p>
 			<input type="button" class="close" onClick="deselect(5)" name="okbutton" value="OK"></input>
 		</div>
@@ -153,7 +153,7 @@ $(document).ready(function(){
 			<th class="width5">Select/ deselect</th>
 			<th class="width13">Functional Group</th>
 			<th class="width5">Focal Functional Group</th>
-			<th class="width7">Background Functional Group</th>
+			<th class="width7">Biotic Resource</th>
 			<th class="width13">Class</th>
 			<th>Species</th>
 			<th class="width7">Maximum length (cm)</th>
@@ -182,14 +182,14 @@ $(document).ready(function(){
 			</div>
 		</fieldset>
 		<fieldset>
-			<legend>Order Background functional groups</legend>
+			<legend>Order Biotic resources</legend>
 			<div id="container">
 				<p class="justify13"></br></br>Please order background functional groups</p>
 				<div class="padTop10" name="backgrounddiv">
 					<table class="padTop10 collapse" width="100%" border="1" id="btable">
 					<tbody id="btabletbody">
 					<th></th>
-					<th>Background Functional Group</th>
+					<th>Biotic Resource</th>
 					<th>Species</th>
 					</tbody>
 					</table>
