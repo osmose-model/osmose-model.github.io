@@ -14,8 +14,8 @@ var familyArr = [];
 var orderArr = [];
 var allFuncGroup = {};
 var defaultFunchGroup = [
-					{funcname:"zooplankton", funcgroup:"background"},
-					{funcname:"phytoplankton", funcgroup:"background"}
+					{funcname:"zooplankton", funcgroup:"biotic_resource"},
+					{funcname:"phytoplankton", funcgroup:"biotic_resource"}
 					];
 var url1 = "data/ecosystem_funcgrp.json";
 var url2 = "data/countryFAO_funcgrp.json";
