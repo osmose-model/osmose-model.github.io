@@ -405,14 +405,14 @@ var validateGroups = function (groups) {
     if (Array.isArray(groups)) {
         var errors = groups.reduce(validateGroup, []);
         var backgroundGroups = groups.filter(function (group) {
-            return group.type === 'background';
+            return group.type === 'biotic_resource';
         });
         if (backgroundGroups.length == 0) {
             errors.push('expected at least one background group, but none were found in ' + JSON.stringify(groups));
         }
 
         var focalGroups = groups.filter(function (group) {
-            return group.type === 'focal';
+            return group.type === 'focal_functional_group';
         });
         if (focalGroups.length == 0) {
             errors.push('expected at least one focal group, but none were found in ' + JSON.stringify(groups));
