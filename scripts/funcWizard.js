@@ -1415,8 +1415,8 @@ function download(){
 	var focalArr = getOrderThenSort('focalfuncgrouporder');
 	var bgArr = getOrderThenSort('backgroundfuncgrouporder');
 	
-	jsonCombineData = convertGroupsIntoJSON('focal_functional_group', focalArr, jsonCombineData);
-	jsonCombineData = convertGroupsIntoJSON('biotic_resource', bgArr, jsonCombineData);
+	jsonCombineData = convertGroupsIntoJSON('focal', focalArr, jsonCombineData);
+	jsonCombineData = convertGroupsIntoJSON('background', bgArr, jsonCombineData);
 	
 	var config = {
         "timeStepsPerYear" : steps,
