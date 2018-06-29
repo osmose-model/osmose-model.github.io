@@ -71,7 +71,7 @@
 				if(i == 0){
 					valid = validateform1();
 				}else if(i == 1){
-					valid = validateformGroup();
+					valid = true;
 				}else if(i == 4){
 					valid = validateStep();
 				}
