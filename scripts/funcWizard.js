@@ -1156,14 +1156,16 @@ function addNext(grpCount){
 }
 
 function validateformGroup(){
-	var ctr = 1;
+	//var ctr = 1;
 	var bgroupcount = 0;
 	var fgroupcount = 0;
+	var count = ("selected").length;
 	
 	$("#ftable").find("tr:gt(0)").remove();
 	$("#btable").find("tr:gt(0)").remove();
 	
-	while($("#selected"+ctr).length > 0){
+	//while($("#selected"+ctr).length > 0){
+	for(var ctr=1; ctr <= count; ctr++){
 		if($("#selected"+ctr).is(':checked')){
 			if($("input[name='sample"+ctr+"']:checked").val() == "fgroup"){
 				fgroupcount++;
