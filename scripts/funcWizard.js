@@ -1166,6 +1166,7 @@ function validateformGroup(){
 	while(($("#selected"+ctr2).length) > 0){
 		ctr2++;
 	}	
+	ctr2 = ctr2 - 1;
 	
 	//while(($("#selected"+ctr).length) > 0){
 	//for(var ctr=1; ctr <= count; ctr++){
@@ -1188,7 +1189,7 @@ function validateformGroup(){
 			if($("input[name='sample"+ctr+"']:checked").val() == "bgroup"){
 				bgroupcount++;
 			}
-			ctr++;
+			//ctr++;
 		}
 	}
 	
