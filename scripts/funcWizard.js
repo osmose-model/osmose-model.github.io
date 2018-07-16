@@ -17,9 +17,10 @@ var defaultFunchGroup = [
 					{funcname:"zooplankton", funcgroup:"biotic_resource"},
 					{funcname:"phytoplankton", funcgroup:"biotic_resource"}
 					];
-var url1 = "data/ecosystem_funcgrp.json";
-var url2 = "data/countryFAO_funcgrp.json";
-var url3 = "data/countrySubFAO_funcgrp.json";
+
+var urlForFunctionalGroupsByEcosystem = "data/ecosystem_funcgrp.json";
+var urlForFunctionalGroupsByCountryFAO = "data/countryFAO_funcgrp.json";
+var urlForFunctionalGroupsByCountrySubFAO = "data/countrySubFAO_funcgrp.json";
 
 /****** End of Global variable ******/
 
@@ -283,7 +284,7 @@ function populateFuncTable(){
 		if(e_code == ''){
 			$("#funcGrptable").find("tr:gt(0)").remove();
 		}else{
-			urldata = "data/ecosystem_funcgrp.json";
+			urldata = urlForFunctionalGroupsByEcosystem;
 		}
 	}else if(selected == "cntry")
 	{
@@ -295,9 +296,9 @@ function populateFuncTable(){
 			$("#funcGrptable").find("tr:gt(0)").remove();
 		
 		}else if (c_subcode == ''){
-			urldata = "data/countryFAO_funcgrp.json";
+			urldata = urlForFunctionalGroupsByCountryFAO;
 		}else{
-			urldata = "data/countrySubFAO_funcgrp.json";
+			urldata = urlForFunctionalGroupsByCountrySubFAO;
 		}
 	}
 		
@@ -613,7 +614,7 @@ function validateform1(){
 
 function populateProp(ctr, gen, sp, a, classname){
 	
-	var sizeid, habitatid, depthid, category, urlsp, urlsp2, categoryCap;
+	var sizeid, habitatid, depthid, category, categoryCap;
 	var output = true;
 	
 	if(gen != '' && gen != null){
@@ -623,9 +624,6 @@ function populateProp(ctr, gen, sp, a, classname){
 		category = 'class';
 		categoryCap = 'Class';
 	}
-	
-	urlsp = "data/ecosystem_funcgrp.json";
-	urlsp2 = "data/countryFAO_funcgrp.json";
 	
 	//get the maximum allowable number of species to add in the functional group
 	var nextSp = document.getElementsByName(ctr+"species").length;
@@ -644,14 +642,14 @@ function populateProp(ctr, gen, sp, a, classname){
 		$.when(
 			$.ajax({
 				type: 'GET',
-				url: urlsp,
+				url: urlForFunctionalGroupsByEcosystem,
 				success: function (result) {
 					resultData = result;
 				}
 			}),
 			$.ajax({
 				type: 'GET',
-				url: urlsp2,
+				url: urlForFunctionalGroupsByCountrySubFAO,
 				success: function (result) {
 					resultData2 = result;
 				}
@@ -1295,7 +1293,7 @@ function getOrderThenSort(elementName){
 	return tempArr;
 }
 
-function convertGroupsIntoJSON(funcgr, sortArray, combineArr){
+function convertGroupsIntoJSON(funcgr, sortArray, combineArr, resultData){
 	
 	for(var b=0; b<sortArray.length; b++){
 		var ctr = sortArray[b].split('_')[1];	
@@ -1342,68 +1340,40 @@ function convertGroupsIntoJSON(funcgr, sortArray, combineArr){
 			}
 		}
 		
-		var resultData1, resultData2, resultData3;
-		$.when(
-			$.ajax({
-				type: 'GET',
-				url: url1,
-				success: function (result1) {
-					resultData1 = result1;
-				}
-			}),
-			$.ajax({
-				type: 'GET',
-				url: url2,
-				success: function (result2) {
-					resultData2 = result2;
-				}
-			}),
-			$.ajax({
-				type: 'GET',
-				url: url3,
-				success: function (result3) {
-					resultData3 = result3;
-				}
-			})
-		).then(function() {
-			var resultData = resultData1.concat(resultData2);
-			resultData = resultData.concat(resultData3);
 
-			if(resultData){
-				
-				var filter = $.grep(resultData, function(element,index){
-					return (genusList.indexOf(element.Genus) > 0 || famList.indexOf(element.Family) > 0 || ordList.indexOf(element.Order) > 0);
-				});
-				
-				filter.sort(function(a,b){
-					var x = a.DataRichness;
-					var y = b.DataRichness;
-					return y-x;
-				});
-				
-				var len = Object.keys(filter).length;
-				
-				if (len > 0){
-					for(var i=0; i<len; i++){
-						var e = filter[i];
-						var gen = e.Genus;
-						var spec = e.Species;
-						var nameofspec = gen+' '+spec.slice(0,1).toLowerCase() + spec.slice(1);
-						
-						var item = $.grep(taxaArr, function(item) {
-							return item.name == nameofspec;
-						});
-						if(!(item.length)){
-							var specCode = e.SpecCode;
-							var link = (e.Source == "Fb" ? "http://fishbase.org/summary/"+specCode : "http://sealifebase.org/summary/"+specCode);
-							
-							taxaArr[taxaArrlen++] = {"name": nameofspec, "url": link, "selectionCriteria": "implicit"};
-						}
-					}
-				}
-			}
-		});
-		
+    if(resultData){
+      var filter = $.grep(resultData, function(element,index){
+        return (genusList.indexOf(element.Genus) > 0 || famList.indexOf(element.Family) > 0 || ordList.indexOf(element.Order) > 0);
+      });
+
+      filter.sort(function(a,b){
+        var x = a.DataRichness;
+        var y = b.DataRichness;
+        return y-x;
+      });
+
+      var len = Object.keys(filter).length;
+
+      if (len > 0){
+        for(var i=0; i<len; i++){
+          var e = filter[i];
+          var gen = e.Genus;
+          var spec = e.Species;
+          var nameofspec = gen+' '+spec.slice(0,1).toLowerCase() + spec.slice(1);
+
+          var item = $.grep(taxaArr, function(item) {
+            return item.name == nameofspec;
+          });
+          if(!(item.length)){
+            var specCode = e.SpecCode;
+            var link = (e.Source == "Fb" ? "http://fishbase.org/summary/"+specCode : "http://sealifebase.org/summary/"+specCode);
+
+            taxaArr[taxaArrlen++] = {"name": nameofspec, "url": link, "selectionCriteria": "implicit"};
+          }
+        }
+      }
+    }
+
 		combineArrlen = combineArr.length;
 		combineArr[combineArrlen++] = {
 			"name": gname,
@@ -1432,28 +1402,52 @@ function download(){
 	
 	var focalArr = getOrderThenSort('focalfuncgrouporder');
 	var bgArr = getOrderThenSort('backgroundfuncgrouporder');
-	
-	jsonCombineData = convertGroupsIntoJSON('focal_functional_group', focalArr, jsonCombineData);
-	jsonCombineData = convertGroupsIntoJSON('biotic_resource', bgArr, jsonCombineData);
+
+  var resultData1, resultData2, resultData3;
+  $.when(
+          $.ajax({
+            type: 'GET',
+            url: urlForFunctionalGroupsByEcosystem,
+            success: function (result1) {
+              resultData1 = result1;
+            }
+          }),
+          $.ajax({
+            type: 'GET',
+            url: urlForFunctionalGroupsByCountryFAO,
+            success: function (result2) {
+              resultData2 = result2;
+            }
+          }),
+          $.ajax({
+            type: 'GET',
+            url: urlForFunctionalGroupsByCountrySubFAO,
+            success: function (result3) {
+              resultData3 = result3;
+            }
+          })
+      ).then(function() {
+        var resultData = resultData1.concat(resultData2);
+        resultData = resultData.concat(resultData3);
+
+	jsonCombineData = convertGroupsIntoJSON('focal_functional_group', focalArr, jsonCombineData, resultData);
+	jsonCombineData = convertGroupsIntoJSON('biotic_resource', bgArr, jsonCombineData, resultData);
 	
 	var config = {
         "timeStepsPerYear" : steps,
         "groups" : jsonCombineData
     };
 
-	var generateConfig = osmose.generateConfig(config, function(err, url) {
-		
-		if(url != null){
-			statusLabel.empty();
+	osmose.generateConfig(config, function(err, url) {
+    statusLabel.empty();
+    if (url != null) {
 			statusLabel.append("Done preparing configuration");
 			
 			downloadEl.text("Click here to download Osmose configuration");
 			downloadEl.attr("download", "osmose_config.zip");
 			downloadEl.attr("href", url);
 			
-		}else{
-			
-			statusLabel.empty();
+		} else {
 			statusLabel.append("Generating configuration is not successful.");
 			statusLabel.css('color', 'red');
 			
@@ -1464,6 +1458,6 @@ function download(){
 			downloadEl.attr("href", "data:'"+data + "'");
 		}
     });
-	
+   });
 	return false;
 }
