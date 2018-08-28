@@ -343,7 +343,8 @@ function populateFuncTable(){
 						var curFamily = element.Family;
 						var curOrder = element.Order;
 						var genspec = element.Genus + ' ' + element.Species;
-						var genspecval = element.Genus + element.Species.slice(0,1).toUpperCase() + element.Species.slice(1) + element.SpecCode +'Fb'+curFamily+curOrder;
+						//var genspecval = element.Genus + element.Species.slice(0,1).toUpperCase() + element.Species.slice(1) + element.SpecCode +'Fb'+curFamily+curOrder;
+						var genspecval = element.Genus + element.Species.slice(0,1).toUpperCase() + element.Species.slice(1) + element.SpecCode +element.Source+curFamily+curOrder;
 						var cursize = (element.LengthEstimate) ? parseFloat(element.LengthEstimate) : '';
 						var curhabitat = element.Habitat;
 						var curdepthshallow = element.DepthRangeShallow;
