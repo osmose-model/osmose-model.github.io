@@ -1318,11 +1318,22 @@ function convertGroupsIntoJSON(funcgr, sortArray, combineArr, resultData){
 			if(group1[a].checked){
 				var genspec = group1[a].value.match(/[A-Z]?[a-z]+|[0-9]+/g);
 				var gen = genspec[0];	//genus
-				var sp = genspec[1];	//species
-				var id = genspec[2];	// speccode
-				var link = (genspec[3] == "Fb" ? "http://fishbase.org/summary/"+id : "http://sealifebase.org/summary/"+id); 	//fb or slb
-				var fam = genspec[4];
-				var order = genspec[5];
+				
+				//https://github.com/jhpoelen/fb-osmose-bridge/issues/177
+				if (isNaN(genspec[2])){
+					var sp = genspec[1] +" "+ genspec[2];	//species
+					var id = genspec[3];	// speccode
+					var link = (genspec[4] == "Fb" ? "http://fishbase.org/summary/"+id : "http://sealifebase.org/summary/"+id); 	//fb or slb
+					var fam = genspec[5];
+					var order = genspec[6];
+				} else {
+					var sp = genspec[1];	//species
+					var id = genspec[2];	// speccode
+					var link = (genspec[3] == "Fb" ? "http://fishbase.org/summary/"+id : "http://sealifebase.org/summary/"+id); 	//fb or slb
+					var fam = genspec[4];
+					var order = genspec[5];
+				}
+				
 				var nameofspec = gen+' '+sp.slice(0,1).toLowerCase() + sp.slice(1);
 				
 				if(genusList.indexOf(gen) === -1){
