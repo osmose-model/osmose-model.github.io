@@ -1,3 +1,5 @@
+This web ui is no longer supported, but its code and data remains available through this read-only archive.
+
 # osmose-web-ui
 
 This is a web user interface (web UI) that allows a user to define functional groups and a number of time steps per year for an OSMOSE model for a given marine region. This web UI utilizes JavaScript and the JQuery library. After the user has defined the study region, the web UI queries information stored in JavaScript Object Notation (JSON) data archives to define functional groups for the OSMOSE model. Then, the web UI offers the possibility to the user to redefine functional groups and the user is also requested to indicate the number of time steps per year of their OSMOSE model.
